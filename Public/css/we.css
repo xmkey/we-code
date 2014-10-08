@@ -2,16 +2,16 @@
 html,body{overflow:hidden;position:relative;}
 .page-content{height:100%;}
 .hide{
-    display:none;
+	display:none;
 }
 .we-font,
 .we-logo,
 .we-icon,
 .popback{
-    display:inline-block;
-    background:url(../img/we_sprite@2x.png) no-repeat;background-size:242px auto;
-    text-indent:-999em;width:242px;overflow:hidden;margin:0;
-    position:absolute;left:50%;margin-left:-121px;
+	display:inline-block;
+	background:url(../img/we_sprite@2x.png) no-repeat;background-size:242px auto;
+	text-indent:-999em;width:242px;overflow:hidden;margin:0;
+	position:absolute;left:50%;margin-left:-121px;
 }
 .fingerprint,
 .btn-fingerprint,
@@ -58,7 +58,7 @@ html,body{overflow:hidden;position:relative;}
 .font-01,
 .font-02,
 .font-03{
-    height:12px;
+	height:12px;
 }
 .font-01{background-position:0 -108px;top:50%;}
 .font-02{background-position:0 -121px;top:54%;}
@@ -243,7 +243,7 @@ html,body{overflow:hidden;position:relative;}
 
 
 .icon-clock{
-    height:33px;background-position:0 -321px;
+	height:33px;background-position:0 -321px;
 }
 .clock-01{top:40%;}
 .clock-02{top:60%;}
@@ -252,46 +252,60 @@ html,body{overflow:hidden;position:relative;}
 .guest-title{height:20px;background-position:0 -400px;top:5%;}
 
 .guest-list{
-    position:absolute;top:15%;width:280px;left:50%;margin-left:-140px;overflow:hidden;
+	position:absolute;top:15%;width:280px;left:50%;margin-left:-140px;overflow:hidden;
 }
 .guest-list .list-item{
-    float:left;width:50%;height:135px;
+	float:left;width:50%;height:135px;
 }
 .guest-list .list-item img{
-    width:100px;height:100px;
+	width:100px;height:100px;
 }
 .guest-list .item-name{display:block;font-size:10px;color:#fff;}
 
 .app{
-    background:url(../img/bg.jpg) no-repeat fixed;background-size:100% 100%;
-    text-align:center;
+	background:url(../img/bg.jpg) no-repeat fixed;background-size:100% 100%;
+	text-align:center;
 }
 
 .btn-stargame{width:145px;height:42px;background-position:0 -496px;top:60%;margin-left:-77px;}
 
 .guest-pop{
-    position:absolute;left:0;top:0;bottom:0;right:0;z-index:10000;background-color:rgba(0,0,0,0.8);overflow:hidden;
+	position:absolute;left:0;top:0;bottom:0;right:0;z-index:10000;background-color:rgba(0,0,0,0.8);overflow:hidden;
 }
 .guest-pop ul{
-    top:0;bottom:0;z-index:0;
+	top:0;bottom:0;z-index:0;
 }
 .guest-pop li{
-    position:relative;
-    height:100%;line-height:100%;overflow:hidden;vertical-align:middle;
+	position:relative;
+	height:100%;line-height:100%;overflow:hidden;vertical-align:middle;
+}
+.guest-pop .guest-card{
+	position:absolute;left:50%;top:50%;
+    width:268px;height:387px;margin:-198px 0 0 -135px;
+    border-radius:5px;overflow:hidden;
+    border:1px solid #0b3c9d;
+    background-color:#0b3c9d;box-shadow:inset  0 -5px 10px rgba(255,255,255,.2),inset 0 5px 10px rgba(255,255,255,.2);
+    color:#fff;
+}
+.guest-desc{
+    text-align:left;padding:12px;font-size:12px;
+    line-height:18px;
+}
+.guest-desc .guest-name{
+    line-height:32px;
+}
+.guest-desc .guest-en{
 }
 .guest-pop .imgbox{
-    position:absolute;left:50%;top:50%;
-}
-.guest-pop li img{
-    position:relative;margin-top:-75%;left:-50%;
+    display:block;
 }
 .guest-pop .outer{
-    position:absolute;left:0;top:0;bottom:0;right:0;z-index:2;
+	position:absolute;left:0;top:0;bottom:0;right:0;z-index:2;
 }
 .guest-pop .popback{
-    position:absolute;bottom:12px;left:50%;z-index:10;
-    width:42px;height:42px;margin:0 0 0 -21px;
-    background:url(../img/pop_back.png) no-repeat 0 0;background-size:100%;
+	position:absolute;bottom:12px;left:50%;z-index:10;
+	width:42px;height:42px;margin:0 0 0 -21px;
+	background:url(../img/pop_back.png) no-repeat 0 0;background-size:100%;
 }
 
 
@@ -443,7 +457,7 @@ html,body{overflow:hidden;position:relative;}
     z-index: 9999
 }
 .u-maskLayer img{
-    width:100%;height:auto;
+	width:100%;height:auto;
 }
 
 .u-maskLayer.z-show,.u-maskLayer.z-showing {
@@ -487,11 +501,3 @@ html,body{overflow:hidden;position:relative;}
 .u-maskLayer.z-show .u-maskLayer-close {
     -webkit-transform: translate(0%,0)
 }
-
-
-.game-content{-webkit-transition:all .5s ease-in-out;}
-.game-content.game-hide{-webkit-transform:scale(.5);opacity: 0;}
-.game-success{-webkit-transform:translateY(2000px);-webkit-transition:all .5s ease-in-out;position: absolute;top:0px;left:0px;width: 100%;height:100%;}
-.game-success.success-show{-webkit-transform:translateY(0px);}
-
-.we-code{-webkit-user-select:text;-webkit-user-select:initial;}
