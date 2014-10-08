@@ -2,7 +2,7 @@
 !function($){
 
 var imgUrl = 'http://imgcache.qq.com/ac/www_tencent/we/2014/images/logo.png'; 
-var lineLink = window.location.href;
+var lineLink =APP;
 
 if(ISSENDER){
  
@@ -46,39 +46,47 @@ function shareTimeline() {
     _report('timeline', res.err_msg);  
     });  
 }  
-function shareWeibo() {  
-    WeixinJSBridge.invoke('shareWeibo',{  
-    "content": descContent,  
-    "url": lineLink,  
-    }, function(res) {  
-    _report('weibo', res.err_msg);  
-    });  
+function is_weixn(){  
+    var ua = navigator.userAgent.toLowerCase();  
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {  
+        return true;  
+    } else {  
+        return false;  
+    }  
 }  
-
+if(!is_weixn()){
+  alert("请在微信中打开该页面");
+}
+ 
 // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。  
 document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
       // 发送给好友  
   WeixinJSBridge.on('menu:share:appmessage', function(argv){
-    var index=$(".pages .page").index($(".page-share"));
+   
 
-    window.slideTo(index+1);  
+   
+      window.toGame();
         shareFriend();  
   });  
 
     // 分享到朋友圈  
     WeixinJSBridge.on('menu:share:timeline', function(argv){  
-      var index=$(".pages .page").index($(".page-share"));
+    //   var index=$(".pages .page").index($(".page-share"));
 
-    window.slideTo(index+1); 
+    // window.slideTo(index+1); 
+    
+
+   
+     window.toGame();
         shareTimeline();  
         });  
 
     // 分享到微博  
     WeixinJSBridge.on('menu:share:weibo', function(argv){
-    var index=$(".pages .page").index($(".page-share"));
-
-    window.slideTo(index+1);   
+    
+    
         shareWeibo();  
         });  
-    }, false);   
+    }, false); 
+
 }(Zepto)

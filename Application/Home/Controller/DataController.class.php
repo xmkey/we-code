@@ -24,25 +24,38 @@ class DataController extends Controller {
     	$key_data=$Match->where('`key`="'.$data['key'].'"')->find();
     	
 		if(!$key_data){
+			$data['time']=time();
 			$Match->data($data)->add();
 			$ret['status']='new';
 		}else{
 
 			$ret['status']='fail';
-			if($key_data['ismatch']==1&&$key_data['num']>=2){
+
+			if($key_data['ismatch']==1&&$key_data['num']>=3){
 				$ret['status']='matched';
+				// return false;
 			}
-			else if($data['timer']==0||time()-strtotime($key_data['time'])>60){
+			else if($data['timer']==0||time()-$key_data['time']>60){
 				$ret['status']='timeout';
+				// return false;
 			}
 			else if($key_data['to']==3&&$data['from']==3){
 				$data['ismatch']=1;
-				$data['num']=$key_data['num']?$key_data['num']:0+1;
+				$data['num']=1;
+				if($key_data['num']==2||$key_data['num']==3){
+					$data['num']=3;
+				}
+				
+				// $data['num']=($key_data['num']?$key_data['num']:0)+1;
+
 				$ret['status']='success';
 			}
 			$ret['to']=$key_data['to'];
 			
-	    	$Match->where('`key`="'.$data['key'].'"')->save($data);
+			// if($key_data['ismatch']!=1){
+				
+	    		$Match->where('`key`="'.$data['key'].'"')->save($data);
+	    	// }
 		}
 		echo json_encode($ret);
     }
@@ -57,24 +70,40 @@ class DataController extends Controller {
     	$key_data=$Match->where('`key`="'.$data['key'].'"')->find();
 		if(!$key_data){
 			$ret['status']='noyet';
+
 		}else{
 			$ret['status']='fail';
 			
-			if($key_data['ismatch']==1&&$key_data['num']>=2){
+			if($key_data['ismatch']==1&&$key_data['num']>=3){
 				$ret['status']='matched';
 			}
-			else if($key_data['timer']==0||time()-strtotime($key_data['time'])>60){
+			else if($key_data['timer']==0||time()-$key_data['time']>60){
 				$ret['status']='timeout';
 			}
 			else if($key_data['from']==3&&$data['to']==3){
 				$data['ismatch']=1;
-				$data['num']=$key_data['num']?$key_data['num']:0+1;
+				// $data['num']=($key_data['num']?$key_data['num']:0)+1;
+
+				$data['num']=2;
+				if($key_data['num']==1||$key_data['num']==3){
+					$data['num']=3;
+				}
+				
 				$ret['status']='success';
 			}
 			$ret['from']=$key_data['from'];
-			$ret['timer']=$key_data['timer'];
-			
-	    	$Match->where('`key`="'.$data['key'].'"')->save($data);
+			$timer=60-(time()-$key_data['time']);
+			if($timer<=0){
+				$timer==0;
+			}
+			$ret['timer']=$timer;
+			if($key_data['ismatch']==1){
+				$data['to']=3;
+			}
+			$ret['num']=$data['num'];
+	    	// if($key_data['ismatch']!=1){
+	    		$Match->where('`key`="'.$data['key'].'"')->save($data);
+	    	// }
 		}
 		echo json_encode($ret);
     }

@@ -135,6 +135,9 @@
 
 
   $("#btn-invite").tap(function(){
+    // var index=$(".pages .page").index($(".page-game"));
+
+   
     if(ISSENDER){
       $(".m-weixinShareLayer").removeClass("hide");
       return false;

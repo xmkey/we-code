@@ -494,3 +494,4 @@ html,body{overflow:hidden;position:relative;}
 .game-success{-webkit-transform:translateY(2000px);-webkit-transition:all .5s ease-in-out;position: absolute;top:0px;left:0px;width: 100%;height:100%;}
 .game-success.success-show{-webkit-transform:translateY(0px);}
 
+.we-code{-webkit-user-select:text;-webkit-user-select:initial;}

@@ -54,7 +54,8 @@ var global={
 	isTrigger:false,
 	timeRemain:60,
 	isFirst:true,
-	interval:null
+	interval:null,
+	isDone:false
 }
 
  var Timer={
@@ -72,29 +73,55 @@ var global={
 	 		if(global.isTrigger){
 	 			if(global.timeRemain-1<=0){
 	 				global.timeRemain=0;
-	 				clearInterval(interval);
+	 				done("timeout");
+	 				clearInterval(global.interval);
+	 				// alert("超时");
+
+	 				
 	 			}else{
 	 				global.timeRemain--;
 	 			}
 	 			$(".count-down").html(global.timeRemain);
 	 		}
+
 	 		
 	 		postData(data,global.isFirst);
+
 	 		
  		},1000)
  	}
  }
  if(!ISSENDER){
- 	var index=$(".pages .page").index($(".page-game"));
+ 	// var index=$(".pages .page").index($(".page-game"));
  	
- 	window.slideTo(index);
+ 	// window.slideTo(index);
  	Timer.start(global.timeRemain);
  }
 
  function check(status){
  	if(global.isTrigger==false&&ISSENDER&&status==3){
 
- 		var data={
+ 		// var data={
+ 		// 	isSender:ISSENDER,
+ 		// 	status:status,
+ 		// 	key:KEY,
+ 		// 	timer:global.timeRemain
+ 		// }
+ 		
+ 		// postData(data,global.isFirst);
+ 		// global.isFirst=false;
+ 		// Timer.start(global.timeRemain);
+ 	}
+ 	
+ }
+
+ window.toGame=function(){
+ 	var index=$(".pages .page").index($(".page-game"));
+
+    window.slideTo(index);  
+    $(".share-content").hide();
+    $(".game-content").css({"display":"block"});
+ 	var data={
  			isSender:ISSENDER,
  			status:status,
  			key:KEY,
@@ -104,34 +131,34 @@ var global={
  		postData(data,global.isFirst);
  		global.isFirst=false;
  		Timer.start(global.timeRemain);
- 	}
  }
+ 
  function postData(data,isfirst){
  	$.post(APP+'/Home/data/', data, (function(isfirst){
 	  return function(result){
 	  	// console.log(result)
 	  	var result=JSON.parse(result);
-	  	
+	  	ISSENDER?setStatus(result.to):setStatus(result.from);
 	  	if(result.status=="success"){
 	  		clearInterval(global.interval);
-	  		$(".game-content").addClass("game-hide");
-	  		if(ISSENDER){
-	  			$("#sender-success").addClass("success-show");
-	  		}else{
-	  			$("#helper-success").addClass("success-show");
-	  		}
+	  		
+	  		setTimeout(function(){
+	  			done(result.status);
+	  		},500)
  			
 	  		return true;
 	  	}else if(result.status=="matched"){
-
+	  		done(result.status);
 	  		clearInterval(global.interval);
-	  		alert("已经匹配过");
+	  		// alert("已经匹配过");
 	  		return false;
 	  	}else if(result.status=="timeout"){
+	  		done(result.status);
 	  		clearInterval(global.interval);
-	  		alert("已经过期");
+	  		// alert("已经超时");
 	  		return false;
 	  	}
+	  	
 	  	global.isTrigger=true;
 
 	  	if(result.status=="noyet"){
@@ -144,8 +171,8 @@ var global={
 	  		global.isFirst=false;
 	  		
 	  	}
-	  	ISSENDER?setStatus(result.to):setStatus(result.from);
-	  	console.log(result)
+	  	
+	  	
 	  };
 	})(isfirst));
  }
@@ -174,5 +201,20 @@ function setStatus(status){
   		}
   	}
 }
-
+function done(status){
+	if(!global.isDone){
+		global.isDone=true;
+		if(status=="timeout"){
+			alert("超时");
+		}else if(status=="matched"){
+			alert("已经匹配过");
+		}
+		$(".game-content").addClass("game-hide");
+		if(ISSENDER){
+			$("#sender-success").addClass("success-show");
+		}else{
+			$("#helper-success").addClass("success-show");
+		}
+	}
+}
 }(Zepto)

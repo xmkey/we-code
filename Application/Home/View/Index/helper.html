@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ch">
 <head>
 <title>WE大会</title>
@@ -17,11 +17,11 @@
 <meta http-equiv="pragram" content="no-cache" />
 <meta name="sharecontent" data-msg-img="http://www.liveapp.cn/userfiles/video/tmp/14586/541bf5545a226.jpg" data-msg-title="WE大会" data-msg-content="这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。" data-msg-callBack="" data-line-img="http://www.liveapp.cn/userfiles/video/tmp/14586/541bf55b2dab0.jpg" data-line-title="WE大会" data-line-callBack=""/> 
 <script type="text/javascript">
-var KEY="<?php echo ($key); ?>";
-var ISSENDER=<?php echo ($isSender); ?>;
-var APP="/we-code/index.php";
+var KEY="{$key}";
+var ISSENDER={$isSender};
+var APP="__APP__";
 </script>
-<link rel="stylesheet" href="/we-code/Public/css/main.css">
+<link rel="stylesheet" href="__PUBLIC__/css/main.css">
 </head>
 <body class="app">
 <div id="app-loading" class="app-loading z-hide">
@@ -39,15 +39,15 @@ var APP="/we-code/index.php";
 </div>
 
 <section class="pages">
-  <section class="page page-we-01">
+  <!-- <section class="page page-we-01">
     <section class="page-content">
       <h1 class="we-logo" data-animation="slideToTop" data-duration="1000"></h1>
       <p class="we-font font-01" data-animation="slideToTop" data-delay="200" data-duration="1000">这里没有商业或者公司竞争，只有前沿的科学</p>
       <p class="we-font font-02" data-animation="slideToTop" data-delay="400" data-duration="1000">思想和最新技术，还有天马行空般的想象力。</p>
       <p class="we-font font-03" data-animation="slideToTop" data-delay="600" data-duration="1000">— 马化腾 腾讯公司首席执行官兼董事会主席</p>
     </section>
-  </section>
-  <section class="page page-we-02">
+  </section> -->
+ <!--  <section class="page page-we-02">
     <section class="page-content">
       <h1 class="we-logo" data-animation="followSlide" data-duration="1000"></h1>
       <p class="we-font font-04" data-animation="followSlide" data-delay="200" data-duration="1000">2014</p>
@@ -63,22 +63,22 @@ var APP="/we-code/index.php";
         <h2 class="timeline-title" data-animation="slideToTop" data-duration="1000">大会议程</h2>
         <ul class="timeline" data-animation="slideToTop" data-delay="200" data-duration="1000">
           <li class="timeline-item" data-animation="slideToTop" data-delay="400" data-duration="1000">
-            <span class="item-img"><img src="/we-code/Public/pic/timeline_01.png" alt=""></span>
+            <span class="item-img"><img src="__PUBLIC__/pic/timeline_01.png" alt=""></span>
           </li>
           <li class="timeline-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
-            <span class="item-img"><img src="/we-code/Public/pic/timeline_01.png" alt=""></span>
+            <span class="item-img"><img src="__PUBLIC__/pic/timeline_01.png" alt=""></span>
           </li>
           <li class="timeline-item" data-animation="slideToTop" data-delay="800" data-duration="1000">
-            <span class="item-img"><img src="/we-code/Public/pic/timeline_01.png" alt=""></span>
+            <span class="item-img"><img src="__PUBLIC__/pic/timeline_01.png" alt=""></span>
           </li>
           <li class="timeline-item" data-animation="slideToTop" data-delay="1000" data-duration="1000">
-            <span class="item-img"><img src="/we-code/Public/pic/timeline_01.png" alt=""></span>
+            <span class="item-img"><img src="__PUBLIC__/pic/timeline_01.png" alt=""></span>
           </li>
           <li class="timeline-item" data-animation="slideToTop" data-delay="1200" data-duration="1000">
-            <span class="item-img"><img src="/we-code/Public/pic/timeline_01.png" alt=""></span>
+            <span class="item-img"><img src="__PUBLIC__/pic/timeline_01.png" alt=""></span>
           </li>
           <li class="timeline-item" data-animation="slideToTop" data-delay="1400" data-duration="1000">
-            <span class="item-img"><img src="/we-code/Public/pic/timeline_01.png" alt=""></span>
+            <span class="item-img"><img src="__PUBLIC__/pic/timeline_01.png" alt=""></span>
           </li>
         </ul>
       </div>
@@ -91,128 +91,128 @@ var APP="/we-code/index.php";
       <ul class="speaker-list">
         <li class="list-item" data-animation="slideToTop" data-delay="200" data-duration="1000">
           <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_01.jpg" alt="">
+            <img src="__PUBLIC__/pic/guest_img_01.jpg" alt="">
           </span>
           <span class="item-text text-01">Martin A. Nowak人类社会行为学研究专家</span>
         </li>
         <li class="list-item" data-animation="slideToTop" data-delay="400" data-duration="1000">
           <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_02.jpg" alt="">
+            <img src="__PUBLIC__/pic/guest_img_02.jpg" alt="">
           </span>
           <span class="item-text text-02">Martin A. Nowak人类社会行为学研究专家</span>
         </li>
         <li class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
           <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_03.jpg" alt="">
+            <img src="__PUBLIC__/pic/guest_img_03.jpg" alt="">
           </span>
           <span class="item-text text-03">Martin A. Nowak人类社会行为学研究专家</span>
         </li>
         <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
           <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_04.jpg" alt="">
+            <img src="__PUBLIC__/pic/guest_img_04.jpg" alt="">
           </span>
           <span class="item-text text-04">Martin A. Nowak人类社会行为学研究专家</span>
         </li>
         <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
           <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_05.jpg" alt="">
+            <img src="__PUBLIC__/pic/guest_img_05.jpg" alt="">
           </span>
           <span class="item-text text-05">Martin A. Nowak人类社会行为学研究专家</span>
         </li>
         <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
           <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_06.jpg" alt="">
+            <img src="__PUBLIC__/pic/guest_img_06.jpg" alt="">
           </span>
           <span class="item-text text-06">Martin A. Nowak人类社会行为学研究专家</span>
         </li>
         <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
           <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_07.jpg" alt="">
+            <img src="__PUBLIC__/pic/guest_img_07.jpg" alt="">
           </span>
           <span class="item-text text-07">Martin A. Nowak人类社会行为学研究专家</span>
         </li>
         <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
           <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_08.jpg" alt="">
+            <img src="__PUBLIC__/pic/guest_img_08.jpg" alt="">
           </span>
           <span class="item-text text-08">Martin A. Nowak人类社会行为学研究专家</span>
         </li>
         <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
           <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_09.jpg" alt="">
+            <img src="__PUBLIC__/pic/guest_img_09.jpg" alt="">
           </span>
           <span class="item-text text-09">Martin A. Nowak人类社会行为学研究专家</span>
         </li>
         <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
           <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_10.jpg" alt="">
+            <img src="__PUBLIC__/pic/guest_img_10.jpg" alt="">
           </span>
           <span class="item-text text-10">Martin A. Nowak人类社会行为学研究专家</span>
         </li>
         <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
           <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_11.jpg" alt="">
+            <img src="__PUBLIC__/pic/guest_img_11.jpg" alt="">
           </span>
           <span class="item-text text-11">Martin A. Nowak人类社会行为学研究专家</span>
         </li>
         <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
           <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_12.jpg" alt="">
+            <img src="__PUBLIC__/pic/guest_img_12.jpg" alt="">
           </span>
           <span class="item-text text-12">Martin A. Nowak人类社会行为学研究专家</span>
         </li>
       </ul>
       </div>
     </section>
-  </section>
+  </section> -->
   <section class="page page-we-03 page-game">
-    <section class="page-content share-content" >
+    <section class="page-content share-content" style="display:none">
       <p class="we-font font-08" data-animation="followSlide" data-duration="1000">邀请好友一起 </p>
       <p class="we-font font-09" data-animation="followSlide" data-delay="200" data-duration="1000">开启未来之门</p>
       <div class="we-gamebox gamebox-01" data-animation="followSlide" data-delay="400" data-duration="1000"></div>
       <div class="we-gamebox gamebox-02" data-animation="followSlide" data-delay="400" data-duration="1000"></div>
-      <a href="/we-code/index.php" class="we-btn btn-01" id="btn-invite" data-animation="followSlide" data-delay="600" data-duration="1000">邀请好友</a>
+      <a href="__APP__" class="we-btn btn-01" id="btn-invite" data-animation="followSlide" data-delay="600" data-duration="1000">邀请好友</a>
       <p class="we-font font-10" data-animation="followSlide" data-delay="800" data-duration="1000">和好友一起按下指纹，打开未来之门，</p>
       <p class="we-font font-11" data-animation="followSlide" data-delay="1000" data-duration="1000">抢2014WE大会视频直播码。</p>
       <div class="u-maskLayer m-weixinShareLayer hide" style="opacity:1;">
-        <img src="/we-code/Public/pic/we_share.png">
+        <img src="__PUBLIC__/pic/we_share.png">
         <p class="we-font font-32">合作机构：艾迪票务设计机构：pinnadesign</p>
       </div>
     </section>
   <!-- </section>
   <section class="page page-we-04 page-game"> -->
-    <section class="page-content game-content" style="display:none">
-      <div class="game-bg" data-animation="followSlide" data-delay="0" data-duration="1000"></div>
-      <p class="we-font font-12" data-animation="followSlide" data-delay="200" data-duration="1000">请按下您的手指</p>
-      <p class="we-font font-13" data-animation="followSlide" data-delay="400" data-duration="1000">并保持 60 秒</p>
-      <p class="count-down" data-animation="followSlide" data-delay="400" data-duration="1000">60</p>
-      <div class="we-gamebox gamebox-01" data-animation="followSlide" data-delay="600" data-duration="1000">
+    <section class="page-content game-content">
+      <div class="game-bg" data-animation="slideToTop" data-delay="0" data-duration="1000"></div>
+      <p class="we-font font-12" data-animation="slideToTop" data-delay="200" data-duration="1000">请按下您的手指</p>
+      <p class="we-font font-13" data-animation="slideToTop" data-delay="400" data-duration="1000">并保持 60 秒</p>
+      <p class="count-down" data-animation="slideToTop" data-delay="400" data-duration="1000">60</p>
+      <div class="we-gamebox gamebox-01" data-animation="slideToTop" data-delay="600" data-duration="1000">
         <span class="fingerprint"></span>
         <span class="fingerprint"></span>
         <span class="fingerprint"></span>
         <span class="fingerprint"></span>
       </div>
-      <div class="we-funcs" data-animation="followSlide" data-delay="800" data-duration="1000">
+      <div class="we-funcs" data-animation="slideToTop" data-delay="800" data-duration="1000">
         <div class="we-btn btn-fingerprint btn-fingerprint-left"><span>左</span></div>
         <div class="we-btn btn-fingerprint btn-fingerprint-right"><span>右</span></div>
       </div>
     </section>
     <section class="page-content game-success" id="sender-success">
-      <p class="we-font font-14" data-animation="followSlide" data-duration="1000">恭喜您开启了未来之门！</p>
-      <p class="we-font font-15" data-animation="followSlide" data-delay="400" data-duration="1000">获得WE大会视频直播码！</p>
-      <div class="we-code" data-animation="followSlide" data-delay="600" data-duration="1000">
+      <p class="we-font font-14" data-animation="slideToTop" data-duration="1000">恭喜您开启了未来之门！</p>
+      <p class="we-font font-15" data-animation="slideToTop" data-delay="400" data-duration="1000">获得WE大会视频直播码！</p>
+      <div class="we-code" data-animation="slideToTop" data-delay="600" data-duration="1000">
         <span>ZHIBOMA0256523</span>
       </div>
-      <p class="we-font font-16" data-animation="followSlide" data-delay="800" data-duration="1000">离WE大会直播还有<i>16</i>天</p>
-      <a href="#" class="we-btn btn-02" data-animation="followSlide" data-delay="1000" data-duration="1000">观看WE大会现场直播</a>
-      <p class="we-font font-17" data-animation="followSlide" data-delay="1200" data-duration="1000">请于2014年11月8日 13:00进入腾讯大学 </p>
-      <p class="we-font font-18" data-animation="followSlide" data-delay="1400" data-duration="1000">官网WE大会直播间输入直播码观看！</p>
+      <p class="we-font font-16" data-animation="slideToTop" data-delay="800" data-duration="1000">离WE大会直播还有<i>16</i>天</p>
+      <a href="#" class="we-btn btn-02" data-animation="slideToTop" data-delay="1000" data-duration="1000">观看WE大会现场直播</a>
+      <p class="we-font font-17" data-animation="slideToTop" data-delay="1200" data-duration="1000">请于2014年11月8日 13:00进入腾讯大学 </p>
+      <p class="we-font font-18" data-animation="slideToTop" data-delay="1400" data-duration="1000">官网WE大会直播间输入直播码观看！</p>
     </section>
     <section class="page-content game-success" id="helper-success">
-      <p class="we-font font-19" data-animation="followSlide" data-duration="1000">费等费用，请小伙伴们注意喔！如须购买门票</p>
-      <p class="we-font font-20" data-animation="followSlide" data-delay="200" data-duration="1000">请从官方正规渠道进入。</p>
-      <a href="/we-code/index.php" class="we-btn btn-03" data-animation="followSlide" data-delay="400" data-duration="1000">我也要直播码</a>
-      <a href="http://mp.weixin.qq.com/s?__biz=MzA5MTMyNzAzMQ==&mid=200598274&idx=1&sn=5aa98b60ec81b62ff589aa6c1c66c9e4#rd" class="we-btn btn-04" data-animation="followSlide" data-delay="600" data-duration="1000">关注腾讯大学</a>
+      <p class="we-font font-19" data-animation="slideToTop" data-duration="1000">费等费用，请小伙伴们注意喔！如须购买门票</p>
+      <p class="we-font font-20" data-animation="slideToTop" data-delay="200" data-duration="1000">请从官方正规渠道进入。</p>
+      <a href="__APP__" class="we-btn btn-03" data-animation="slideToTop" data-delay="400" data-duration="1000">我也要直播码</a>
+      <a href="http://mp.weixin.qq.com/s?__biz=MzA5MTMyNzAzMQ==&mid=200598274&idx=1&sn=5aa98b60ec81b62ff589aa6c1c66c9e4#rd" class="we-btn btn-04" data-animation="slideToTop" data-delay="600" data-duration="1000">关注腾讯大学</a>
     </section>
   </section>
   <!-- <section class="page page-we-05">
@@ -236,22 +236,22 @@ var APP="/we-code/index.php";
       <a href="#" class="we-btn btn-04" data-animation="followSlide" data-delay="600" data-duration="1000">关注腾讯大学</a>
     </section>
   </section> -->
-  <section class="page page-history">
+  <!-- <section class="page page-history">
     <section class="page-content">
       <div class="content" style="height:726px">
         <div class="history-box">
           <ul class="history-img-list">
-            <li class="list-item" data-animation="followSlide" data-duration="1000"><img src="/we-code/Public/pic/history_img_01.jpg" alt=""></li>
-            <li class="list-item" data-animation="followSlide" data-delay="200" data-duration="1000"><img src="/we-code/Public/pic/history_img_02.jpg" alt=""></li>
-            <li class="list-item" data-animation="followSlide" data-delay="400" data-duration="1000"><img src="/we-code/Public/pic/history_img_03.jpg" alt=""></li>
-            <li class="list-item" data-animation="followSlide" data-delay="600" data-duration="1000"><img src="/we-code/Public/pic/history_img_04.jpg" alt=""></li>
-            <li class="list-item" data-animation="followSlide" data-delay="800" data-duration="1000"><img src="/we-code/Public/pic/history_img_05.jpg" alt=""></li>
+            <li class="list-item" data-animation="followSlide" data-duration="1000"><img src="__PUBLIC__/pic/history_img_01.jpg" alt=""></li>
+            <li class="list-item" data-animation="followSlide" data-delay="200" data-duration="1000"><img src="__PUBLIC__/pic/history_img_02.jpg" alt=""></li>
+            <li class="list-item" data-animation="followSlide" data-delay="400" data-duration="1000"><img src="__PUBLIC__/pic/history_img_03.jpg" alt=""></li>
+            <li class="list-item" data-animation="followSlide" data-delay="600" data-duration="1000"><img src="__PUBLIC__/pic/history_img_04.jpg" alt=""></li>
+            <li class="list-item" data-animation="followSlide" data-delay="800" data-duration="1000"><img src="__PUBLIC__/pic/history_img_05.jpg" alt=""></li>
           </ul>
           <div class="history-weibo" data-animation="slideToLeft" data-delay="100" data-duration="1000">
             <ul class="weibo-list">
-              <li class="list-item" data-animation="followSlide" data-delay="300" data-duration="1000"><img src="/we-code/Public/pic/weibo_01.jpg" alt=""></li>
-              <li class="list-item" data-animation="followSlide" data-delay="500" data-duration="1000"><img src="/we-code/Public/pic/weibo_01.jpg" alt=""></li>
-              <li class="list-item" data-animation="followSlide" data-delay="700" data-duration="1000"><img src="/we-code/Public/pic/weibo_01.jpg" alt=""></li>
+              <li class="list-item" data-animation="followSlide" data-delay="300" data-duration="1000"><img src="__PUBLIC__/pic/weibo_01.jpg" alt=""></li>
+              <li class="list-item" data-animation="followSlide" data-delay="500" data-duration="1000"><img src="__PUBLIC__/pic/weibo_01.jpg" alt=""></li>
+              <li class="list-item" data-animation="followSlide" data-delay="700" data-duration="1000"><img src="__PUBLIC__/pic/weibo_01.jpg" alt=""></li>
             </ul>
           </div>
         </div>
@@ -263,8 +263,8 @@ var APP="/we-code/index.php";
       <h2 class="we-logo tencent-logo" data-animation="followSlide" data-duration="1000"></h2>
       <a href="http://mp.weixin.qq.com/s?__biz=MzA5MTMyNzAzMQ==&mid=200598274&idx=1&sn=5aa98b60ec81b62ff589aa6c1c66c9e4#rd" class="we-btn btn-03" data-animation="followSlide" data-delay="200" data-duration="1000">关注腾讯大学</a>
     </section>
-  </section>
-</section><a href="javascript:void(0);" class="u-guideTop z-move"></a>
+  </section> -->
+</section><!-- <a href="javascript:void(0);" class="u-guideTop z-move"></a> -->
 <footer class="app-footer">
 </footer>
 <section class="page-facade guest-pop hide">
@@ -273,13 +273,13 @@ var APP="/we-code/index.php";
     <a href="javascript:void(0);" class="u-guideNext z-move">prev</a>
     <div class="outer" id="slider">
       <ul class="u_sper">
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
       </ul>
     </div>
     <a href="#" class="we-btn popback"></a>
@@ -287,8 +287,8 @@ var APP="/we-code/index.php";
 </section>
 
 
-<script type="text/javascript" src="/we-code/Public/js/zepto.min.js"></script>
-<script type="text/javascript" src="/we-code/Public/js/main.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/zepto.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/main.js"></script>
 
 
 </body>

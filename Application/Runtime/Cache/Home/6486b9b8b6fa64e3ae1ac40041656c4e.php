@@ -39,15 +39,15 @@ var APP="/we-code/index.php";
 </div>
 
 <section class="pages">
-  <section class="page page-we-01">
+  <!-- <section class="page page-we-01">
     <section class="page-content">
       <h1 class="we-logo" data-animation="slideToTop" data-duration="1000"></h1>
       <p class="we-font font-01" data-animation="slideToTop" data-delay="200" data-duration="1000">这里没有商业或者公司竞争，只有前沿的科学</p>
       <p class="we-font font-02" data-animation="slideToTop" data-delay="400" data-duration="1000">思想和最新技术，还有天马行空般的想象力。</p>
       <p class="we-font font-03" data-animation="slideToTop" data-delay="600" data-duration="1000">— 马化腾 腾讯公司首席执行官兼董事会主席</p>
     </section>
-  </section>
-  <section class="page page-we-02">
+  </section> -->
+ <!--  <section class="page page-we-02">
     <section class="page-content">
       <h1 class="we-logo" data-animation="followSlide" data-duration="1000"></h1>
       <p class="we-font font-04" data-animation="followSlide" data-delay="200" data-duration="1000">2014</p>
@@ -164,9 +164,9 @@ var APP="/we-code/index.php";
       </ul>
       </div>
     </section>
-  </section>
+  </section> -->
   <section class="page page-we-03 page-game">
-    <section class="page-content share-content" >
+    <section class="page-content share-content" style="display:none">
       <p class="we-font font-08" data-animation="followSlide" data-duration="1000">邀请好友一起 </p>
       <p class="we-font font-09" data-animation="followSlide" data-delay="200" data-duration="1000">开启未来之门</p>
       <div class="we-gamebox gamebox-01" data-animation="followSlide" data-delay="400" data-duration="1000"></div>
@@ -181,38 +181,38 @@ var APP="/we-code/index.php";
     </section>
   <!-- </section>
   <section class="page page-we-04 page-game"> -->
-    <section class="page-content game-content" style="display:none">
-      <div class="game-bg" data-animation="followSlide" data-delay="0" data-duration="1000"></div>
-      <p class="we-font font-12" data-animation="followSlide" data-delay="200" data-duration="1000">请按下您的手指</p>
-      <p class="we-font font-13" data-animation="followSlide" data-delay="400" data-duration="1000">并保持 60 秒</p>
-      <p class="count-down" data-animation="followSlide" data-delay="400" data-duration="1000">60</p>
-      <div class="we-gamebox gamebox-01" data-animation="followSlide" data-delay="600" data-duration="1000">
+    <section class="page-content game-content">
+      <div class="game-bg" data-animation="slideToTop" data-delay="0" data-duration="1000"></div>
+      <p class="we-font font-12" data-animation="slideToTop" data-delay="200" data-duration="1000">请按下您的手指</p>
+      <p class="we-font font-13" data-animation="slideToTop" data-delay="400" data-duration="1000">并保持 60 秒</p>
+      <p class="count-down" data-animation="slideToTop" data-delay="400" data-duration="1000">60</p>
+      <div class="we-gamebox gamebox-01" data-animation="slideToTop" data-delay="600" data-duration="1000">
         <span class="fingerprint"></span>
         <span class="fingerprint"></span>
         <span class="fingerprint"></span>
         <span class="fingerprint"></span>
       </div>
-      <div class="we-funcs" data-animation="followSlide" data-delay="800" data-duration="1000">
+      <div class="we-funcs" data-animation="slideToTop" data-delay="800" data-duration="1000">
         <div class="we-btn btn-fingerprint btn-fingerprint-left"><span>左</span></div>
         <div class="we-btn btn-fingerprint btn-fingerprint-right"><span>右</span></div>
       </div>
     </section>
     <section class="page-content game-success" id="sender-success">
-      <p class="we-font font-14" data-animation="followSlide" data-duration="1000">恭喜您开启了未来之门！</p>
-      <p class="we-font font-15" data-animation="followSlide" data-delay="400" data-duration="1000">获得WE大会视频直播码！</p>
-      <div class="we-code" data-animation="followSlide" data-delay="600" data-duration="1000">
+      <p class="we-font font-14" data-animation="slideToTop" data-duration="1000">恭喜您开启了未来之门！</p>
+      <p class="we-font font-15" data-animation="slideToTop" data-delay="400" data-duration="1000">获得WE大会视频直播码！</p>
+      <div class="we-code" data-animation="slideToTop" data-delay="600" data-duration="1000">
         <span>ZHIBOMA0256523</span>
       </div>
-      <p class="we-font font-16" data-animation="followSlide" data-delay="800" data-duration="1000">离WE大会直播还有<i>16</i>天</p>
-      <a href="#" class="we-btn btn-02" data-animation="followSlide" data-delay="1000" data-duration="1000">观看WE大会现场直播</a>
-      <p class="we-font font-17" data-animation="followSlide" data-delay="1200" data-duration="1000">请于2014年11月8日 13:00进入腾讯大学 </p>
-      <p class="we-font font-18" data-animation="followSlide" data-delay="1400" data-duration="1000">官网WE大会直播间输入直播码观看！</p>
+      <p class="we-font font-16" data-animation="slideToTop" data-delay="800" data-duration="1000">离WE大会直播还有<i>16</i>天</p>
+      <a href="#" class="we-btn btn-02" data-animation="slideToTop" data-delay="1000" data-duration="1000">观看WE大会现场直播</a>
+      <p class="we-font font-17" data-animation="slideToTop" data-delay="1200" data-duration="1000">请于2014年11月8日 13:00进入腾讯大学 </p>
+      <p class="we-font font-18" data-animation="slideToTop" data-delay="1400" data-duration="1000">官网WE大会直播间输入直播码观看！</p>
     </section>
     <section class="page-content game-success" id="helper-success">
-      <p class="we-font font-19" data-animation="followSlide" data-duration="1000">费等费用，请小伙伴们注意喔！如须购买门票</p>
-      <p class="we-font font-20" data-animation="followSlide" data-delay="200" data-duration="1000">请从官方正规渠道进入。</p>
-      <a href="/we-code/index.php" class="we-btn btn-03" data-animation="followSlide" data-delay="400" data-duration="1000">我也要直播码</a>
-      <a href="http://mp.weixin.qq.com/s?__biz=MzA5MTMyNzAzMQ==&mid=200598274&idx=1&sn=5aa98b60ec81b62ff589aa6c1c66c9e4#rd" class="we-btn btn-04" data-animation="followSlide" data-delay="600" data-duration="1000">关注腾讯大学</a>
+      <p class="we-font font-19" data-animation="slideToTop" data-duration="1000">费等费用，请小伙伴们注意喔！如须购买门票</p>
+      <p class="we-font font-20" data-animation="slideToTop" data-delay="200" data-duration="1000">请从官方正规渠道进入。</p>
+      <a href="/we-code/index.php" class="we-btn btn-03" data-animation="slideToTop" data-delay="400" data-duration="1000">我也要直播码</a>
+      <a href="http://mp.weixin.qq.com/s?__biz=MzA5MTMyNzAzMQ==&mid=200598274&idx=1&sn=5aa98b60ec81b62ff589aa6c1c66c9e4#rd" class="we-btn btn-04" data-animation="slideToTop" data-delay="600" data-duration="1000">关注腾讯大学</a>
     </section>
   </section>
   <!-- <section class="page page-we-05">
@@ -236,7 +236,7 @@ var APP="/we-code/index.php";
       <a href="#" class="we-btn btn-04" data-animation="followSlide" data-delay="600" data-duration="1000">关注腾讯大学</a>
     </section>
   </section> -->
-  <section class="page page-history">
+  <!-- <section class="page page-history">
     <section class="page-content">
       <div class="content" style="height:726px">
         <div class="history-box">
@@ -263,8 +263,8 @@ var APP="/we-code/index.php";
       <h2 class="we-logo tencent-logo" data-animation="followSlide" data-duration="1000"></h2>
       <a href="http://mp.weixin.qq.com/s?__biz=MzA5MTMyNzAzMQ==&mid=200598274&idx=1&sn=5aa98b60ec81b62ff589aa6c1c66c9e4#rd" class="we-btn btn-03" data-animation="followSlide" data-delay="200" data-duration="1000">关注腾讯大学</a>
     </section>
-  </section>
-</section><a href="javascript:void(0);" class="u-guideTop z-move"></a>
+  </section> -->
+</section><!-- <a href="javascript:void(0);" class="u-guideTop z-move"></a> -->
 <footer class="app-footer">
 </footer>
 <section class="page-facade guest-pop hide">

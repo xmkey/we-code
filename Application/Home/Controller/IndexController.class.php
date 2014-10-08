@@ -27,16 +27,22 @@ class IndexController extends Controller {
     		// $key_data=$Match->where('`key`='.$_GET['from_key'])->find();
     		// if($key_data!=null){
     			$key=$_GET['from_key'];
-    			$isSender=0;
-
+                $isSender=0;
+                $this->assign('key',$key);
+                $this->assign('isSender',$isSender);
+    			
+                $this->display("helper");
     		// }
-    	}	
+    	}else{
+            $this->assign('key',$key);
+            $this->assign('isSender',$isSender);
+            $this->display();
+        }
 
-		$this->assign('key',$key);
-		$this->assign('isSender',$isSender);
+		
 
 
-        $this->display();
+        
     }
 
     
