@@ -21,13 +21,23 @@ class IndexController extends Controller {
     	$key=$num.time().rand(10,99);
     	// $key=302390923;
     	$isSender=true;
-
+        
+        
+        
+    
+        
     	if(isset($_GET['from_key'])){
     		
     		// $key_data=$Match->where('`key`='.$_GET['from_key'])->find();
     		// if($key_data!=null){
+            
     			$key=$_GET['from_key'];
                 $isSender=0;
+                $c_key=cookie('key');
+                $is=0;
+                if(stripos($c_key, '-'.$key.'-')!==false){
+                   $is=1;
+                }
                 $this->assign('key',$key);
                 $this->assign('isSender',$isSender);
     			
@@ -36,8 +46,12 @@ class IndexController extends Controller {
     	}else{
             $this->assign('key',$key);
             $this->assign('isSender',$isSender);
+            $c_key=cookie('key');
+            cookie('key',$c_key.'-'.$key.'-');
+            // $this->handleCookie($key);
             $this->display();
         }
+        
 
 		
 
@@ -45,5 +59,13 @@ class IndexController extends Controller {
         
     }
 
-    
+    private function handleCookie($key){
+        $c_key=cookie('key');
+        if(stripos($c_key, '-'.$key.'-')===false){
+            cookie('key',$c_key.'-'.$key.'-');
+        }else{
+
+        }
+        
+    }
 }

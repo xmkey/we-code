@@ -2,7 +2,7 @@
 !function($){
 
 var imgUrl = 'http://imgcache.qq.com/ac/www_tencent/we/2014/images/logo.png'; 
-var lineLink =APP;
+var lineLink =window.location.protocol+"//"+window.location.host+window.location.pathname;
 
 if(ISSENDER){
  
