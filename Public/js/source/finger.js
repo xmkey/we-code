@@ -11,7 +11,7 @@ function preventDefault(e){
     return false;
 }
 window.showTips=function(index){
-	console.log(index)
+	
 	var index=index;
 	if(!ISSENDER){
 		index=index+3;

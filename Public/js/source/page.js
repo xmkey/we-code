@@ -16,7 +16,7 @@
      */
     onchange: function(index, element, direction) {
       // code here...
-      console.log(index, element, direction);
+      // console.log(index, element, direction);
       if (index !== 2 || index !== 3 || index !== 8) {
         $('.content').css("-webkit-transform", "none"); 
       }
