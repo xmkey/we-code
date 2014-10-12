@@ -3,7 +3,7 @@
 
 var imgUrl = 'http://imgcache.qq.com/ac/www_tencent/we/2014/images/logo.png'; 
 var lineLink =window.location.protocol+"//"+window.location.host+window.location.pathname;
-
+var senderLink=lineLink;
 if(ISSENDER){
  
   var search="from_key="+KEY;
@@ -12,7 +12,7 @@ if(ISSENDER){
   }else{
     search="?"+search;
   }
-  lineLink=window.location.protocol+"//"+window.location.host+window.location.pathname+window.location.search+search+window.location.hash;
+  senderLink=window.location.protocol+"//"+window.location.host+window.location.pathname+window.location.search+search+window.location.hash;
 }
 
 
@@ -22,6 +22,16 @@ var shareTitle = 'we大会';
 var appid = 'wxc9937e3a66af6dc8';  
   
 function shareFriend() {  
+  var curindex=$(".pages .page").index($(".page.current"));
+  var gameindex=$(".pages .page").index($(".page-game"));
+
+  descContent = "这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。"; 
+  // alert($(".share-content").is(':hidden'))
+  if(curindex==gameindex&& $(".share-content").css("display")=="block"){
+
+    descContent="帮我一起赢取we大会直播码吧";
+    lineLink=senderLink;
+  }
 
     WeixinJSBridge.invoke('sendAppMessage',{  
       "img_url": imgUrl,  
@@ -35,6 +45,13 @@ function shareFriend() {
       })  
 }
 function shareTimeline() {  
+  var curindex=$(".pages .page").index($(".page.current"));
+  var gameindex=$(".pages .page").index($(".page-game"));
+  descContent = "这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。"; 
+  if(curindex==gameindex&& $(".share-content").css("display")=="block"){
+    descContent="帮我一起赢取we大会直播码吧";
+    lineLink=senderLink;
+  }
     WeixinJSBridge.invoke('shareTimeline',{  
     "img_url": imgUrl,  
     "img_width": "640",  
@@ -47,6 +64,13 @@ function shareTimeline() {
     });  
 }  
 function is_weixn(){  
+  var curindex=$(".pages .page").index($(".page.current"));
+  var gameindex=$(".pages .page").index($(".page-game"));
+  descContent = "这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。"; 
+  if(curindex==gameindex&& $(".share-content").css("display")=="block"){
+    descContent="帮我一起赢取we大会直播码吧";
+    lineLink=senderLink;
+  }
     var ua = navigator.userAgent.toLowerCase();  
     if(ua.match(/MicroMessenger/i)=="micromessenger") {  
         return true;  
@@ -61,11 +85,12 @@ if(!is_weixn()){
 // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。  
 document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
       // 发送给好友  
+
   WeixinJSBridge.on('menu:share:appmessage', function(argv){
    
 
    
-      window.toGame();
+      // window.toGame();
         shareFriend();  
   });  
 
@@ -77,7 +102,7 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
     
 
    
-     window.toGame();
+     // window.toGame();
         shareTimeline();  
         });  
 

@@ -482,6 +482,7 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
                 $duration   = $element.attr('data-duration') || 500,
                 $timfunc    = $element.attr('data-timing-function') || 'ease',
                 $delay      = $element.attr('data-delay') ?  $element.attr('data-delay') : 0;
+                $fillmode      = $element.attr('data-fillmode') ?  $element.attr('data-fillmode') : 'both';
 
 
             if ($animation === 'followSlide') {
@@ -512,7 +513,7 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
                 '-webkit-animation-timing-function': 'ease',
                 '-webkit-animation-timing-function': $timfunc,
                 '-webkit-animation-delay': $delay + 'ms',
-                '-webkit-animation-fill-mode': 'both'
+                '-webkit-animation-fill-mode': $fillmode
             })
         });
     }

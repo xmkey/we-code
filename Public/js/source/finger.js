@@ -1,12 +1,28 @@
 !function($){
-
+var tips={
+	"done":"您的好友已经抢到<br/>WE大会视频直播码！",
+	"timeout":"亲，您的活动邀请已失效，</br>赶快联系好友重新发送吧！",
+	"timeout-my":"亲，您的活动邀请已失效，</br>点击下面的按钮重新发送吧！",
+	"matched":"亲，您的好友已成功获得</br>WE大会直播码了！",
+	"matched-other":"亲，您的好友已经在其他好友</br>的帮助下获得了直播码！"
+}
 function preventDefault(e){
    
     e.preventDefault();
     return false;
 }
+window.showTips=function(index){
+	console.log(index)
+	var index=index;
+	if(!ISSENDER){
+		index=index+3;
+	}
+	$(".we-pop").addClass("tips-hide");
+	$("#tips"+index).removeClass("tips-hide");
+}
 var fingerprint=$(".we-gamebox .fingerprint");
 var status=0;
+
  $(document).on("touchstart",".btn-fingerprint-left",function(){
  	$(".pages").on("touchmove",preventDefault);
  	if(ISSENDER){
@@ -15,17 +31,17 @@ var status=0;
  		fingerprint.eq(0).addClass("on");
  	}
  	status=status+1;
-
  	check(status);
  });
  $(document).on("touchend",".btn-fingerprint-left",function(){
- 	$(".pages").off("touchmove",preventDefault);
+ 	// $(".pages").off("touchmove",preventDefault);
  	if(ISSENDER){
  		fingerprint.eq(2).removeClass("on");
  	}else{
  		fingerprint.eq(0).removeClass("on");
  	}
  	status=status-1;
+ 	check(status);
  	
  });
  $(document).on("touchstart",".btn-fingerprint-right",function(){
@@ -39,13 +55,14 @@ var status=0;
  	check(status);
  });
  $(document).on("touchend",".btn-fingerprint-right",function(){
- 	$(".pages").off("touchmove",preventDefault);
+ 	
  	if(ISSENDER){
  		fingerprint.eq(3).removeClass("on");
  	}else{
  		fingerprint.eq(1).removeClass("on");
  	}
  	status=status-2;
+ 	check(status);
  	
  });
  // var isTrigger=false;
@@ -53,7 +70,7 @@ var status=0;
  // var isFirst=true;
 var global={
 	isTrigger:false,
-	timeRemain:60,
+	timeRemain:10,
 	isFirst:true,
 	interval:null,
 	isDone:false
@@ -92,28 +109,37 @@ var global={
  		},1000)
  	}
  }
+ 
  if(!ISSENDER){
- 	// var index=$(".pages .page").index($(".page-game"));
  	
- 	// window.slideTo(index);
  	Timer.start(global.timeRemain);
  }
-
+$(".m-weixinShareLayer").tap(function(){
+	$(this).hide();
+});
  function check(status){
- 	if(global.isTrigger==false&&ISSENDER&&status==3){
+ 	if(global.isTrigger==false&&ISSENDER&&status!=0){
 
- 		// var data={
- 		// 	isSender:ISSENDER,
- 		// 	status:status,
- 		// 	key:KEY,
- 		// 	timer:global.timeRemain
- 		// }
+ 		var data={
+ 			isSender:ISSENDER,
+ 			status:status,
+ 			key:KEY,
+ 			timer:global.timeRemain
+ 		}
  		
- 		// postData(data,global.isFirst);
- 		// global.isFirst=false;
- 		// Timer.start(global.timeRemain);
+ 		postData(data,global.isFirst);
+ 		global.isFirst=false;
+ 		Timer.start(global.timeRemain);
  	}
- 	
+ 	console.log(status);
+ 	if(status==0){
+ 		$(".pages").off("touchmove",preventDefault);
+ 		showTips(1);
+ 	}else if(status==1||status==2){
+ 		showTips(2)
+ 	}else if(status==3){
+ 		showTips(3)
+ 	}
  }
 
  window.toGame=function(){
@@ -206,13 +232,28 @@ function done(status){
 	if(!global.isDone){
 		global.isDone=true;
 		if(status=="timeout"){
-			alert("超时");
+			$("#tips-result").html(tips['timeout']);
+		}else if(status=="matched"&&status!=3){
+			$("#tips-result").html(tips['matched-other']);
 		}else if(status=="matched"){
-			alert("已经匹配过");
+			$("#tips-result").html(tips['matched']);
+		}else{
+			$("#tips-result").html(tips['done']);
 		}
 		$(".game-content").addClass("game-hide");
+		
 		if(ISSENDER){
-			$("#sender-success").addClass("success-show");
+			
+			if(status=="timeout"){
+				
+				$("#tips-result").html(tips['timeout-my']);
+				$("#btn-getcode").html("重新获得直播码");
+				$("#helper-success").addClass("success-show");
+			}else{
+				
+				$("#sender-success").addClass("success-show");
+			}
+			
 		}else{
 			$("#helper-success").addClass("success-show");
 		}

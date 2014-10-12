@@ -129,7 +129,7 @@ html,body{overflow:hidden;position:relative;}
 
 
 /* S page6 */
-.font-19{height:20px;background-position:0 -485px;top:25%;text-indent:0;background:0;color:#3fcae1;font-size:16px;font-family:"MicroSoft YaHei";}
+.font-19{height:50px;background-position:0 -485px;top:25%;text-indent:0;background:0;color:#3fcae1;font-size:16px;font-family:"MicroSoft YaHei";}
 .font-20{height:20px;background-position:0 -506px;top:30%;text-indent:0;background:0;color:#3fcae1;font-size:16px;font-family:"MicroSoft YaHei";}
 .btn-03{top:50%;}
 .btn-04{top:62%;background-color:#cdcdcd;color:#333333;}
@@ -518,4 +518,6 @@ html,body{overflow:hidden;position:relative;}
     position:absolute;left:50%;top:50%;margin:-160px 0 0 -110px;
     width:200px;display:table-cell;vertical-align: middle;padding:5px 10px;
     background-color:rgba(0,0,0,0.8);border-radius:5px;color:#fff;font-size:12px;
+    -webkit-transition:all .5s;opacity: 1;
 }
+.we-pop.tips-hide{opacity: 0;}

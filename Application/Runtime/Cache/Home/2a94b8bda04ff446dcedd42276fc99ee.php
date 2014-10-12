@@ -166,7 +166,7 @@ var APP="/we-code/index.php";
     </section>
   </section> -->
   <section class="page page-we-03 page-game">
-    <section class="page-content share-content" style="display:none" >
+    <section class="page-content share-content"  >
       <p class="we-font font-08" data-animation="followSlide" data-duration="1000">邀请好友一起 </p>
       <p class="we-font font-09" data-animation="followSlide" data-delay="200" data-duration="1000">开启未来之门</p>
       <div class="we-gamebox gamebox-01" data-animation="followSlide" data-delay="400" data-duration="1000"></div>
@@ -181,11 +181,11 @@ var APP="/we-code/index.php";
     </section>
   <!-- </section>
   <section class="page page-we-04 page-game"> -->
-    <section class="page-content game-content" style="display:block">
+    <section class="page-content game-content" style="display:none">
       <div class="game-bg" data-animation="followSlide" data-delay="0" data-duration="1000"></div>
       <p class="we-font font-12" data-animation="followSlide" data-delay="200" data-duration="1000">请按下您的手指</p>
-      <p class="we-font font-13" data-animation="followSlide" data-delay="400" data-duration="1000">并保持 60 秒</p>
-      <p class="count-down" data-animation="followSlide" data-delay="400" data-duration="1000">60</p>
+      <p class="we-font font-13" data-animation="followSlide" data-delay="400" data-duration="1000">并保持 180 秒</p>
+      <p class="count-down" data-animation="followSlide" data-delay="400" data-duration="1000">180</p>
       <div class="we-gamebox gamebox-01" data-animation="followSlide" data-delay="600" data-duration="1000">
         <span class="fingerprint"></span>
         <span class="fingerprint"></span>
@@ -196,13 +196,23 @@ var APP="/we-code/index.php";
         <div class="we-btn btn-fingerprint btn-fingerprint-left"><span>左</span></div>
         <div class="we-btn btn-fingerprint btn-fingerprint-right"><span>右</span></div>
       </div>
-      <div class="we-pop">
-        <p>情况1、时间不多了请按下您的指纹</p>
-        <p>情况2、您还要按下另外一个指纹哦</p>
-        <p>情况3、请让您的朋友快按下指纹吧</p>
-        <p>情况4、您快给你的好友按下指纹吧</p>
-        <p>情况5、您还要按下另外一个指纹哦</p>
-        <p>情况6、请让您的朋友快按下指纹吧</p>
+      <div class="we-pop tips-hide" id="tips1">
+        <p>时间不多了请按下您的指纹</p>
+      </div>
+      <div class="we-pop tips-hide" id="tips2">
+        <p>您还要按下另外一个指纹哦</p>
+      </div>
+      <div class="we-pop tips-hide" id="tips3">
+        <p>请让您的朋友快按下指纹吧</p>
+      </div>
+      <div class="we-pop tips-hide" id="tips4">
+        <p>您快给你的好友按下指纹吧</p>
+      </div>
+      <div class="we-pop tips-hide" id="tips5">
+        <p>您还要按下另外一个指纹哦</p>
+      </div>
+      <div class="we-pop tips-hide" id="tips6">
+        <p>请让您的朋友快按下指纹吧</p>
       </div>
     </section>
     <section class="page-content game-success" id="sender-success">
@@ -217,9 +227,9 @@ var APP="/we-code/index.php";
       <p class="we-font font-18" data-animation="followSlide" data-delay="1400" data-duration="1000">官网WE大会直播间输入直播码观看！</p>
     </section>
     <section class="page-content game-success" id="helper-success">
-      <p class="we-font font-19" data-animation="followSlide" data-duration="1000">费等费用，请小伙伴们注意喔！如须购买门票</p>
-      <p class="we-font font-20" data-animation="followSlide" data-delay="200" data-duration="1000">请从官方正规渠道进入。</p>
-      <a href="/we-code/index.php" class="we-btn btn-03" data-animation="followSlide" data-delay="400" data-duration="1000">我也要直播码</a>
+      <p class="we-font font-19" data-animation="followSlide" id="tips-result" data-duration="1000">您的好友已经抢到<br/>WE大会视频直播码！</p>
+      <!-- <p class="we-font font-20" data-animation="followSlide" data-delay="200" data-duration="1000">请从官方正规渠道进入。</p> -->
+      <a href="/we-code/index.php" class="we-btn btn-03" data-animation="followSlide" data-delay="400" data-duration="1000" id="btn-getcode" >我也要直播码</a>
       <a href="http://mp.weixin.qq.com/s?__biz=MzA5MTMyNzAzMQ==&mid=200598274&idx=1&sn=5aa98b60ec81b62ff589aa6c1c66c9e4#rd" class="we-btn btn-04" data-animation="followSlide" data-delay="600" data-duration="1000">关注腾讯大学</a>
     </section>
   </section>

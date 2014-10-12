@@ -196,6 +196,32 @@ var APP="/we-code/index.php";
         <div class="we-btn btn-fingerprint btn-fingerprint-left"><span>左</span></div>
         <div class="we-btn btn-fingerprint btn-fingerprint-right"><span>右</span></div>
       </div>
+      <!-- <div class="we-pop">
+        <p>时间不多了请按下您的指纹</p>
+        <p>您还要按下另外一个指纹哦</p>
+        <p>请让您的朋友快按下指纹吧</p>
+        <p>您快给你的好友按下指纹吧</p>
+        <p>您还要按下另外一个指纹哦</p>
+        <p>请让您的朋友快按下指纹吧</p>
+      </div> -->
+      <div class="we-pop tips-hide" id="tips1" data-animation="fade" data-delay="2000" data-duration="500">
+        <p>时间不多了请按下您的指纹</p>
+      </div>
+      <div class="we-pop tips-hide" id="tips2" data-animation="fade" data-delay="2000" data-duration="500">
+        <p>您还要按下另外一个指纹哦</p>
+      </div>
+      <div class="we-pop tips-hide" id="tips3" data-animation="fade" data-delay="2000" data-duration="500">
+        <p>请让您的朋友快按下指纹吧</p>
+      </div>
+      <div class="we-pop tips-hide" id="tips4" data-animation="fade" data-delay="2000" data-duration="500">
+        <p>您快给你的好友按下指纹吧</p>
+      </div>
+      <div class="we-pop tips-hide" id="tips5" data-animation="fade" data-delay="2000" data-duration="500">
+        <p>您还要按下另外一个指纹哦</p>
+      </div>
+      <div class="we-pop tips-hide" id="tips6" data-animation="fade" data-delay="2000" data-duration="500">
+        <p>请让您的朋友快按下指纹吧</p>
+      </div>
     </section>
     <section class="page-content game-success" id="sender-success">
       <p class="we-font font-14" data-animation="slideToTop" data-duration="1000">恭喜您开启了未来之门！</p>
@@ -209,9 +235,9 @@ var APP="/we-code/index.php";
       <p class="we-font font-18" data-animation="slideToTop" data-delay="1400" data-duration="1000">官网WE大会直播间输入直播码观看！</p>
     </section>
     <section class="page-content game-success" id="helper-success">
-      <p class="we-font font-19" data-animation="slideToTop" data-duration="1000">费等费用，请小伙伴们注意喔！如须购买门票</p>
-      <p class="we-font font-20" data-animation="slideToTop" data-delay="200" data-duration="1000">请从官方正规渠道进入。</p>
-      <a href="/we-code/index.php" class="we-btn btn-03" data-animation="slideToTop" data-delay="400" data-duration="1000">我也要直播码</a>
+      <p class="we-font font-19" id="tips-result" data-animation="slideToTop" data-duration="1000">您的好友已经抢到<br/>WE大会视频直播码！</p>
+     <!--  <p class="we-font font-20" data-animation="slideToTop" data-delay="200" data-duration="1000">WE大会视频直播码！</p> -->
+      <a href="/we-code/index.php" class="we-btn btn-03" id="btn-getcode" data-animation="slideToTop" data-delay="400" data-duration="1000">我也要直播码</a>
       <a href="http://mp.weixin.qq.com/s?__biz=MzA5MTMyNzAzMQ==&mid=200598274&idx=1&sn=5aa98b60ec81b62ff589aa6c1c66c9e4#rd" class="we-btn btn-04" data-animation="slideToTop" data-delay="600" data-duration="1000">关注腾讯大学</a>
     </section>
   </section>

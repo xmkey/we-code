@@ -1,4 +1,5 @@
 !function($){
+  var isFirst=true;
   $('.pages').parallax({
     direction: 'vertical',  // horizontal (水平翻页)
     swipeAnim: 'default',   // default (切换效果)
@@ -17,6 +18,18 @@
       // console.log(index, element, direction);
       if (index !== 2 || index !== 3 || index !== 8) {
         $('.content').css("-webkit-transform", "none"); 
+      }
+      // var curindex=$(".pages .page").index($(".page.current"));
+      var gameindex=$(".pages .page").index($(".page-game"));
+      if(index==gameindex){
+        setTimeout(function(){
+          if(isFirst){
+             window.showTips(1);
+          }
+          isFirst=false;
+         
+        },2000)
+        
       }
     },
     /*
