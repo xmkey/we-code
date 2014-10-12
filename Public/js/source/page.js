@@ -15,7 +15,7 @@
      */
     onchange: function(index, element, direction) {
       // code here...
-      // console.log(index, element, direction);
+      console.log(index, element, direction);
       if (index !== 2 || index !== 3 || index !== 8) {
         $('.content').css("-webkit-transform", "none"); 
       }
@@ -76,34 +76,34 @@
     });
 
 
-    var endPos,
-    startPos,
-    temp,
-    offset,
-    offset2,
-    $pages = $('.pages'),
-    $content = null,
-    cHeight = 0,
-    wHeight = $(window).height();
+  var endPos,
+      startPos,
+      temp,
+      offset,
+      offset2,
+      $pages = $('.pages'),
+      $content = null,
+      cHeight = 0,
+      wHeight = $(window).height();
 
-  $('.page-timeline').on('touchstart','.page', function() {
+  $('.page-timeline').on('touchstart', function() {
     onStart(event.changedTouches[0],$(this).find($('.content')));
   })
-  .on('touchmove','.page', function() {
+  .on('touchmove', function() {
     onMove(event.changedTouches[0],$(this).find($('.content')));
-  })
+  });
   $('.page-speaker').on('touchstart', function() {
     onStart(event.changedTouches[0],$(this).find($('.content')));
   })
   .on('touchmove', function() {
     onMove(event.changedTouches[0],$(this).find($('.content')));
-  })
+  });
   $('.page-history').on('touchstart', function() {
     onStart(event.changedTouches[0],$(this).find($('.content')));
   })
   .on('touchmove', function() {
     onMove(event.changedTouches[0],$(this).find($('.content')));
-  })
+  });
 
   function onStart(e,element) {
     startPos = e.pageY; 
@@ -118,7 +118,6 @@
   }
 
   function onMove(e,element) {
-        
     cHeight = element.height() + 50;
         offset2 = $pages.css("-webkit-transform")
                         .replace("matrix(", "")
@@ -127,11 +126,9 @@
 
     offset2 = Math.abs(parseInt(offset2[5]) || 0);
     endPos = e.pageY; 
-    
     if (cHeight > wHeight && endPos < startPos) {
       temp = offset + endPos - startPos;
-    
-      if (Math.abs(temp) < (cHeight - wHeight)) {
+      if (Math.abs(temp) <= (cHeight - wHeight)) {
         event.preventDefault();
         event.stopPropagation();
         element.css("-webkit-transform", "matrix(1, 0, 0, 1, 0, " + temp + ")");  

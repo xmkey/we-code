@@ -178,20 +178,20 @@ html,body{overflow:hidden;position:relative;}
 .timeline{position:relative;padding-top:47px;}
 .timeline:before{
     content:"";position:absolute;top:16px;left:50%;
-    width:18px;height:18px;margin-left:-64px;
+    width:18px;height:18px;margin-left:-55px;
     background:url(../img/clock@2x.png) no-repeat;background-size:100% 100%;
 }
 .timeline:after{
-    content:"";position:absolute;left:50%;top:33px;
-    width:1px;height:999em;margin-left:-56px;
+    content:"";position:absolute;left:50%;top:33px;z-index:0;
+    width:1px;height:1233px;margin-left:-46px;
     background-color:#edab12;
 }
 .timeline-title{
     position:absolute;top:16px;left:0;right:0;
     color:#cccccc;font-family:"MicroSoft YaHei";font-weight:100;font-size:12px;
 }
-.timeline .timeline-item{height:90px;}
-.timeline .item-img{width:265px;height:73px;display:block;margin:0 auto;position:relative;z-index:2;}
+.timeline .timeline-item{height:90px;position:relative;z-index:3;}
+.timeline .item-img{width:285px; height:77px;display:block;margin:0 auto;position:relative;z-index:2;}
 .timeline .item-img img{width:100%;}
 /* E timeline */
 

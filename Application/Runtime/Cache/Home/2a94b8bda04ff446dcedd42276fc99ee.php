@@ -19,9 +19,9 @@
 <script type="text/javascript">
 var KEY="<?php echo ($key); ?>";
 var ISSENDER=<?php echo ($isSender); ?>;
-var APP="/we-code/index.php";
+var APP="/Personal/xmkey/we-code/index.php";
 </script>
-<link rel="stylesheet" href="/we-code/Public/css/main.css">
+<link rel="stylesheet" href="/Personal/xmkey/we-code/Public/css/main.css">
 </head>
 <body class="app">
 <div id="app-loading" class="app-loading z-hide">
@@ -47,7 +47,7 @@ var APP="/we-code/index.php";
       <p class="we-font font-03" data-animation="slideToTop" data-delay="600" data-duration="1000">— 马化腾 腾讯公司首席执行官兼董事会主席</p>
     </section>
   </section>
-  <!-- <section class="page page-we-02">
+  <section class="page page-we-02">
     <section class="page-content">
       <h1 class="we-logo" data-animation="followSlide" data-duration="1000"></h1>
       <p class="we-font font-04" data-animation="followSlide" data-delay="200" data-duration="1000">2014</p>
@@ -59,26 +59,49 @@ var APP="/we-code/index.php";
   </section>
   <section class="page page-timeline">
     <section class="page-content">
-      <div class="content" style="height:587px;">
-        <h2 class="timeline-title" data-animation="slideToTop" data-duration="1000">大会议程</h2>
-        <ul class="timeline" data-animation="slideToTop" data-delay="200" data-duration="1000">
+      <div class="content" style="height:1307px;">
+        <ul class="timeline">
           <li class="timeline-item" data-animation="slideToTop" data-delay="400" data-duration="1000">
-            <span class="item-img"><img src="/we-code/Public/pic/timeline_01.png" alt=""></span>
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_01.png" alt=""></span>
           </li>
           <li class="timeline-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
-            <span class="item-img"><img src="/we-code/Public/pic/timeline_01.png" alt=""></span>
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_02.png" alt=""></span>
           </li>
           <li class="timeline-item" data-animation="slideToTop" data-delay="800" data-duration="1000">
-            <span class="item-img"><img src="/we-code/Public/pic/timeline_01.png" alt=""></span>
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_03.png" alt=""></span>
           </li>
           <li class="timeline-item" data-animation="slideToTop" data-delay="1000" data-duration="1000">
-            <span class="item-img"><img src="/we-code/Public/pic/timeline_01.png" alt=""></span>
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_04.png" alt=""></span>
           </li>
           <li class="timeline-item" data-animation="slideToTop" data-delay="1200" data-duration="1000">
-            <span class="item-img"><img src="/we-code/Public/pic/timeline_01.png" alt=""></span>
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_05.png" alt=""></span>
           </li>
           <li class="timeline-item" data-animation="slideToTop" data-delay="1400" data-duration="1000">
-            <span class="item-img"><img src="/we-code/Public/pic/timeline_01.png" alt=""></span>
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_06.png" alt=""></span>
+          </li>
+          <li class="timeline-item" data-animation="slideToTop" data-delay="1400" data-duration="1000">
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_07.png" alt=""></span>
+          </li>
+          <li class="timeline-item" data-animation="slideToTop" data-delay="1400" data-duration="1000">
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_08.png" alt=""></span>
+          </li>
+          <li class="timeline-item" data-animation="slideToTop" data-delay="1400" data-duration="1000">
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_09.png" alt=""></span>
+          </li>
+          <li class="timeline-item" data-animation="slideToTop" data-delay="1400" data-duration="1000">
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_10.png" alt=""></span>
+          </li>
+          <li class="timeline-item" data-animation="slideToTop" data-delay="1400" data-duration="1000">
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_11.png" alt=""></span>
+          </li>
+          <li class="timeline-item" data-animation="slideToTop" data-delay="1400" data-duration="1000">
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_12.png" alt=""></span>
+          </li>
+          <li class="timeline-item" data-animation="slideToTop" data-delay="1400" data-duration="1000">
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_13.png" alt=""></span>
+          </li>
+          <li class="timeline-item" data-animation="slideToTop" data-delay="1400" data-duration="1000">
+            <span class="item-img"><img src="/Personal/xmkey/we-code/Public/pic/timeline_14.png" alt=""></span>
           </li>
         </ul>
       </div>
@@ -87,95 +110,95 @@ var APP="/we-code/index.php";
   <section class="page page-speaker">
     <section class="page-content">
       <div class="content" style="height:1888px;">
-      <h2 class="speaker-title" data-animation="slideToTop" data-duration="1000">为未来而来的他们大会演讲嘉宾</h2>
-      <ul class="speaker-list">
-        <li class="list-item" data-animation="slideToTop" data-delay="200" data-duration="1000">
-          <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_01.jpg" alt="">
-          </span>
-          <span class="item-text text-01">Martin A. Nowak人类社会行为学研究专家</span>
-        </li>
-        <li class="list-item" data-animation="slideToTop" data-delay="400" data-duration="1000">
-          <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_02.jpg" alt="">
-          </span>
-          <span class="item-text text-02">Martin A. Nowak人类社会行为学研究专家</span>
-        </li>
-        <li class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
-          <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_03.jpg" alt="">
-          </span>
-          <span class="item-text text-03">Martin A. Nowak人类社会行为学研究专家</span>
-        </li>
-        <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
-          <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_04.jpg" alt="">
-          </span>
-          <span class="item-text text-04">Martin A. Nowak人类社会行为学研究专家</span>
-        </li>
-        <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
-          <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_05.jpg" alt="">
-          </span>
-          <span class="item-text text-05">Martin A. Nowak人类社会行为学研究专家</span>
-        </li>
-        <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
-          <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_06.jpg" alt="">
-          </span>
-          <span class="item-text text-06">Martin A. Nowak人类社会行为学研究专家</span>
-        </li>
-        <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
-          <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_07.jpg" alt="">
-          </span>
-          <span class="item-text text-07">Martin A. Nowak人类社会行为学研究专家</span>
-        </li>
-        <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
-          <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_08.jpg" alt="">
-          </span>
-          <span class="item-text text-08">Martin A. Nowak人类社会行为学研究专家</span>
-        </li>
-        <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
-          <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_09.jpg" alt="">
-          </span>
-          <span class="item-text text-09">Martin A. Nowak人类社会行为学研究专家</span>
-        </li>
-        <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
-          <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_10.jpg" alt="">
-          </span>
-          <span class="item-text text-10">Martin A. Nowak人类社会行为学研究专家</span>
-        </li>
-        <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
-          <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_11.jpg" alt="">
-          </span>
-          <span class="item-text text-11">Martin A. Nowak人类社会行为学研究专家</span>
-        </li>
-        <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
-          <span class="item-img">
-            <img src="/we-code/Public/pic/guest_img_12.jpg" alt="">
-          </span>
-          <span class="item-text text-12">Martin A. Nowak人类社会行为学研究专家</span>
-        </li>
-      </ul>
+        <h2 class="speaker-title" data-animation="slideToTop" data-duration="1000">为未来而来的他们大会演讲嘉宾</h2>
+        <ul class="speaker-list">
+          <li class="list-item" data-animation="slideToTop" data-delay="200" data-duration="1000">
+            <span class="item-img">
+              <img src="/Personal/xmkey/we-code/Public/pic/guest_img_01.jpg" alt="">
+            </span>
+            <span class="item-text text-01">Martin A. Nowak人类社会行为学研究专家</span>
+          </li>
+          <li class="list-item" data-animation="slideToTop" data-delay="400" data-duration="1000">
+            <span class="item-img">
+              <img src="/Personal/xmkey/we-code/Public/pic/guest_img_02.jpg" alt="">
+            </span>
+            <span class="item-text text-02">Martin A. Nowak人类社会行为学研究专家</span>
+          </li>
+          <li class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
+            <span class="item-img">
+              <img src="/Personal/xmkey/we-code/Public/pic/guest_img_03.jpg" alt="">
+            </span>
+            <span class="item-text text-03">Martin A. Nowak人类社会行为学研究专家</span>
+          </li>
+          <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
+            <span class="item-img">
+              <img src="/Personal/xmkey/we-code/Public/pic/guest_img_04.jpg" alt="">
+            </span>
+            <span class="item-text text-04">Martin A. Nowak人类社会行为学研究专家</span>
+          </li>
+          <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
+            <span class="item-img">
+              <img src="/Personal/xmkey/we-code/Public/pic/guest_img_05.jpg" alt="">
+            </span>
+            <span class="item-text text-05">Martin A. Nowak人类社会行为学研究专家</span>
+          </li>
+          <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
+            <span class="item-img">
+              <img src="/Personal/xmkey/we-code/Public/pic/guest_img_06.jpg" alt="">
+            </span>
+            <span class="item-text text-06">Martin A. Nowak人类社会行为学研究专家</span>
+          </li>
+          <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
+            <span class="item-img">
+              <img src="/Personal/xmkey/we-code/Public/pic/guest_img_07.jpg" alt="">
+            </span>
+            <span class="item-text text-07">Martin A. Nowak人类社会行为学研究专家</span>
+          </li>
+          <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
+            <span class="item-img">
+              <img src="/Personal/xmkey/we-code/Public/pic/guest_img_08.jpg" alt="">
+            </span>
+            <span class="item-text text-08">Martin A. Nowak人类社会行为学研究专家</span>
+          </li>
+          <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
+            <span class="item-img">
+              <img src="/Personal/xmkey/we-code/Public/pic/guest_img_09.jpg" alt="">
+            </span>
+            <span class="item-text text-09">Martin A. Nowak人类社会行为学研究专家</span>
+          </li>
+          <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
+            <span class="item-img">
+              <img src="/Personal/xmkey/we-code/Public/pic/guest_img_10.jpg" alt="">
+            </span>
+            <span class="item-text text-10">Martin A. Nowak人类社会行为学研究专家</span>
+          </li>
+          <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
+            <span class="item-img">
+              <img src="/Personal/xmkey/we-code/Public/pic/guest_img_11.jpg" alt="">
+            </span>
+            <span class="item-text text-11">Martin A. Nowak人类社会行为学研究专家</span>
+          </li>
+          <li class="list-item" class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000">
+            <span class="item-img">
+              <img src="/Personal/xmkey/we-code/Public/pic/guest_img_12.jpg" alt="">
+            </span>
+            <span class="item-text text-12">Martin A. Nowak人类社会行为学研究专家</span>
+          </li>
+        </ul>
       </div>
     </section>
-  </section> -->
+  </section>
   <section class="page page-we-03 page-game">
     <section class="page-content share-content"  >
       <p class="we-font font-08" data-animation="followSlide" data-duration="1000">邀请好友一起 </p>
       <p class="we-font font-09" data-animation="followSlide" data-delay="200" data-duration="1000">开启未来之门</p>
       <div class="we-gamebox gamebox-01" data-animation="followSlide" data-delay="400" data-duration="1000"></div>
       <div class="we-gamebox gamebox-02" data-animation="followSlide" data-delay="400" data-duration="1000"></div>
-      <a href="/we-code/index.php" class="we-btn btn-01" id="btn-invite" data-animation="followSlide" data-delay="600" data-duration="1000">邀请好友</a>
+      <a href="/Personal/xmkey/we-code/index.php" class="we-btn btn-01" id="btn-invite" data-animation="followSlide" data-delay="600" data-duration="1000">邀请好友</a>
       <p class="we-font font-10" data-animation="followSlide" data-delay="800" data-duration="1000">和好友一起按下指纹，打开未来之门，</p>
       <p class="we-font font-11" data-animation="followSlide" data-delay="1000" data-duration="1000">抢2014WE大会视频直播码。</p>
       <div class="u-maskLayer m-weixinShareLayer hide" style="opacity:1;">
-        <img src="/we-code/Public/pic/we_share.png">
+        <img src="/Personal/xmkey/we-code/Public/pic/we_share.png">
         <p class="we-font font-32">合作机构：艾迪票务设计机构：pinnadesign</p>
       </div>
     </section>
@@ -229,7 +252,7 @@ var APP="/we-code/index.php";
     <section class="page-content game-success" id="helper-success">
       <p class="we-font font-19" data-animation="followSlide" id="tips-result" data-duration="1000">您的好友已经抢到<br/>WE大会视频直播码！</p>
       <!-- <p class="we-font font-20" data-animation="followSlide" data-delay="200" data-duration="1000">请从官方正规渠道进入。</p> -->
-      <a href="/we-code/index.php" class="we-btn btn-03" data-animation="followSlide" data-delay="400" data-duration="1000" id="btn-getcode" >我也要直播码</a>
+      <a href="/Personal/xmkey/we-code/index.php" class="we-btn btn-03" data-animation="followSlide" data-delay="400" data-duration="1000" id="btn-getcode" >我也要直播码</a>
       <a href="http://mp.weixin.qq.com/s?__biz=MzA5MTMyNzAzMQ==&mid=200598274&idx=1&sn=5aa98b60ec81b62ff589aa6c1c66c9e4#rd" class="we-btn btn-04" data-animation="followSlide" data-delay="600" data-duration="1000">关注腾讯大学</a>
     </section>
   </section>
@@ -259,17 +282,17 @@ var APP="/we-code/index.php";
       <div class="content" style="height:726px">
         <div class="history-box">
           <ul class="history-img-list">
-            <li class="list-item" data-animation="followSlide" data-duration="1000"><img src="/we-code/Public/pic/history_img_01.jpg" alt=""></li>
-            <li class="list-item" data-animation="followSlide" data-delay="200" data-duration="1000"><img src="/we-code/Public/pic/history_img_02.jpg" alt=""></li>
-            <li class="list-item" data-animation="followSlide" data-delay="400" data-duration="1000"><img src="/we-code/Public/pic/history_img_03.jpg" alt=""></li>
-            <li class="list-item" data-animation="followSlide" data-delay="600" data-duration="1000"><img src="/we-code/Public/pic/history_img_04.jpg" alt=""></li>
-            <li class="list-item" data-animation="followSlide" data-delay="800" data-duration="1000"><img src="/we-code/Public/pic/history_img_05.jpg" alt=""></li>
+            <li class="list-item" data-animation="slideToTop" data-duration="1000"><img src="/Personal/xmkey/we-code/Public/pic/history_img_01.jpg" alt=""></li>
+            <li class="list-item" data-animation="slideToTop" data-delay="200" data-duration="1000"><img src="/Personal/xmkey/we-code/Public/pic/history_img_02.jpg" alt=""></li>
+            <li class="list-item" data-animation="slideToTop" data-delay="400" data-duration="1000"><img src="/Personal/xmkey/we-code/Public/pic/history_img_03.jpg" alt=""></li>
+            <li class="list-item" data-animation="slideToTop" data-delay="600" data-duration="1000"><img src="/Personal/xmkey/we-code/Public/pic/history_img_04.jpg" alt=""></li>
+            <li class="list-item" data-animation="slideToTop" data-delay="800" data-duration="1000"><img src="/Personal/xmkey/we-code/Public/pic/history_img_05.jpg" alt=""></li>
           </ul>
           <div class="history-weibo" data-animation="slideToLeft" data-delay="100" data-duration="1000">
             <ul class="weibo-list">
-              <li class="list-item" data-animation="followSlide" data-delay="300" data-duration="1000"><img src="/we-code/Public/pic/weibo_01.jpg" alt=""></li>
-              <li class="list-item" data-animation="followSlide" data-delay="500" data-duration="1000"><img src="/we-code/Public/pic/weibo_01.jpg" alt=""></li>
-              <li class="list-item" data-animation="followSlide" data-delay="700" data-duration="1000"><img src="/we-code/Public/pic/weibo_01.jpg" alt=""></li>
+              <li class="list-item" data-animation="slideToTop" data-delay="300" data-duration="1000"><img src="/Personal/xmkey/we-code/Public/pic/weibo_01.jpg" alt=""></li>
+              <li class="list-item" data-animation="slideToTop" data-delay="500" data-duration="1000"><img src="/Personal/xmkey/we-code/Public/pic/weibo_01.jpg" alt=""></li>
+              <li class="list-item" data-animation="slideToTop" data-delay="700" data-duration="1000"><img src="/Personal/xmkey/we-code/Public/pic/weibo_01.jpg" alt=""></li>
             </ul>
           </div>
         </div>
@@ -291,13 +314,13 @@ var APP="/we-code/index.php";
     <a href="javascript:void(0);" class="u-guideNext z-move">prev</a>
     <div class="outer" id="slider">
       <ul class="u_sper">
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="/we-code/Public/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img.png" width="235px"></span></li>
+        <li><span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img.png" width="235px"></span></li>
       </ul>
     </div>
     <a href="#" class="we-btn popback"></a>
@@ -311,7 +334,7 @@ var APP="/we-code/index.php";
       <ul class="u_sper">
         <li>
           <div class="guest-card">
-            <span class="imgbox"><img src="/we-code/Public/pic/pop_img_01.jpg" width="268px"></span>
+            <span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img_01.jpg" width="268px"></span>
             <div class="guest-desc">
               <h3 class="guest-name">Martin A. Nowak</h3>
               <p class="guest-en">Professor of Biology and Mathematics and Director of the Program for Evolutionary Dynamics at Harvard University, author of Supercooperators</p>
@@ -321,7 +344,7 @@ var APP="/we-code/index.php";
         </li>
         <li>
           <div class="guest-card">
-            <span class="imgbox"><img src="/we-code/Public/pic/pop_img_02.jpg" width="268px"></span>
+            <span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img_02.jpg" width="268px"></span>
             <div class="guest-desc">
               <h3 class="guest-name">Robert (Bob) Richards</h3>
               <p class="guest-en">Co-Founder of Singularity University and Moon Express, Inc.</p>
@@ -331,7 +354,7 @@ var APP="/we-code/index.php";
         </li>
         <li>
           <div class="guest-card">
-            <span class="imgbox"><img src="/we-code/Public/pic/pop_img_03.jpg" width="268px"></span>
+            <span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img_03.jpg" width="268px"></span>
             <div class="guest-desc">
               <h3 class="guest-name">David Wallerstein</h3>
               <p class="guest-en">Senior Executive Vice President and, Chairman, Tencent USA.</p>
@@ -341,7 +364,7 @@ var APP="/we-code/index.php";
         </li>
         <li>
           <div class="guest-card">
-            <span class="imgbox"><img src="/we-code/Public/pic/pop_img_04.jpg" width="268px"></span>
+            <span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img_04.jpg" width="268px"></span>
             <div class="guest-desc">
               <h3 class="guest-name">Jose Carmena</h3>
               <p class="guest-en">Associate Professor of Electrical Engineering and Neuroscience at UC Berkeley</p>
@@ -351,7 +374,7 @@ var APP="/we-code/index.php";
         </li>
         <li>
           <div class="guest-card">
-            <span class="imgbox"><img src="/we-code/Public/pic/pop_img_05.jpg" width="268px"></span>
+            <span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img_05.jpg" width="268px"></span>
             <div class="guest-desc">
               <h3 class="guest-name">Jane Poynter</h3>
               <p class="guest-en">Co-Founder and CEO of World View Enterprises, Inc.</p>
@@ -361,7 +384,7 @@ var APP="/we-code/index.php";
         </li>
         <li>
           <div class="guest-card">
-            <span class="imgbox"><img src="/we-code/Public/pic/pop_img_06.jpg" width="268px"></span>
+            <span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img_06.jpg" width="268px"></span>
             <div class="guest-desc">
               <h3 class="guest-name">Daniel Leithinger</h3>
               <p class="guest-en">PHD at the MIT Media Lab</p>
@@ -371,7 +394,7 @@ var APP="/we-code/index.php";
         </li>
         <li>
           <div class="guest-card">
-            <span class="imgbox"><img src="/we-code/Public/pic/pop_img_07.jpg" width="268px"></span>
+            <span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img_07.jpg" width="268px"></span>
             <div class="guest-desc">
               <h3 class="guest-name">苏运升Su Yunsheng</h3>
               <p class="guest-en">Director of the Technology Development Center in Shanghai Tongji Urban Planning & Design Institute</p>
@@ -381,7 +404,7 @@ var APP="/we-code/index.php";
         </li>
         <li>
           <div class="guest-card">
-            <span class="imgbox"><img src="/we-code/Public/pic/pop_img_08.jpg" width="268px"></span>
+            <span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img_08.jpg" width="268px"></span>
             <div class="guest-desc">
               <h3 class="guest-name">王俊 Wang Jun</h3>
               <p class="guest-en">Director and Professor, BGI, China</p>
@@ -391,7 +414,7 @@ var APP="/we-code/index.php";
         </li>
         <li>
           <div class="guest-card">
-            <span class="imgbox"><img src="/we-code/Public/pic/pop_img_09.jpg" width="268px"></span>
+            <span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img_09.jpg" width="268px"></span>
             <div class="guest-desc">
               <h3 class="guest-name">Rajinder Sodhi</h3>
               <p class="guest-en">Senior Research Engineer at Disney Research Pittsburgh</p>
@@ -401,7 +424,7 @@ var APP="/we-code/index.php";
         </li>
         <li>
           <div class="guest-card">
-            <span class="imgbox"><img src="/we-code/Public/pic/pop_img_10.jpg" width="268px"></span>
+            <span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img_10.jpg" width="268px"></span>
             <div class="guest-desc">
               <h3 class="guest-name">Ben Waber</h3>
               <p class="guest-en">CEO of Sociometric Solutions</p>
@@ -411,7 +434,7 @@ var APP="/we-code/index.php";
         </li>
         <li>
           <div class="guest-card">
-            <span class="imgbox"><img src="/we-code/Public/pic/pop_img_11.jpg" width="268px"></span>
+            <span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img_11.jpg" width="268px"></span>
             <div class="guest-desc">
               <h3 class="guest-name">王阳 Matt Wang</h3>
               <p class="guest-en">Vice President of IBM</p>
@@ -421,7 +444,7 @@ var APP="/we-code/index.php";
         </li>
         <li>
           <div class="guest-card">
-            <span class="imgbox"><img src="/we-code/Public/pic/pop_img_12.jpg" width="268px"></span>
+            <span class="imgbox"><img src="/Personal/xmkey/we-code/Public/pic/pop_img_12.jpg" width="268px"></span>
             <div class="guest-desc">
               <h3 class="guest-name">Tomonori Kagaya</h3>
               <p class="guest-en">Japanese entrepreneur，Co-Founder of Neurowear</p>
@@ -435,8 +458,8 @@ var APP="/we-code/index.php";
   </section>
 </section>
 
-<script type="text/javascript" src="/we-code/Public/js/zepto.min.js"></script>
-<script type="text/javascript" src="/we-code/Public/js/main.js"></script>
+<script type="text/javascript" src="/Personal/xmkey/we-code/Public/js/zepto.min.js"></script>
+<script type="text/javascript" src="/Personal/xmkey/we-code/Public/js/main.js"></script>
 
 
 </body>
