@@ -193,7 +193,10 @@ var APP="/Personal/xmkey/we-code/index.php";
       <p class="we-font font-08" data-animation="followSlide" data-duration="1000">邀请好友一起 </p>
       <p class="we-font font-09" data-animation="followSlide" data-delay="200" data-duration="1000">开启未来之门</p>
       <div class="we-gamebox gamebox-01" data-animation="followSlide" data-delay="400" data-duration="1000"></div>
-      <div class="we-gamebox gamebox-02" data-animation="followSlide" data-delay="400" data-duration="1000"></div>
+      <div class="we-gamebox gamebox-02" data-animation="followSlide" data-delay="400" data-duration="1000">
+        <p>和好友一起按下指纹打开未来之门</p>
+        <p>抢2014WE大会视频直播码</p>
+      </div>
       <a href="/Personal/xmkey/we-code/index.php" class="we-btn btn-01" id="btn-invite" data-animation="followSlide" data-delay="600" data-duration="1000">邀请好友</a>
       <p class="we-font font-10" data-animation="followSlide" data-delay="800" data-duration="1000">和好友一起按下指纹，打开未来之门，</p>
       <p class="we-font font-11" data-animation="followSlide" data-delay="1000" data-duration="1000">抢2014WE大会视频直播码。</p>

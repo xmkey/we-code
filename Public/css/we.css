@@ -77,7 +77,8 @@ html,body{overflow:hidden;position:relative;}
 .font-08{height:21px;background-position:0 -279px;top:5%;}
 .font-09{height:21px;background-position:0 -301px;top:10%;}
 .gamebox-01{top:20%;background:url(../img/gamebox_bg_01.png) no-repeat;background-size:100% 100%;}
-.gamebox-02{top:20%;background:url(../img/gamebox_bg_02.png) no-repeat;background-size:100% 100%;}
+.gamebox-02{top:20%;background:url(../img/gamebox_bg_02.png) no-repeat;background-size:100% 100%;padding-top:82px;height:163px;}
+.gamebox-02 p{color:#fff;padding:0 55px;text-align:left;}
 .btn-01{top:75%;}
 .font-10{height:12px;background-position:0 -367px;top:87%;}
 .font-11{height:12px;background-position:0 -380px;top:90%;}
