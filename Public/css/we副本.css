@@ -124,15 +124,18 @@ html,body{overflow:hidden;position:relative;}
 .font-16 i{position:absolute;width:34px;height:21px;line-height:21px;text-indent:0;color:#edab12;left:168px;top:0;font-size:27px;}
 .font-17{height:12px;background-position:0 -459px;top:86%;}
 .font-18{height:12px;background-position:0 -472px;top:90%;}
+
+
+
 .btn-02{top:75%;color:#90680b;}
 /* E page5 */
 
 
 /* S page6 */
-.font-19{height:20px;background-position:0 -485px;top:25%;text-indent:0;background:0;color:#3fcae1;font-size:16px;font-family:"MicroSoft YaHei";}
-.font-20{height:20px;background-position:0 -506px;top:30%;text-indent:0;background:0;color:#3fcae1;font-size:16px;font-family:"MicroSoft YaHei";}
+.font-19{height:20px;background-position:0 -485px;top:25%;}
+.font-20{height:20px;background-position:0 -506px;top:30%;}
 .btn-03{top:50%;}
-.btn-04{top:62%;background-color:#cdcdcd;color:#333333;}
+.btn-04{top:60%;background-color:#cdcdcd;color:#333333;}
 /* E page6 */
 
 /* S page-speaker */
@@ -242,11 +245,6 @@ html,body{overflow:hidden;position:relative;}
 /* E 购票页 */
 
 
-.we-pop{
-    position:absolute;left:50%;top:50%;margin:-160px 0 0 -110px;
-    width:200px;display:table-cell;vertical-align: middle;padding:5px 10px;
-    background-color:rgba(0,0,0,0.8);border-radius:5px;color:#fff;font-size:12px;
-}
 
 .icon-clock{
     height:33px;background-position:0 -321px;
@@ -285,25 +283,11 @@ html,body{overflow:hidden;position:relative;}
     position:relative;
     height:100%;line-height:100%;overflow:hidden;vertical-align:middle;
 }
-.guest-pop .guest-card{
-    position:absolute;left:50%;top:50%;
-    width:268px;height:387px;margin:-198px 0 0 -135px;
-    border-radius:5px;overflow:hidden;
-    border:1px solid #0b3c9d;
-    background-color:#0b3c9d;box-shadow:inset  0 -5px 10px rgba(255,255,255,.2),inset 0 5px 10px rgba(255,255,255,.2);
-    color:#fff;
-}
-.guest-desc{
-    text-align:left;padding:12px;font-size:12px;
-    line-height:18px;
-}
-.guest-desc .guest-name{
-    line-height:32px;
-}
-.guest-desc .guest-en{
-}
 .guest-pop .imgbox{
-    display:block;
+    position:absolute;left:50%;top:50%;
+}
+.guest-pop li img{
+    position:relative;margin-top:-75%;left:-50%;
 }
 .guest-pop .outer{
     position:absolute;left:0;top:0;bottom:0;right:0;z-index:2;
@@ -507,6 +491,7 @@ html,body{overflow:hidden;position:relative;}
 .u-maskLayer.z-show .u-maskLayer-close {
     -webkit-transform: translate(0%,0)
 }
+
 
 .game-content{-webkit-transition:all .5s ease-in-out;}
 .game-content.game-hide{-webkit-transform:scale(.5);opacity: 0;}

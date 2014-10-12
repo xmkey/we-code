@@ -55,7 +55,7 @@ function is_weixn(){
     }  
 }  
 if(!is_weixn()){
-  alert("请在微信中打开该页面");
+  // alert("请在微信中打开该页面");
 }
  
 // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。  

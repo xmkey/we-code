@@ -8,8 +8,8 @@
 // http://www.opensource.org/licenses/mit-license.php
 // http://www.gnu.org/licenses/gpl.html
 ;(function($){
-    $.extend($.fn, {
-        cookie : function (key, value, options) {
+    // $.extend($.fn, {
+        $.fn.cookie = function (key, value, options) {
             var days, time, result, decode
 
             // A key and value were given. Set cookie.
@@ -46,5 +46,5 @@
             return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? decode(result[1]) : null
         }
 
-    })
+    
 })(Zepto)
