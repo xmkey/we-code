@@ -15,9 +15,8 @@ module.exports = function(grunt){
     ];
     var module=[
       
-      "Public/js/source/fastclick.js",
-      "Public/js/source/prefixfree.min.js",
       "Public/js/source/jquery.keyframes.js",
+      "Public/js/source/bg.js",
       "Public/js/source/parallax.js",
       "Public/js/source/swipe.js",
       // "Public/js/source/transform.js",

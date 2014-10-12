@@ -19,22 +19,26 @@
 <script type="text/javascript">
 var KEY="{$key}";
 var ISSENDER={$isSender};
+var ISMATCHED={$isMatched};
+var ISTIMEOUT={$isTimeout};
+var ISWORK={$isWork};
 var APP="__APP__";
 </script>
 <link rel="stylesheet" href="__PUBLIC__/css/main.css">
 </head>
 <body class="app">
-<div id="app-loading" class="app-loading z-hide">
-  <div class="cycleWrap">
-    <span class="cycle cycle-1"></span>
-    <span class="cycle cycle-2"></span>
-    <span class="cycle cycle-3"></span>
-    <span class="cycle cycle-4"></span>
-  </div>
-  <div class="lineWrap">
-    <span class="line line-1"></span>
-    <span class="line line-2"></span>
-    <span class="line line-3"></span>
+<div class="app-loading">
+  
+  <div class="loading-bubbles">
+    <div class="bubble-container">
+      <div class="bubble"></div>
+    </div>
+    <div class="bubble-container">
+      <div class="bubble"></div>
+    </div>
+    <div class="bubble-container">
+      <div class="bubble"></div>
+    </div>
   </div>
 </div>
 
@@ -166,7 +170,7 @@ var APP="__APP__";
     </section>
   </section> -->
   <section class="page page-we-03 page-game">
-    <section class="page-content share-content" style="display:none">
+    <section class="page-content share-content" style="display:none" >
       <p class="we-font font-08" data-animation="followSlide" data-duration="1000">邀请好友一起 </p>
       <p class="we-font font-09" data-animation="followSlide" data-delay="200" data-duration="1000">开启未来之门</p>
       <div class="we-gamebox gamebox-01" data-animation="followSlide" data-delay="400" data-duration="1000"></div>
@@ -181,11 +185,12 @@ var APP="__APP__";
     </section>
   <!-- </section>
   <section class="page page-we-04 page-game"> -->
-    <section class="page-content game-content">
+
+    <section class="page-content game-content <if condition="($isWork eq 0) OR ($isTimeout eq 1) OR ($isMatched eq 1) "> game-hide</if>" >
       <div class="game-bg" data-animation="slideToTop" data-delay="0" data-duration="1000"></div>
       <p class="we-font font-12" data-animation="slideToTop" data-delay="200" data-duration="1000">请按下您的手指</p>
-      <p class="we-font font-13" data-animation="slideToTop" data-delay="400" data-duration="1000">并保持 60 秒</p>
-      <p class="count-down" data-animation="slideToTop" data-delay="400" data-duration="1000">60</p>
+      <p class="we-font font-13" data-animation="slideToTop" data-delay="400" data-duration="1000">并保持 180 秒</p>
+      <p class="count-down" data-animation="slideToTop" data-delay="400" data-duration="1000">180</p>
       <div class="we-gamebox gamebox-01" data-animation="slideToTop" data-delay="600" data-duration="1000">
         <span class="fingerprint"></span>
         <span class="fingerprint"></span>
@@ -234,8 +239,17 @@ var APP="__APP__";
       <p class="we-font font-17" data-animation="slideToTop" data-delay="1200" data-duration="1000">请于2014年11月8日 13:00进入腾讯大学 </p>
       <p class="we-font font-18" data-animation="slideToTop" data-delay="1400" data-duration="1000">官网WE大会直播间输入直播码观看！</p>
     </section>
-    <section class="page-content game-success" id="helper-success">
-      <p class="we-font font-19" id="tips-result" data-animation="slideToTop" data-duration="1000">您的好友已经抢到<br/>WE大会视频直播码！</p>
+    <section class="page-content game-success <if condition="($isWork eq 0) OR ($isTimeout eq 1) OR ($isMatched eq 1) "> success-show</if>" id="helper-success">
+      <if condition="($isMatched eq 1)">
+        <p class="we-font font-19" id="tips-result" data-animation="slideToTop" data-duration="1000">您的好友已经抢到<br/>WE大会视频直播码！</p>
+        <elseif condition="($isWork eq 0) OR ($isTimeout eq 1)"/>
+        <p class="we-font font-19" id="tips-result" data-animation="slideToTop" data-duration="1000">亲，您的活动邀请已失效，</br>赶快联系好友重新发送吧！</p>
+        <else />
+        <p class="we-font font-19" id="tips-result" data-animation="slideToTop" data-duration="1000">您的好友已经抢到<br/>WE大会视频直播码！</p>
+      </if>
+     
+      
+
      <!--  <p class="we-font font-20" data-animation="slideToTop" data-delay="200" data-duration="1000">WE大会视频直播码！</p> -->
       <a href="__APP__" class="we-btn btn-03" id="btn-getcode" data-animation="slideToTop" data-delay="400" data-duration="1000">我也要直播码</a>
       <a href="http://mp.weixin.qq.com/s?__biz=MzA5MTMyNzAzMQ==&mid=200598274&idx=1&sn=5aa98b60ec81b62ff589aa6c1c66c9e4#rd" class="we-btn btn-04" data-animation="slideToTop" data-delay="600" data-duration="1000">关注腾讯大学</a>

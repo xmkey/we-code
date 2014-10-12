@@ -2,3 +2,4 @@
 .svn/
 node_modules/
 *.psd
+Runtime/

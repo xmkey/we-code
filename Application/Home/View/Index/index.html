@@ -3,9 +3,6 @@
 <head>
 <title>WE大会</title>
 <meta charset="utf-8" />
-<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
-<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
-<meta HTTP-EQUIV="expires" CONTENT="0">
 <meta name="keywords" content="WE大会" />
 <meta name="description" content="WE大会" />
 <meta name="apple-touch-fullscreen" content="yes" />
@@ -13,31 +10,37 @@
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<meta http-equiv="Expires" content="-1" />
-<meta http-equiv="pragram" content="no-cache" />
-<meta name="sharecontent" data-msg-img="http://www.liveapp.cn/userfiles/video/tmp/14586/541bf5545a226.jpg" data-msg-title="WE大会" data-msg-content="这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。" data-msg-callBack="" data-line-img="http://www.liveapp.cn/userfiles/video/tmp/14586/541bf55b2dab0.jpg" data-line-title="WE大会" data-line-callBack=""/> 
 <script type="text/javascript">
 var KEY="{$key}";
 var ISSENDER={$isSender};
 var APP="__APP__";
+var PUBLIC="__PUBLIC__";
 </script>
 <link rel="stylesheet" href="__PUBLIC__/css/main.css">
 </head>
 <body class="app">
-<div id="app-loading" class="app-loading z-hide">
-  <div class="cycleWrap">
-    <span class="cycle cycle-1"></span>
-    <span class="cycle cycle-2"></span>
-    <span class="cycle cycle-3"></span>
-    <span class="cycle cycle-4"></span>
-  </div>
-  <div class="lineWrap">
-    <span class="line line-1"></span>
-    <span class="line line-2"></span>
-    <span class="line line-3"></span>
+<div class="app-loading">
+  
+  <div class="loading-bubbles">
+    <div class="bubble-container">
+      <div class="bubble"></div>
+    </div>
+    <div class="bubble-container">
+      <div class="bubble"></div>
+    </div>
+    <div class="bubble-container">
+      <div class="bubble"></div>
+    </div>
   </div>
 </div>
-
+<div class="bg">
+  <div class="bg-inner"></div>
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud3"></div>
+  <canvas id="canvas" width="100%" height="100%"></canvas>
+    <!-- <canvas id="bg_canvas" width="100%" height="100%"></canvas> -->
+   
+</div>
 <section class="pages">
   <section class="page page-we-01">
     <section class="page-content">
@@ -463,7 +466,41 @@ var APP="__APP__";
 
 <script type="text/javascript" src="__PUBLIC__/js/zepto.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/main.js"></script>
+<script type="text/javascript">
 
+  function loadImage(url, callback) {
+    var img = new Image();
+     img.src = url;
+     img.onload = function(){ //图片下载完毕时异步调用callback函数。
+       callback.call(img);   // 将callback函数this指针切换为img。
+     };
+  }
+  
+  var images=[
+    PUBLIC+'/img/bg.jpg',
+    PUBLIC+'/img/gamebox_bg.png',
+    PUBLIC+'/img/speaker_text.png',
+    PUBLIC+'/img/we_game@2x.png',
+    PUBLIC+'/img/we_sprite@2x.png',
+    PUBLIC+'/img/speaker_head_bg.png',
+    PUBLIC+'/img/we_code_bg.png',
+  ];
+  var count=0;
+  for(var i=0;i<images.length;i++){
+   loadImage(images[i], function(img) {
+       count++;
+       if(count==images.length){
+          $(".app").addClass("ready");
+           window.page();
+           window.bg_start();
+         
+         
+       }
+   });
+  }
+
+  
+</script>
 
 </body>
 </html>

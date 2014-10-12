@@ -3,7 +3,7 @@
     var $createKeyframeStyleTag, animationPlayState, playStateRunning,
         animationSupport = false,
         animationString = 'animation',
-        vendorPrefix = prefix = '',
+        vendorPrefix = prefix = '-webkit-',
         domPrefixes = ['Webkit', 'Moz', 'O', 'ms', 'Khtml'];
 
     
@@ -55,8 +55,9 @@
                     css += "}";
                 }
             }
-
-            css = PrefixFree.prefixCSS(css + "}");
+            css=css+"}"
+            // css = PrefixFree.prefixCSS(css + "}");
+            
 
             $frameStyle = $("style#" + frameData.name);
 

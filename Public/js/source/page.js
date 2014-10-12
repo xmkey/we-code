@@ -1,4 +1,5 @@
 !function($){
+  window.page=function(){
   var isFirst=true;
   $('.pages').parallax({
     direction: 'vertical',  // horizontal (水平翻页)
@@ -23,10 +24,10 @@
       var gameindex=$(".pages .page").index($(".page-game"));
       if(index==gameindex){
         setTimeout(function(){
-          if(isFirst){
-             window.showTips(1);
-          }
-          isFirst=false;
+          // if(isFirst){
+          //    window.showTips(1);
+          // }
+          // isFirst=false;
          
         },2000)
         
@@ -56,24 +57,9 @@
     $(".pages").css({'-webkit-transform': 'matrix(1, 0, 0, 1, 0, -' + pageHeight*timeIndex + ')'});
   }
 
-  var slider =
-    Swipe(document.getElementById('slider'), {
-      auto: 3000,
-      continuous: true,
-      callback: function(pos) {
+  
 
-        // var i = bullets.length;
-        // while (i--) {
-        //   bullets[i].className = ' ';
-        // }
-        // bullets[pos].className = 'on';
-
-      }
-    });
-
-  $('.popback').on('touchend', function(e) {
-      $('.guest-pop').addClass("hide");
-    });
+ 
 
 
   var endPos,
@@ -146,13 +132,38 @@
 
   $("#btn-invite").tap(function(){
     // var index=$(".pages .page").index($(".page-game"));
-
-   
     if(ISSENDER){
-      $(".m-weixinShareLayer").removeClass("hide");
+      $(".m-weixinShareLayer").show();
       return false;
     }else{
       location.href=$(this).attr("href");
     }
   })
+
+  var slider = null;
+  slider =Swipe(document.getElementById('slider'), {
+      auto: false,
+      callback: function(pos) {
+        
+      }
+    });
+  
+    $('.popback').tap(function(e) {
+      $('.guest-pop').addClass("hide");
+    });
+  $(".speaker-list li").tap(function(){
+   
+    var index=$(".speaker-list li").index($(this));
+    $(".guest-pop").removeClass("hide");
+    slider.slide(index,0)
+  });
+  $(".u-guidePrev").tap(function(){
+    slider.prev();
+  })
+  $(".u-guideNext").tap(function(){
+    slider.next();
+  })
+  }
+
+
 }(Zepto)

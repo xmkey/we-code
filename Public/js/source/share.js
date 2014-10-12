@@ -27,12 +27,15 @@ function shareFriend() {
 
   descContent = "这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。"; 
   // alert($(".share-content").is(':hidden'))
-  if(curindex==gameindex&& $(".share-content").css("display")=="block"){
+  lineLink =window.location.protocol+"//"+window.location.host+window.location.pathname;
 
+  if(curindex==gameindex&& $(".share-content").css("display")=="block"){
+    
     descContent="帮我一起赢取we大会直播码吧";
     lineLink=senderLink;
+    
   }
-
+  
     WeixinJSBridge.invoke('sendAppMessage',{  
       "img_url": imgUrl,  
       "img_width": "640",  
@@ -40,17 +43,27 @@ function shareFriend() {
       "link": lineLink,  
       "desc": descContent,  
       "title": shareTitle  
-      }, function(res) {  
-      _report('send_msg', res.err_msg);  
+      }, function(res) { 
+        
+
+          if(curindex==gameindex&& $(".share-content").css("display")=="block"){
+            
+            if(res.err_msg.indexOf("confirm")>=0){
+              window.toGame();
+            }
+              
+          }
       })  
 }
 function shareTimeline() {  
   var curindex=$(".pages .page").index($(".page.current"));
   var gameindex=$(".pages .page").index($(".page-game"));
   descContent = "这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。"; 
+  lineLink =window.location.protocol+"//"+window.location.host+window.location.pathname;
   if(curindex==gameindex&& $(".share-content").css("display")=="block"){
     descContent="帮我一起赢取we大会直播码吧";
     lineLink=senderLink;
+    // window.toGame();
   }
     WeixinJSBridge.invoke('shareTimeline',{  
     "img_url": imgUrl,  
@@ -60,7 +73,11 @@ function shareTimeline() {
     "desc": descContent,  
     "title": shareTitle  
     }, function(res) {  
-    _report('timeline', res.err_msg);  
+      if(curindex==gameindex&& $(".share-content").css("display")=="block"){
+        if(res.err_msg.indexOf("confirm")>=0){
+          window.toGame();
+        }
+      }
     });  
 }  
 function is_weixn(){  
@@ -70,6 +87,7 @@ function is_weixn(){
   if(curindex==gameindex&& $(".share-content").css("display")=="block"){
     descContent="帮我一起赢取we大会直播码吧";
     lineLink=senderLink;
+    window.toGame();
   }
     var ua = navigator.userAgent.toLowerCase();  
     if(ua.match(/MicroMessenger/i)=="micromessenger") {  

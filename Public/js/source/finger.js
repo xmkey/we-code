@@ -3,11 +3,10 @@ var tips={
 	"done":"您的好友已经抢到<br/>WE大会视频直播码！",
 	"timeout":"亲，您的活动邀请已失效，</br>赶快联系好友重新发送吧！",
 	"timeout-my":"亲，您的活动邀请已失效，</br>点击下面的按钮重新发送吧！",
-	"matched":"亲，您的好友已成功获得</br>WE大会直播码了！",
-	"matched-other":"亲，您的好友已经在其他好友</br>的帮助下获得了直播码！"
+	"matched":"亲，您已经帮您的的好友获得了</br>WE大会直播码了！",
+	"matched-other":"您的好友已经抢到<br/>WE大会视频直播码！"
 }
 function preventDefault(e){
-   
     e.preventDefault();
     return false;
 }
@@ -70,7 +69,7 @@ var status=0;
  // var isFirst=true;
 var global={
 	isTrigger:false,
-	timeRemain:10,
+	timeRemain:180,
 	isFirst:true,
 	interval:null,
 	isDone:false
@@ -113,6 +112,10 @@ var global={
  if(!ISSENDER){
  	
  	Timer.start(global.timeRemain);
+ 	setTimeout(function(){
+ 		showTips(1);
+ 	},2000)
+ 	
  }
 $(".m-weixinShareLayer").tap(function(){
 	$(this).hide();
@@ -131,7 +134,7 @@ $(".m-weixinShareLayer").tap(function(){
  		global.isFirst=false;
  		Timer.start(global.timeRemain);
  	}
- 	console.log(status);
+ 	
  	if(status==0){
  		$(".pages").off("touchmove",preventDefault);
  		showTips(1);
@@ -148,6 +151,10 @@ $(".m-weixinShareLayer").tap(function(){
     window.slideTo(index);  
     $(".share-content").hide();
     $(".game-content").css({"display":"block"});
+    setTimeout(function(){
+    	showTips(1);
+    },2000)
+    
  	var data={
  			isSender:ISSENDER,
  			status:status,
@@ -157,7 +164,7 @@ $(".m-weixinShareLayer").tap(function(){
  		
  		postData(data,global.isFirst);
  		global.isFirst=false;
- 		Timer.start(global.timeRemain);
+ 		// Timer.start(global.timeRemain);
  }
  
  function postData(data,isfirst){
@@ -238,7 +245,7 @@ function done(status){
 		}else if(status=="matched"){
 			$("#tips-result").html(tips['matched']);
 		}else{
-			$("#tips-result").html(tips['done']);
+			$("#tips-result").html(tips['matched']);
 		}
 		$(".game-content").addClass("game-hide");
 		

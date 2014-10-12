@@ -11,7 +11,6 @@ class IndexController extends Controller {
 			$data['id'] = 1;
 			$data['num'] = $num;
 			$Match->data($data)->add();
-			
 		}else{
 			$num=$data['num']+1;
 
@@ -21,16 +20,10 @@ class IndexController extends Controller {
     	$key=$num.time().rand(10,99);
     	// $key=302390923;
     	$isSender=true;
-        
-        
-        
-    
-        
     	if(isset($_GET['from_key'])){
     		
     		// $key_data=$Match->where('`key`='.$_GET['from_key'])->find();
     		// if($key_data!=null){
-            
     			$key=$_GET['from_key'];
                 $isSender=0;
                 $c_key=cookie('key');
@@ -40,7 +33,16 @@ class IndexController extends Controller {
                 }
                 $this->assign('key',$key);
                 $this->assign('isSender',$isSender);
-    			
+                $key_data=$Match->where('`key`="'.$key.'"')->find();
+                $isWork=1;
+                if(!$key_data){
+                    $isWork=0;
+                }
+                $isMatched=$key_data['ismatch']?$key_data['ismatch']:0;
+                $this->assign('isMatched',$isMatched);
+                $isTimeout=(time()-$key_data['time']>180)?1:0;
+                $this->assign('isTimeout',$isTimeout);
+                $this->assign('isWork',$isWork);
                 $this->display("helper");
     		// }
     	}else{
