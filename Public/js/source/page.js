@@ -1,6 +1,7 @@
 !function($){
   window.page=function(){
   var isFirst=true;
+
   $('.pages').parallax({
     direction: 'vertical',  // horizontal (水平翻页)
     swipeAnim: 'default',   // default (切换效果)
@@ -17,6 +18,7 @@
     onchange: function(index, element, direction) {
       // code here...
       // console.log(index, element, direction);
+      
       if (index !== 2 || index !== 3 || index !== 8) {
         $('.content').css("-webkit-transform", "none"); 
       }
@@ -58,8 +60,6 @@
   }
 
   
-
- 
 
 
   var endPos,
@@ -128,7 +128,6 @@
       element.css("-webkit-transform", "matrix(1, 0, 0, 1, 0, " + temp + ")");
     }
   }
-
 
   $("#btn-invite").tap(function(){
     // var index=$(".pages .page").index($(".page-game"));

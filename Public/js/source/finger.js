@@ -12,6 +12,7 @@ function preventDefault(e){
 }
 window.showTips=function(index){
 	
+
 	var index=index;
 	if(!ISSENDER){
 		index=index+3;
@@ -76,36 +77,41 @@ var global={
 }
 
  var Timer={
+ 	isStart:false,
  	start:function(timeRemain){
- 		
- 		global.interval=setInterval(function(){
- 			var data={
-	 			isSender:ISSENDER,
-	 			status:status,
-	 			key:KEY,
-	 			timer:global.timeRemain
-	 		}
+ 		console.log(1)
+ 		if(Timer.isStart==false){
+ 			Timer.isStart=true;
+	 		global.interval=setInterval(function(){
+	 			var data={
+		 			isSender:ISSENDER,
+		 			status:status,
+		 			key:KEY,
+		 			timer:global.timeRemain
+		 		}
 
 
-	 		if(global.isTrigger){
-	 			if(global.timeRemain-1<=0){
-	 				global.timeRemain=0;
-	 				done("timeout");
-	 				clearInterval(global.interval);
-	 				// alert("超时");
+		 		if(global.isTrigger){
 
-	 				
-	 			}else{
-	 				global.timeRemain--;
-	 			}
-	 			$(".count-down").html(global.timeRemain);
-	 		}
+		 			if(global.timeRemain-1<=0){
+		 				global.timeRemain=0;
+		 				done("timeout");
+		 				clearInterval(global.interval);
+		 				// alert("超时");
 
-	 		
-	 		postData(data,global.isFirst);
+		 				
+		 			}else{
+		 				global.timeRemain--;
+		 			}
 
-	 		
- 		},1000)
+		 			$(".count-down").html(global.timeRemain);
+		 		}
+
+		 		
+		 		postData(data,global.isFirst);
+	
+	 		},1000)
+ 		}
  	}
  }
  
@@ -121,6 +127,7 @@ $(".m-weixinShareLayer").tap(function(){
 	$(this).hide();
 });
  function check(status){
+ 	
  	if(global.isTrigger==false&&ISSENDER&&status!=0){
 
  		var data={
@@ -192,8 +199,10 @@ $(".m-weixinShareLayer").tap(function(){
 	  		// alert("已经超时");
 	  		return false;
 	  	}
-	  	
-	  	global.isTrigger=true;
+	  	if(!isfirst){
+	  		global.isTrigger=true;
+	  	}
+	  		
 
 	  	if(result.status=="noyet"){
 	  		
@@ -201,8 +210,13 @@ $(".m-weixinShareLayer").tap(function(){
 	  	}else if(isfirst&&!ISSENDER){
 
 	  		global.timeRemain=result['timer'];
+	  		// alert(global.timeRemain)
+	  		if(global.timeRemain<180){
+	  			global.isFirst=false;
+	  			
+	  		}
 	  		$(".count-down").html(global.timeRemain);
-	  		global.isFirst=false;
+	  		
 	  		
 	  	}
 	  	
