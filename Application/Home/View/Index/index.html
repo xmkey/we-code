@@ -23,7 +23,7 @@ var PUBLIC="__PUBLIC__";
 <a href="javascript:void(0);" class="u-globalAudio z-play">
   <i class="icon-music"></i>
   <audio src="__PUBLIC__/mp3/globalAudio1.mp3" autoplay loop></audio>
-  <span class="z-show">开启</span>
+  <span>关闭</span>
 </a>
 </header>
 <div class="app-loading">
@@ -468,7 +468,6 @@ var PUBLIC="__PUBLIC__";
         </li>
       </ul>
     </div>
-    <a href="#" class="we-btn popback"></a>
   </section>
 </section>
 
@@ -508,14 +507,25 @@ var PUBLIC="__PUBLIC__";
   }
 
   $(function(){
-    var $this = $(".u-globalAudio"),$audio = $this.find('audio');
-    console.log($audio.audio);
+    var $this = $(".u-globalAudio"),$audio = $this.find('audio')[0],$text = $this.find('span');
     $this.on('tap',function(){
-      // console.log("asdfasd");
-      // $audio.pause();
-    })
-    
-  })
+      if ($this.hasClass('z-play')) {
+        $this.removeClass('z-play');
+        $audio.pause();
+        $text.addClass('z-show').text('关闭');
+        setTimeout(function(){
+          $text.removeClass('z-show')
+        },300);
+      }else{
+        $this.addClass('z-play');
+        $audio.play();
+        $text.addClass('z-show').text('开启');
+        setTimeout(function(){
+          $text.removeClass('z-show')
+        },300);
+      };
+    });
+  });
 
 </script>
 

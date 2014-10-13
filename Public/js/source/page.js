@@ -141,27 +141,27 @@
 
   var slider = null;
   slider =Swipe(document.getElementById('slider'), {
-      auto: false,
-      callback: function(pos) {
-        
-      }
-    });
+    auto: false,
+    callback: function(pos) {
+      console.log(pos);
+    }
+  });
   
-    $('.popback').tap(function(e) {
-      $('.guest-pop').addClass("hide");
-    });
+  $('.guest-card').tap(function(e) {
+    $('.guest-pop').addClass("hide");
+  });
   $(".speaker-list li").tap(function(){
    
     var index=$(".speaker-list li").index($(this));
     $(".guest-pop").removeClass("hide");
-    slider.slide(index,0)
-  });
-  $(".u-guidePrev").tap(function(){
-    slider.prev();
-  })
-  $(".u-guideNext").tap(function(){
-    slider.next();
-  })
+      slider.slide(index,0)
+    });
+    $(".u-guidePrev").tap(function(){
+      slider.prev();
+    })
+    $(".u-guideNext").tap(function(){
+      slider.next();
+    })
   }
 
 
