@@ -35,7 +35,7 @@ class DataController extends Controller {
 				$ret['status']='matched';
 				// return false;
 			}
-			else if($data['timer']==0||time()-$key_data['time']>180){
+			else if($data['timer']==0||($key_data['starttime']&&time()-$key_data['starttime']>180)||(time()-$key_data['time']>360)){
 				$ret['status']='timeout';
 				// return false;
 			}
@@ -49,6 +49,9 @@ class DataController extends Controller {
 				// $data['num']=($key_data['num']?$key_data['num']:0)+1;
 
 				$ret['status']='success';
+			}
+			if($data['timer']!=180&&!$key_data['starttime']){
+				$data['starttime']=time();
 			}
 			$ret['to']=$key_data['to'];
 			
@@ -77,7 +80,7 @@ class DataController extends Controller {
 			if($key_data['ismatch']==1&&$key_data['num']>=3){
 				$ret['status']='matched';
 			}
-			else if($key_data['timer']==0||time()-$key_data['time']>180){
+			else if($key_data['timer']==0||($key_data['starttime']&&time()-$key_data['starttime']>180)||(time()-$key_data['time']>360)){
 				$ret['status']='timeout';
 			}
 			else if($key_data['from']==3&&$data['to']==3){
@@ -92,7 +95,15 @@ class DataController extends Controller {
 				$ret['status']='success';
 			}
 			$ret['from']=$key_data['from'];
-			$timer=180-(time()-$key_data['time']);
+			$timer=$key_data['timer'];
+			// if($key_data['starttime']){
+			// 	$timer=(180-(time()-$key_data['starttime']));
+			// }
+			if($key_data['starttime']&&abs((180-(time()-$key_data['starttime']))-$key_data['timer'])>5){
+				$timer=(180-(time()-$key_data['starttime']));
+			}
+			
+			// $key_data['timer']==180?180:(180-(time()-$key_data['time']));
 			if($timer<=0){
 				$timer==0;
 			}

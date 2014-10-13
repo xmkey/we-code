@@ -13,38 +13,38 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
 //  'use strict';
     $.keyframe.define([{
         name: 'slideToTop',
-        '0%': {'transform': 'translate3d(0, '+screenH+'px, 0)'},
-        '100%': {'transform': 'translate3d(0, 0px, 0)'}
+        '0%': {'-webkit-transform': 'translate3d(0, '+screenH+'px, 0)'},
+        '100%': {'-webkit-transform': 'translate3d(0, 0px, 0)'}
         }
     ]);
     $.keyframe.define([{
         name: 'slideToBottom',
-        '0%': {'transform': 'translate3d(0, -'+screenH+'px, 0)'},
-        '100%': {'transform': 'translate3d(0, 0px, 0)'}
+        '0%': {'-webkit-transform': 'translate3d(0, -'+screenH+'px, 0)'},
+        '100%': {'-webkit-transform': 'translate3d(0, 0px, 0)'}
         }
     ]);
     $.keyframe.define([{
         name: 'slideToLeft',
-        '0%': {'transform': 'translate3d( '+screenW+'px,0px, 0)'},
-        '100%': {'transform': 'translate3d(0, 0px, 0)'}
+        '0%': {'-webkit-transform': 'translate3d( '+screenW+'px,0px, 0)'},
+        '100%': {'-webkit-transform': 'translate3d(0, 0px, 0)'}
         }
     ]);
     $.keyframe.define([{
         name: 'slideToRight',
-        '0%': {'transform': 'translate3d( -'+screenW+'px,0px, 0)'},
-        '100%': {'transform': 'translate3d(0, 0px, 0)'}
+        '0%': {'-webkit-transform': 'translate3d( -'+screenW+'px,0px, 0)'},
+        '100%': {'-webkit-transform': 'translate3d(0, 0px, 0)'}
         }
     ]);
     $.keyframe.define([{
         name: 'followSlideToBottom',
-        '0%': {'transform': 'translate3d(0, -'+screenH+'px, 0)'},
-        '100%': {'transform': 'translate3d(0, 0px, 0)'}
+        '0%': {'-webkit-transform': 'translate3d(0, -'+screenH+'px, 0)'},
+        '100%': {'-webkit-transform': 'translate3d(0, 0px, 0)'}
         }
     ]);
     $.keyframe.define([{
         name: 'followSlideToTop',
-        '0%': {'transform': 'translate3d(0, '+screenH+'px, 0);'},
-        '100%': {'transform': 'translate3d(0, 0px, 0);'}
+        '0%': {'-webkit-transform': 'translate3d(0, '+screenH+'px, 0);'},
+        '100%': {'-webkit-transform': 'translate3d(0, 0px, 0);'}
         }
     ]);
     var startPos,           // 开始触摸点(X/Y坐标)

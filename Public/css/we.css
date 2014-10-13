@@ -586,3 +586,6 @@ html,body{overflow:hidden;position:relative;}
     -webkit-transition:all .5s;opacity: 1;
 }
 .we-pop.tips-hide{opacity: 0;}
+@media screen and (max-height: 450px) {
+    .we-pop{margin-top:-145px;}
+}
