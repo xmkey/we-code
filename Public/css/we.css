@@ -509,6 +509,70 @@ html,body{overflow:hidden;position:relative;}
     -webkit-transform: translate(0%,0)
 }
 
+.u-globalAudio {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    position: fixed;
+    left: 50%;
+    margin-left: 124px;
+    bottom: 14px;
+    display: block;
+    z-index: 9999
+}
+
+.u-globalAudio span {
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    text-shadow: 1px 1px 1px #000;
+    letter-spacing: 1px;
+    -webkit-transition: all .2s linear;
+    opacity: 0;
+    -webkit-transform: translateX(-10px)
+}
+
+.u-globalAudio .icon-music {
+    width: 27px;
+    height: 27px;
+    background: url(../img/units-icons.png);
+    background-size:74px 28px;
+    display: block
+}
+
+.u-globalAudio.z-play .icon-music {
+    -webkit-animation: reverseRotataZ 1.2s linear infinite
+}
+
+.u-globalAudio span.z-show {
+    opacity: 1;
+    -webkit-transform: translateX(0px)
+}
+
+.u-globalAudio .coffee-steam-box {
+    -webkit-transform: translate(-20px,-20px)
+}
+
+@-webkit-keyframes reverseRotataZ {
+    0% {
+        -webkit-transform: rotateZ(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotateZ(-360deg)
+    }
+}
+
+@-webkit-keyframes rotataZ {
+    0% {
+        -webkit-transform: rotateZ(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotateZ(360deg)
+    }
+}
+
 .game-content{-webkit-transition:all .5s ease-in-out;}
 .game-content.game-hide{-webkit-transform:scale(.5);opacity: 0;}
 .game-success{-webkit-transform:translateY(2000px);-webkit-transition:all .5s ease-in-out;position: absolute;top:0px;left:0px;width: 100%;height:100%;}

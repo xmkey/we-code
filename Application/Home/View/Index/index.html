@@ -20,9 +20,10 @@ var PUBLIC="__PUBLIC__";
 </head>
 <body class="app">
 <header class="app-header">
-<a href="javascript:void(0);" class="u-globalAudio">
+<a href="javascript:void(0);" class="u-globalAudio z-play">
   <i class="icon-music"></i>
   <audio src="__PUBLIC__/mp3/globalAudio1.mp3" autoplay loop></audio>
+  <span class="z-show">开启</span>
 </a>
 </header>
 <div class="app-loading">
@@ -506,7 +507,16 @@ var PUBLIC="__PUBLIC__";
    });
   }
 
-  
+  $(function(){
+    var $this = $(".u-globalAudio"),$audio = $this.find('audio');
+    console.log($audio.audio);
+    $this.on('tap',function(){
+      // console.log("asdfasd");
+      // $audio.pause();
+    })
+    
+  })
+
 </script>
 
 </body>
