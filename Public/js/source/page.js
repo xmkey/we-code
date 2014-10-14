@@ -1,6 +1,7 @@
 !function($){
   window.page=function(){
   var isFirst=true;
+
   $('.pages').parallax({
     direction: 'vertical',  // horizontal (水平翻页)
     swipeAnim: 'default',   // default (切换效果)
@@ -16,7 +17,8 @@
      */
     onchange: function(index, element, direction) {
       // code here...
-      console.log(index, element, direction);
+      // console.log(index, element, direction);
+      
       if (index !== 2 || index !== 3 || index !== 8) {
         $('.content').css("-webkit-transform", "none"); 
       }
@@ -58,8 +60,6 @@
   }
 
   
-
- 
 
 
   var endPos,
@@ -129,7 +129,6 @@
     }
   }
 
-
   $("#btn-invite").tap(function(){
     // var index=$(".pages .page").index($(".page-game"));
     if(ISSENDER){
@@ -142,27 +141,27 @@
 
   var slider = null;
   slider =Swipe(document.getElementById('slider'), {
-      auto: false,
-      callback: function(pos) {
-        
-      }
-    });
+    auto: false,
+    callback: function(pos) {
+      console.log(pos);
+    }
+  });
   
-    $('.popback').tap(function(e) {
-      $('.guest-pop').addClass("hide");
-    });
+  $('.guest-card').tap(function(e) {
+    $('.guest-pop').addClass("hide");
+  });
   $(".speaker-list li").tap(function(){
    
     var index=$(".speaker-list li").index($(this));
     $(".guest-pop").removeClass("hide");
-    slider.slide(index,0)
-  });
-  $(".u-guidePrev").tap(function(){
-    slider.prev();
-  })
-  $(".u-guideNext").tap(function(){
-    slider.next();
-  })
+      slider.slide(index,0)
+    });
+    $(".u-guidePrev").tap(function(){
+      slider.prev();
+    })
+    $(".u-guideNext").tap(function(){
+      slider.next();
+    })
   }
 
 

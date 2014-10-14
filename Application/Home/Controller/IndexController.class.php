@@ -4,6 +4,7 @@ use Think\Controller;
 use \LaneWeChat\Userinfo;
 class IndexController extends Controller {
     public function index(){
+
     	$Match = M('Match');
 		$num=1;
 		$data=$Match->where('id=1')->find();
@@ -19,7 +20,7 @@ class IndexController extends Controller {
 		}
     	$key=$num.time().rand(10,99);
     	// $key=302390923;
-    	$isSender=true;
+    	$isSender=1;
     	if(isset($_GET['from_key'])){
     		
     		// $key_data=$Match->where('`key`='.$_GET['from_key'])->find();
@@ -40,12 +41,21 @@ class IndexController extends Controller {
                 }
                 $isMatched=$key_data['ismatch']?$key_data['ismatch']:0;
                 $this->assign('isMatched',$isMatched);
-                $isTimeout=(time()-$key_data['time']>180)?1:0;
+
+                $isTimeout=0;
+                if($key_data['starttime']){
+                    $isTimeout=(time()-$key_data['starttime']>180)?1:0;
+                }
+                if((time()-$key_data['time']>360)){
+                    $isTimeout=1;
+                }
+                
                 $this->assign('isTimeout',$isTimeout);
                 $this->assign('isWork',$isWork);
                 $this->display("helper");
     		// }
     	}else{
+           
             $this->assign('key',$key);
             $this->assign('isSender',$isSender);
             $c_key=cookie('key');

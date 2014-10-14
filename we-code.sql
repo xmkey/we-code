@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 10 月 09 日 14:48
+-- 生成日期: 2014 年 10 月 12 日 16:58
 -- 服务器版本: 5.1.44
 -- PHP 版本: 5.3.1
 
@@ -35,9 +35,10 @@ CREATE TABLE IF NOT EXISTS `match` (
   `ismatch` tinyint(1) DEFAULT NULL,
   `num` bigint(20) DEFAULT NULL,
   `time` int(11) DEFAULT NULL,
+  `starttime` int(11) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=107 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=174 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
