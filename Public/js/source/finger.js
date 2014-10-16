@@ -6,6 +6,7 @@ var tips={
 	"matched":"亲，您已经帮您的的好友获得了</br>WE大会直播码了！",
 	"matched-other":"您的好友已经抢到<br/>WE大会视频直播码！"
 }
+
 function preventDefault(e){
     e.preventDefault();
     return false;
@@ -70,7 +71,7 @@ var status=0;
  // var isFirst=true;
 var global={
 	isTrigger:false,
-	timeRemain:180,
+	timeRemain:300,
 	isFirst:true,
 	interval:null,
 	isDone:false
@@ -79,7 +80,7 @@ var global={
  var Timer={
  	isStart:false,
  	start:function(timeRemain){
- 		console.log(1)
+ 		
  		if(Timer.isStart==false){
  			Timer.isStart=true;
 	 		global.interval=setInterval(function(){
@@ -95,7 +96,7 @@ var global={
 
 		 			if(global.timeRemain-1<=0){
 		 				global.timeRemain=0;
-		 				done("timeout");
+		 				done({status:"timeout"});
 		 				clearInterval(global.interval);
 		 				// alert("超时");
 
@@ -106,22 +107,29 @@ var global={
 
 		 			$(".count-down").html(global.timeRemain);
 		 		}
-
-		 		
 		 		postData(data,global.isFirst);
 	
 	 		},1000)
  		}
  	}
  }
- 
+ // $.fn.cookie("code","AC013900AIDM",500);
  if(!ISSENDER){
  	
  	Timer.start(global.timeRemain);
+ 	global.isTrigger=true;
  	setTimeout(function(){
  		showTips(1);
- 	},2000)
+ 	},3000)
  	
+ }else{
+ 	if($.fn.cookie("code")){
+ 		$(".share-content").hide();
+ 		$(".game-content").hide();
+ 		$("#sender-success").addClass("success-show");
+ 		$(".we-code span").html($.fn.cookie("code"));
+
+ 	}
  }
 $(".m-weixinShareLayer").tap(function(){
 	$(this).hide();
@@ -137,9 +145,9 @@ $(".m-weixinShareLayer").tap(function(){
  			timer:global.timeRemain
  		}
  		
- 		postData(data,global.isFirst);
+ 		// postData(data,global.isFirst);
  		global.isFirst=false;
- 		Timer.start(global.timeRemain);
+ 		// Timer.start(global.timeRemain);
  	}
  	
  	if(status==0){
@@ -171,11 +179,11 @@ $(".m-weixinShareLayer").tap(function(){
  		
  		postData(data,global.isFirst);
  		global.isFirst=false;
- 		// Timer.start(global.timeRemain);
+ 		Timer.start(global.timeRemain);
  }
  
  function postData(data,isfirst){
- 	$.post(APP+'/Home/data/', data, (function(isfirst){
+ 	$.post(APP+'?m=home&c=data', data, (function(isfirst){
 	  return function(result){
 	  	// console.log(result)
 	  	var result=JSON.parse(result);
@@ -184,17 +192,17 @@ $(".m-weixinShareLayer").tap(function(){
 	  		clearInterval(global.interval);
 	  		
 	  		setTimeout(function(){
-	  			done(result.status);
+	  			done(result);
 	  		},500)
  			
 	  		return true;
 	  	}else if(result.status=="matched"){
-	  		done(result.status);
+	  		done(result);
 	  		clearInterval(global.interval);
 	  		// alert("已经匹配过");
 	  		return false;
 	  	}else if(result.status=="timeout"){
-	  		done(result.status);
+	  		done(result);
 	  		clearInterval(global.interval);
 	  		// alert("已经超时");
 	  		return false;
@@ -202,7 +210,6 @@ $(".m-weixinShareLayer").tap(function(){
 	  	if(!isfirst){
 	  		global.isTrigger=true;
 	  	}
-	  		
 
 	  	if(result.status=="noyet"){
 	  		
@@ -211,11 +218,10 @@ $(".m-weixinShareLayer").tap(function(){
 
 	  		global.timeRemain=result['timer'];
 	  		// alert(global.timeRemain)
-	  		if(global.timeRemain<180){
-	  			global.isFirst=false;
-	  			
-	  		}
-	  		$(".count-down").html(global.timeRemain);
+	  		// if(global.timeRemain<300){
+	  		// 	global.isFirst=false;
+	  		// }
+	  		// $(".count-down").html(global.timeRemain);
 	  		
 	  		
 	  	}
@@ -249,14 +255,16 @@ function setStatus(status){
   		}
   	}
 }
-function done(status){
+function done(result){
+	
 	if(!global.isDone){
 		global.isDone=true;
-		if(status=="timeout"){
+		
+		if(result.status=="timeout"){
 			$("#tips-result").html(tips['timeout']);
-		}else if(status=="matched"&&status!=3){
+		}else if(result.status=="matched"&&status!=3){
 			$("#tips-result").html(tips['matched-other']);
-		}else if(status=="matched"){
+		}else if(result.status=="matched"){
 			$("#tips-result").html(tips['matched']);
 		}else{
 			$("#tips-result").html(tips['matched']);
@@ -265,14 +273,17 @@ function done(status){
 		
 		if(ISSENDER){
 			
-			if(status=="timeout"){
+			if(result.status=="timeout"){
 				
 				$("#tips-result").html(tips['timeout-my']);
 				$("#btn-getcode").html("重新获得直播码");
 				$("#helper-success").addClass("success-show");
 			}else{
 				
+				$(".we-code span").html(result.code);
+				$.fn.cookie("code",result.code,500);
 				$("#sender-success").addClass("success-show");
+
 			}
 			
 		}else{

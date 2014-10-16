@@ -4,10 +4,11 @@ use Think\Controller;
 use \LaneWeChat\Userinfo;
 class IndexController extends Controller {
     public function index(){
-
+        $limit=300;
     	$Match = M('Match');
 		$num=1;
 		$data=$Match->where('id=1')->find();
+        
 		if($data==null){
 			$data['id'] = 1;
 			$data['num'] = $num;
@@ -43,10 +44,11 @@ class IndexController extends Controller {
                 $this->assign('isMatched',$isMatched);
 
                 $isTimeout=0;
-                if($key_data['starttime']){
-                    $isTimeout=(time()-$key_data['starttime']>180)?1:0;
-                }
-                if((time()-$key_data['time']>360)){
+                // if($key_data['starttime']){
+                //     $isTimeout=(time()-$key_data['starttime']>$limit)?1:0;
+                // }
+
+                if(time()-$key_data['time']>$limit){
                     $isTimeout=1;
                 }
                 
@@ -58,8 +60,8 @@ class IndexController extends Controller {
            
             $this->assign('key',$key);
             $this->assign('isSender',$isSender);
-            $c_key=cookie('key');
-            cookie('key',$c_key.'-'.$key.'-');
+            // $c_key=cookie('key');
+            // cookie('key',$c_key.'-'.$key.'-');
             // $this->handleCookie($key);
             $this->display();
         }

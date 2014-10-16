@@ -290,16 +290,16 @@ html,body{overflow:hidden;position:relative;}
     position:absolute;left:50%;top:50%;
     width:268px;height:387px;margin:-198px 0 0 -135px;
     border-radius:5px;overflow:hidden;
-    border:1px solid #0b3c9d;
-    background-color:#0b3c9d;box-shadow:inset  0 -5px 10px rgba(255,255,255,.2),inset 0 5px 10px rgba(255,255,255,.2);
-    color:#fff;
+    border:1px solid #cdcdcd;
+    background-color:#cdcdcd;box-shadow:inset  0 -5px 10px rgba(255,255,255,.2),inset 0 5px 10px rgba(255,255,255,.2);
+    color:#000;
 }
 .guest-desc{
     text-align:left;padding:12px;font-size:12px;
     line-height:18px;
 }
 .guest-desc .guest-name{
-    line-height:32px;
+    line-height:32px;font-weight:700;
 }
 .guest-desc .guest-en{
 }
