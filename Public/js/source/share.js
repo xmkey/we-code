@@ -1,4 +1,4 @@
-
+// alert(1)
 !function($){
 
 var imgUrl = 'http://imgcache.qq.com/ac/www_tencent/we/2014/images/logo.png'; 
@@ -35,7 +35,7 @@ function shareFriend() {
     lineLink=senderLink;
     
   }
-  
+  // alert(1222);
     WeixinJSBridge.invoke('sendAppMessage',{  
       "img_url": imgUrl,  
       "img_width": "640",  
@@ -45,12 +45,12 @@ function shareFriend() {
       "title": shareTitle  
       }, function(res) { 
         
-
+        // alert(res.err_msg);
           if(curindex==gameindex&& $(".share-content").css("display")=="block"){
             
-            if(res.err_msg.indexOf("confirm")>=0){
+            // if(res.err_msg.toUpperCase().indexOf("OK")>=0){
               window.toGame();
-            }
+            // }
               
           }
       })  
@@ -74,9 +74,9 @@ function shareTimeline() {
     "title": shareTitle  
     }, function(res) {  
       if(curindex==gameindex&& $(".share-content").css("display")=="block"){
-        if(res.err_msg.indexOf("confirm")>=0){
+        // if(res.err_msg.toUpperCase().indexOf("OK")>=0){
           window.toGame();
-        }
+        // }
       }
     });  
 }  
