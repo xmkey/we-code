@@ -74,11 +74,12 @@ html,body{overflow:hidden;position:relative;}
 /* E page2 */
 
 /* S page3 */
-.font-08{height:21px;background-position:0 -279px;top:5%;}
-.font-09{height:21px;background-position:0 -301px;top:10%;}
-.gamebox-01{top:15%;background:url(../img/gamebox_bg_01.png) no-repeat;background-size:100% 100%;}
-.gamebox-02{top:15%;background:url(../img/gamebox_bg_02.png) no-repeat;background-size:100% 100%;padding-top:82px;height:163px;}
-.gamebox-02 p{color:#fff;padding:0 55px;text-align:left;}
+.font-08{height:30px;background-position:0 -526px;top:50%;margin-top:-210px;}
+.font-09{height:20px;background-position:0 -557px;top:50%;margin-top:-175px;}
+.gamebox-01{top:50%;background:url(../img/gamebox_bg_01.png) no-repeat;background-size:100% 100%;margin-top:-150px;}
+.gamebox-02{top:50%;background:url(../img/gamebox_bg_02.png) no-repeat;background-size:100% 100%;margin-top:-150px;padding-top:82px;height:163px;}
+.gamebox-02 p{color:#fff;padding:0 55px;}
+.gamebox-02 p:nth-child(1){font-size:18px;font-weight:700;padding-top:15px;}
 .btn-01{top:75%;}
 .font-10{height:12px;background-position:0 -367px;top:87%;background:0;}
 .font-11{height:12px;background-position:0 -380px;top:90%;background:0;}
@@ -151,7 +152,7 @@ html,body{overflow:hidden;position:relative;}
     display:none;
 }
 .speaker-list .list-item:nth-child(odd) .item-desc{
-    text-align:left;margin-left:5px;
+    text-align:left;margin-left:-10px;
 }
 .speaker-list .list-item .item-desc:before{
     content:"";position:absolute;top:50%;
@@ -162,12 +163,12 @@ html,body{overflow:hidden;position:relative;}
     left:-16px;
     border-right:5px solid #edab12;
 }
+.speaker-list .list-item:nth-child(even) .item-desc{
+    text-align:right;margin-left:-150px;
+}
 .speaker-list .list-item:nth-child(even) .item-desc:before{
     right:-16px;
     border-left:5px solid #edab12;
-}
-.speaker-list .list-item:nth-child(even) .item-desc{
-    text-align:right;margin-left:-160px;
 }
 .speaker-list .list-item:nth-child(odd):before{
     left:50%;top:-60px;background-position:0 -85px;margin-left:-55px;
