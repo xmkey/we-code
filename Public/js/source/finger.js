@@ -1,4 +1,5 @@
 !function($){
+window.finger=function(){
 var tips={
 	"done":"您的好友已经抢到<br/>WE大会视频直播码！",
 	"timeout":"亲，您的活动邀请已失效，</br>赶快联系好友重新发送吧！",
@@ -114,23 +115,7 @@ var global={
  	}
  }
  // $.fn.cookie("code","AC013900AIDM",500);
- if(!ISSENDER){
- 	
- 	Timer.start(global.timeRemain);
- 	global.isTrigger=true;
- 	setTimeout(function(){
- 		showTips(1);
- 	},3000)
- 	
- }else{
- 	if($.fn.cookie("code")){
- 		$(".share-content").hide();
- 		$(".game-content").hide();
- 		$("#sender-success").addClass("success-show");
- 		$(".we-code span").html($.fn.cookie("code"));
 
- 	}
- }
 $(".m-weixinShareLayer").tap(function(){
 	$(this).hide();
 });
@@ -161,8 +146,9 @@ $(".m-weixinShareLayer").tap(function(){
  }
 
  window.toGame=function(){
- 	var index=$(".pages .page").index($(".page-game"));
 
+ 	var index=$(".pages .page").index($(".page-game"));
+ 	
     window.slideTo(index);  
     $(".share-content").hide();
     $(".game-content").css({"display":"block"});
@@ -176,12 +162,34 @@ $(".m-weixinShareLayer").tap(function(){
  			key:KEY,
  			timer:global.timeRemain
  		}
- 		
+ 		window.stopDirec=0;
+ 		$(".u-guideTop").show();
  		postData(data,global.isFirst);
  		global.isFirst=false;
  		Timer.start(global.timeRemain);
  }
- 
+ // $.fn.cookie("code","302390320",500);
+
+if(!ISSENDER){
+ 	Timer.start(global.timeRemain);
+ 	global.isTrigger=true;
+ 	setTimeout(function(){
+ 		showTips(1);
+ 	},3000)
+ 	
+ }else{
+
+ 	if($.fn.cookie("code")){
+ 		$(".share-content").hide();
+ 		$(".game-content").hide();
+ 		$("#sender-success").addClass("success-show");
+ 		$(".we-code span").html($.fn.cookie("code"));
+ 		// window.toGame();
+ 		window.stopDirec=0;
+ 		$(".u-guideTop").show();
+        
+ 	}
+ }
  function postData(data,isfirst){
  	$.post(APP+'?m=home&c=data', data, (function(isfirst){
 	  return function(result){
@@ -270,6 +278,10 @@ function done(result){
 			$("#tips-result").html(tips['matched']);
 		}
 		$(".game-content").addClass("game-hide");
+
+		setTimeout(function(){
+			$(".game-content").hide();
+		},800);
 		
 		if(ISSENDER){
 			
@@ -277,18 +289,28 @@ function done(result){
 				
 				$("#tips-result").html(tips['timeout-my']);
 				$("#btn-getcode").html("重新获得直播码");
-				$("#helper-success").addClass("success-show");
+				setTimeout(function(){
+					$("#helper-success").addClass("success-show");
+				},800);
+				
+
 			}else{
 				
 				$(".we-code span").html(result.code);
 				$.fn.cookie("code",result.code,500);
-				$("#sender-success").addClass("success-show");
+				setTimeout(function(){
+					$("#sender-success").addClass("success-show");
+				},800);
 
 			}
 			
 		}else{
-			$("#helper-success").addClass("success-show");
+			setTimeout(function(){
+				$("#helper-success").addClass("success-show");
+			},800);
 		}
+		window.stopDirec=0;
 	}
+}
 }
 }(Zepto)

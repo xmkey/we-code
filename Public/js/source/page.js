@@ -24,14 +24,13 @@
       }
       // var curindex=$(".pages .page").index($(".page.current"));
       var gameindex=$(".pages .page").index($(".page-game"));
-      if(index==gameindex){
-        setTimeout(function(){
-          // if(isFirst){
-          //    window.showTips(1);
-          // }
-          // isFirst=false;
-         
-        },2000)
+      if(index==gameindex&&!$(".game-success").hasClass("success-show")){
+        window.stopDirec=1;
+        $(".u-guideTop").hide();
+        
+      }else{
+        window.stopDirec=0;
+        $(".u-guideTop").show();
         
       }
     },

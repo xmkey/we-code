@@ -15,7 +15,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <meta http-equiv="Expires" content="-1" />
 <meta http-equiv="pragram" content="no-cache" />
-<meta name="sharecontent" data-msg-img="http://www.liveapp.cn/userfiles/video/tmp/14586/541bf5545a226.jpg" data-msg-title="WE大会" data-msg-content="这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。" data-msg-callBack="" data-line-img="http://www.liveapp.cn/userfiles/video/tmp/14586/541bf55b2dab0.jpg" data-line-title="WE大会" data-line-callBack=""/> 
+<meta name="sharecontent" data-msg-img="http://www.liveapp.cn/userfiles/video/tmp/14586/541bf5545a226.jpg" data-msg-title="WE大会" data-msg-content="这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。" data-msg-callBack="" data-line-img="http://www.liveapp.cn/userfiles/video/tmp/14586/541bf55b2dab0.jpg" data-line-title="WE大会" data-line-callBack=""/>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=37875973" charset="UTF-8"></script> 
 <script type="text/javascript">
 var KEY="{$key}";
 var ISSENDER={$isSender};
@@ -69,7 +70,10 @@ var PUBLIC="__PUBLIC__";
   <section class="page page-we-04 page-game"> -->
 
     <section class="page-content game-content <if condition="($isWork eq 0) OR ($isTimeout eq 1) OR ($isMatched eq 1) "> game-hide</if>" >
-      <div class="game-bg" data-animation="slideToTop" data-delay="0" data-duration="1000"></div>
+      <div class="game-bg" data-animation="slideToTop" data-delay="0" data-duration="1000">
+        <div class="game-bg-1"></div>
+        <div class="game-bg-2"></div>
+      </div>
       <p class="we-font font-12" data-animation="slideToTop" data-delay="200" data-duration="1000">请按下您的手指</p>
       <p class="we-font font-13" data-animation="slideToTop" data-delay="400" data-duration="1000">并保持 300 秒</p>
       <p class="count-down" data-animation="slideToTop" data-delay="400" data-duration="1000">300</p>
@@ -116,16 +120,16 @@ var PUBLIC="__PUBLIC__";
     </section>
     <section class="page-content game-success <if condition="($isWork eq 0) OR ($isTimeout eq 1) OR ($isMatched eq 1) "> success-show</if>" id="helper-success">
       <if condition="($isMatched eq 1)">
-        <p class="we-font font-19" id="tips-result" data-animation="slideToTop" data-duration="1000">您的好友已经抢到<br/>WE大会视频直播码！</p>
+        <p class="we-font font-19" id="tips-result" data-animation="slideToTop" data-delay="1400" data-duration="1000">您的好友已经抢到<br/>WE大会视频直播码！</p>
         <elseif condition="($isWork eq 0) OR ($isTimeout eq 1)"/>
-        <p class="we-font font-19" id="tips-result" data-animation="slideToTop" data-duration="1000">亲，您的活动邀请已失效，<br/>赶快联系好友重新发送吧！</p>
+        <p class="we-font font-19" id="tips-result" data-animation="slideToTop" data-delay="1400" data-duration="1000">亲，您的活动邀请已失效，<br/>赶快联系好友重新发送吧！</p>
         <else />
-        <p class="we-font font-19" id="tips-result" data-animation="slideToTop" data-duration="1000">您的好友已经抢到<br/>WE大会视频直播码！</p>
+        <p class="we-font font-19" id="tips-result" data-animation="slideToTop" data-delay="1400" data-duration="1000">您的好友已经抢到<br/>WE大会视频直播码！</p>
       </if>
      
       
-      <a href="__APP__" class="we-btn btn-03" id="btn-getcode" data-animation="slideToTop" data-delay="400" data-duration="1000">我也要直播码</a>
-      <a href="http://mp.weixin.qq.com/s?__biz=MzA5MTMyNzAzMQ==&mid=200598274&idx=1&sn=5aa98b60ec81b62ff589aa6c1c66c9e4#rd" class="we-btn btn-04" data-animation="slideToTop" data-delay="600" data-duration="1000">关注腾讯大学</a>
+      <a href="__APP__" class="we-btn btn-03" id="btn-getcode" data-animation="slideToTop" data-delay="1600" data-duration="1000">我也要直播码</a>
+      <a href="http://mp.weixin.qq.com/s?__biz=MzA5MTMyNzAzMQ==&mid=200598274&idx=1&sn=5aa98b60ec81b62ff589aa6c1c66c9e4#rd" class="we-btn btn-04" data-animation="slideToTop" data-delay="1800" data-duration="1000">关注腾讯大学</a>
     </section>
   </section>
  
@@ -181,7 +185,7 @@ var PUBLIC="__PUBLIC__";
           $(".app").addClass("ready");
            window.page();
            window.bg_start();
-         
+            window.finger();
          
        }
    });
