@@ -4,7 +4,7 @@
  * @date    : 2014-09-17
  * @repository: https://github.com/hahnzhu/parallax.js
  */
-
+window.stopDirec=0;
 if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requires Zepto') }
 
 !function($) {
@@ -40,7 +40,6 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
 
     // 定义实例方法 (jQuery Object Methods)
     // ==============================
-
     $.fn.parallax = function(opts) {
         options = $.extend({}, $.fn.parallax.defaults, opts);
 
@@ -80,7 +79,11 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
         pageWidth   = $(window).width();         	// 获取手机屏幕宽度
         pageHeight  = $(window).height();       	// 获取手机屏幕高度
         $animateDom = $('[data-animation]');// 获取动画元素节点
+        var gameindex=$(".pages .page").index($(".page-game"));
 
+        if($.fn.cookie("code")){
+            curPage=gameindex;
+        }
         for (var i=0; i<pageCount; i++) {          // 批量添加 data-id
             $($pageArr[i]).attr('data-id', i+1);
         }
@@ -136,11 +139,23 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
             event.preventDefault();
             return false;
         }
-        
+
         stage = 2;
         event.preventDefault();
         options.direction === 'horizontal' ? endPos = e.pageX : endPos = e.pageY;
-
+        
+        if(window.stopDirec==1){
+            if(endPos - startPos<0){
+               stage = 1
+                return ;
+            }
+        }
+        if(window.stopDirec==2){
+            if(endPos - startPos>0){
+                stage = 1
+                return ;
+            }
+        }
         addDirecClass();    // 添加方向类
 
         temp = endPos - startPos;
@@ -402,7 +417,25 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
 			options.orientationchange('landscape') 
 		} 	
     }, false);
-
+window.slideTo=function(index){
+        var pageHeight=$(window).height();
+        curPage=index;
+        direction='forward';
+        
+        $($pageArr.get(curPage)).css("-webkit-transform:translateY(0)")
+        $($pageArr.removeClass('current').get(curPage)).addClass('current');
+        animShow();
+        
+        setTimeout(function(){
+          $(".pages").css({"-webkit-transition-duration":"400ms","transition-duration":"400ms"})
+        },300)
+        
+      }
+  window.moveTo=function(index){
+     curPage=index;
+    var pageHeight=$(window).height()
+    $(".pages").css({'-webkit-transform': 'matrix(1, 0, 0, 1, 0, -' + pageHeight*index + ')'});
+  }
 
 
 }(Zepto)
