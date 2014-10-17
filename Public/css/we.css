@@ -63,6 +63,7 @@ html,body{overflow:hidden;position:relative;}
 .font-01{background-position:0 -108px;}
 .font-02{background-position:0 -367px;margin-top:36px;}
 .font-03{height:12px;background-position:0 -134px;top:45%;margin-top:77px;}
+.front-word{position:absolute;bottom:20px;left:0;right:0;color:#fff;font-size:12px;}
 /* E page1 */
 
 /* S page2 */
@@ -74,13 +75,13 @@ html,body{overflow:hidden;position:relative;}
 /* E page2 */
 
 /* S page3 */
-.font-08{height:30px;background-position:0 -526px;top:50%;margin-top:-210px;}
-.font-09{height:20px;background-position:0 -557px;top:50%;margin-top:-175px;}
-.gamebox-01{top:50%;background:url(../img/gamebox_bg_01.png) no-repeat;background-size:100% 100%;margin-top:-150px;}
-.gamebox-02{top:50%;background:url(../img/gamebox_bg_02.png) no-repeat;background-size:100% 100%;margin-top:-150px;padding-top:82px;height:163px;}
+.font-08{height:30px;background-position:0 -526px;top:50%;margin-top:-200px;}
+.font-09{height:20px;background-position:0 -557px;top:50%;margin-top:-165px;}
+.gamebox-01{top:50%;background:url(../img/gamebox_bg_01.png) no-repeat;background-size:100% 100%;margin-top:-140px;}
+.gamebox-02{top:50%;background:url(../img/gamebox_bg_02.png) no-repeat;background-size:100% 100%;margin-top:-140px;padding-top:82px;height:163px;}
 .gamebox-02 p{color:#fff;padding:0 55px;}
 .gamebox-02 p:nth-child(1){font-size:18px;font-weight:700;padding-top:15px;}
-.btn-01{top:75%;}
+.btn-01{top:50%;margin-top:120px;}
 .font-10{height:12px;background-position:0 -367px;top:87%;background:0;}
 .font-11{height:12px;background-position:0 -380px;top:90%;background:0;}
 /* E page3 */
