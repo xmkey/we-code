@@ -171,7 +171,6 @@ $(".m-weixinShareLayer").tap(function(){
  // $.fn.cookie("code","302390320",500);
 
 if(!ISSENDER){
- 	
  	Timer.start(global.timeRemain);
  	global.isTrigger=true;
  	setTimeout(function(){
