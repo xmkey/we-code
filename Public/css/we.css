@@ -87,9 +87,17 @@ html,body{overflow:hidden;position:relative;}
 /* S page4 */
 .game-bg{
     position:absolute;left:0;top:0;right:0;bottom:0;
-    background:url(../img/gamebox_bg.png) no-repeat;background-size:100% 100%;
-    opacity:0.1;
+    background:url(../img/gamebox_bg.png) no-repeat 0 0;background-size:100% 100%;
+    /*opacity:0.1;*/
 }
+.game-bg .game-bg-1,
+.game-bg .game-bg-2{
+    height:100%;position:absolute;top:0;bottom:0;
+    width:50%;padding-right:20px;opacity:0;
+    -webkit-transform: translateX(0%); 
+}
+.game-bg .game-bg-1{background:url(../img/gamebox_door_2.png) no-repeat 0 0;background-size:100% 100%;left:0;}
+.game-bg .game-bg-2{background:url(../img/gamebox_door_1.png) no-repeat 0 0;background-size:100% 100%;right:0;}
 .font-12{height:21px;background-position:0 -323px;top:5%;}
 .font-13{height:21px;background-position:0 -345px;top:10%;}
 .count-down{
@@ -609,13 +617,64 @@ html,body{overflow:hidden;position:relative;}
 }
 
 .game-content{-webkit-transition:all .5s ease-in-out;}
-.game-content.game-hide{-webkit-transform:scale(.5);opacity: 0;}
+.game-content.game-hide{/*-webkit-transform:scale(.5);*/}
+.game-content.game-hide .fingerprint,
+.game-content.game-hide .we-funcs,
+.game-content.game-hide .we-font,
+.game-content.game-hide .count-down{opacity: 0;-webkit-transition:all .5s ease-in-out;}
+.game-content.game-hide .gamebox-01{
+    -webkit-animation:rotataZHide 1.2s ease 600ms both !important;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0); 
+}
+.game-content.game-hide .game-bg{background:0;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0); 
+    -webkit-animation:none !important;
+}
+.game-content.game-hide .game-bg .game-bg-1{-webkit-animation:openDoorOne 1.2s ease 0 both;}
+.game-content.game-hide .game-bg .game-bg-2{-webkit-animation:openDoorTwo 1.2s ease 0 both;}
 .game-success{-webkit-transform:translateY(2000px);-webkit-transition:all .5s ease-in-out;position: absolute;top:0px;left:0px;width: 100%;height:100%;}
-.game-success.success-show{-webkit-transform:translateY(0px);}
+.game-success.success-show{-webkit-transform:translateY(0px);transition-delay:600ms;}
+
+@-webkit-keyframes openDoorOne{
+    0% {
+        opacity:1;
+        -webkit-transform:translateX(0%);
+    }
+    100% {
+        opacity:1;
+        -webkit-transform:translateX(-100%);
+    }
+}
+@-webkit-keyframes openDoorTwo{
+    0% {
+        opacity:1;
+        -webkit-transform:translateX(0%);
+    }
+    100% {
+        opacity:1;
+        -webkit-transform:translateX(100%);
+    }
+}
+
+@-webkit-keyframes rotataZHide {
+    0% {
+        -webkit-transform: rotateZ(0deg);
+    }
+    80% {
+        -webkit-transform: rotateZ(360deg);
+        opacity:1;
+    }
+    100% {
+        -webkit-transform: rotateZ(360deg);
+        opacity:0;
+    }
+}
 
 .we-code{-webkit-user-select:text;-webkit-user-select:initial;}
 .we-pop{
-    position:absolute;left:50%;top:50%;margin:-160px 0 0 -110px;
+    position:absolute;left:50%;top:15%;margin:-10px 0 0 -110px;
     width:200px;display:table-cell;vertical-align: middle;padding:5px 10px;
     background-color:rgba(0,0,0,0.8);border-radius:5px;color:#fff;font-size:12px;
     -webkit-transition:all .5s;opacity: 1;

@@ -278,6 +278,10 @@ function done(result){
 			$("#tips-result").html(tips['matched']);
 		}
 		$(".game-content").addClass("game-hide");
+
+		setTimeout(function(){
+			$(".game-content").hide();
+		},800);
 		
 		if(ISSENDER){
 			
@@ -285,18 +289,25 @@ function done(result){
 				
 				$("#tips-result").html(tips['timeout-my']);
 				$("#btn-getcode").html("重新获得直播码");
-				$("#helper-success").addClass("success-show");
+				setTimeout(function(){
+					$("#helper-success").addClass("success-show");
+				},800);
+				
 
 			}else{
 				
 				$(".we-code span").html(result.code);
 				$.fn.cookie("code",result.code,500);
-				$("#sender-success").addClass("success-show");
+				setTimeout(function(){
+					$("#sender-success").addClass("success-show");
+				},800);
 
 			}
 			
 		}else{
-			$("#helper-success").addClass("success-show");
+			setTimeout(function(){
+				$("#helper-success").addClass("success-show");
+			},800);
 		}
 		window.stopDirec=0;
 	}
