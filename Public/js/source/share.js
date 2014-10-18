@@ -1,7 +1,9 @@
 // alert(1)
 !function($){
+window.share=function(){
 
-var imgUrl = 'http://imgcache.qq.com/ac/www_tencent/we/2014/images/logo.png'; 
+
+var imgUrl = 'http://imgcache.qq.com/ac/www_tencent/we/2014/images/logo.png?1410181347'; 
 var lineLink =window.location.protocol+"//"+window.location.host+window.location.pathname;
 var senderLink=lineLink;
 if(ISSENDER){
@@ -33,7 +35,7 @@ function shareFriend() {
     
     descContent="帮我一起赢取we大会直播码吧";
     lineLink=senderLink;
-    
+    // alert(lineLink);
   }
   // alert(1222);
     WeixinJSBridge.invoke('sendAppMessage',{  
@@ -45,15 +47,16 @@ function shareFriend() {
       "title": shareTitle  
       }, function(res) { 
         
-        // alert(res.err_msg);
-          if(curindex==gameindex&& $(".share-content").css("display")=="block"){
-            
-            // if(res.err_msg.toUpperCase().indexOf("OK")>=0){
-              window.toGame();
-            // }
-              
-          }
-      })  
+      if(curindex==gameindex&& $(".share-content").css("display")=="block"){
+        // alert(res.err_msg.toUpperCase());
+        if(res.err_msg.toUpperCase()!='SEND_APP_MSG:CANCEL'){
+
+          window.toGame();
+          
+        }
+          
+      }
+    })  
 }
 function shareTimeline() {  
   var curindex=$(".pages .page").index($(".page.current"));
@@ -74,9 +77,9 @@ function shareTimeline() {
     "title": shareTitle  
     }, function(res) {  
       if(curindex==gameindex&& $(".share-content").css("display")=="block"){
-        // if(res.err_msg.toUpperCase().indexOf("OK")>=0){
+        if(res.err_msg!="share_timeline:cancel"){
           window.toGame();
-        // }
+        }
       }
     });  
 }  
@@ -131,5 +134,5 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
         shareWeibo();  
         });  
     }, false); 
-
+}
 }(Zepto)

@@ -26,7 +26,7 @@ var ISWORK={$isWork};
 var APP="__APP__";
 var PUBLIC="__PUBLIC__";
 </script>
-<link rel="stylesheet" href="__PUBLIC__/css/main.css">
+<link rel="stylesheet" href="__PUBLIC__/css/main.css?t=1410181305">
 </head>
 <body class="app">
 <div class="app-loading">
@@ -134,30 +134,9 @@ var PUBLIC="__PUBLIC__";
   </section>
  
 </section>
-<footer class="app-footer">
-</footer>
-<section class="page-facade guest-pop hide">
-  <section class="page-content">
-    <a href="javascript:void(0);" class="u-guidePrev z-move">next</a>
-    <a href="javascript:void(0);" class="u-guideNext z-move">prev</a>
-    <div class="outer" id="slider">
-      <ul class="u_sper">
-        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
-        <li><span class="imgbox"><img src="__PUBLIC__/pic/pop_img.png" width="235px"></span></li>
-      </ul>
-    </div>
-    <a href="#" class="we-btn popback"></a>
-  </section>
-</section>
-
 
 <script type="text/javascript" src="__PUBLIC__/js/zepto.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/main.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/main.js?t=1410190031"></script>
 <script type="text/javascript">
 
   function loadImage(url, callback) {
@@ -185,7 +164,9 @@ var PUBLIC="__PUBLIC__";
           $(".app").addClass("ready");
            window.page();
            window.bg_start();
-            window.finger();
+           window.finger();
+          
+           window.share();
          
        }
    });

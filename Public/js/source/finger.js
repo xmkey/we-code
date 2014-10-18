@@ -33,6 +33,9 @@ var status=0;
  		fingerprint.eq(0).addClass("on");
  	}
  	status=status+1;
+ 	if(status>=3){
+ 		status=3;
+ 	}
  	check(status);
  });
  $(document).on("touchend",".btn-fingerprint-left",function(){
@@ -54,6 +57,10 @@ var status=0;
  		fingerprint.eq(1).addClass("on");
  	}
  	status=status+2;
+ 	if(status>=3){
+ 		status=3;
+ 	}
+ 	
  	check(status);
  });
  $(document).on("touchend",".btn-fingerprint-right",function(){
@@ -146,9 +153,8 @@ $(".m-weixinShareLayer").tap(function(){
  }
 
  window.toGame=function(){
-
- 	var index=$(".pages .page").index($(".page-game"));
  	
+ 	var index=$(".pages .page").index($(".page-game"));
     window.slideTo(index);  
     $(".share-content").hide();
     $(".game-content").css({"display":"block"});
@@ -162,14 +168,15 @@ $(".m-weixinShareLayer").tap(function(){
  			key:KEY,
  			timer:global.timeRemain
  		}
- 		window.stopDirec=0;
+ 		// window.stopDirec=0;
  		$(".u-guideTop").show();
  		postData(data,global.isFirst);
  		global.isFirst=false;
  		Timer.start(global.timeRemain);
  }
- // $.fn.cookie("code","302390320",500);
 
+ // $.fn.cookie("code","302390320",500);
+ // $.fn.cookie('code', null);
 if(!ISSENDER){
  	Timer.start(global.timeRemain);
  	global.isTrigger=true;
@@ -180,6 +187,7 @@ if(!ISSENDER){
  }else{
 
  	if($.fn.cookie("code")){
+ 	
  		$(".share-content").hide();
  		$(".game-content").hide();
  		$("#sender-success").addClass("success-show");
@@ -303,13 +311,15 @@ function done(result){
 				},800);
 
 			}
+
+			window.stopDirec=0;
 			
 		}else{
 			setTimeout(function(){
 				$("#helper-success").addClass("success-show");
 			},800);
 		}
-		window.stopDirec=0;
+		
 	}
 }
 }

@@ -9,7 +9,7 @@ html,body{overflow:hidden;position:relative;}
 .we-icon,
 .popback{
     display:inline-block;
-    background:url(../img/we_sprite@2x.png) no-repeat;background-size:242px auto;
+    background:url(../img/we_sprite@2x.png?t=1410181302) no-repeat;background-size:242px auto;
     text-indent:-999em;width:242px;overflow:hidden;margin:0;
     position:absolute;left:50%;margin-left:-121px;
 }

@@ -120,6 +120,7 @@ window.bg_start=function(){
       }
 
       function update() {
+     
           if (!paused) {
               context.clearRect(0, 0, width, height);
               // context.fillStyle = "#282a3a";
@@ -175,7 +176,22 @@ window.bg_start=function(){
                   }
               }
           }
-          requestAnimationFrame(update);
+          // alert(1);
+          // alert(requestAnimationFrame)
+          // if(requestAnimationFrame){
+          //     requestAnimationFrame(update);
+          // }else{
+
+            
+            // setTimeout(function(){
+            //   update();
+            // },40);
+          // }
+          // alert($.os.android)
+          if(!$.os.android){
+            requestAnimationFrame(update);
+          }
+          
       }
 
       function drawStar(star) {

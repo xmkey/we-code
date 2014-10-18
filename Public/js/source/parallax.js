@@ -109,12 +109,17 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
     // ==============================
 
     function onStart(e) {
-	
+	   
+
         if (movePrevent === true) {
             event.preventDefault();
             return false;
         }
-        
+      
+        if(window.stopDirec==3){
+      
+            return;
+        }
         // console.log('curpage:'+curPage+', pageCount:'+pageCount);
         
         stage = 1;
@@ -155,6 +160,10 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
                 stage = 1
                 return ;
             }
+        }
+        if(window.stopDirec==3){
+            stage=1;
+            return;
         }
         addDirecClass();    // 添加方向类
 
@@ -260,7 +269,14 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
             
             // console.log('====='+curPage);
             
-            
+            var gameindex=$(".pages .page").index($(".page-game"));
+
+              if(curPage==gameindex&&!$(".game-success").hasClass("success-show")){
+                window.stopDirec=3;
+
+                $(".u-guideTop").hide();
+                
+              }
 
 			movePrevent = true;         // 动画过程中不可移动
 	        setTimeout(function() {

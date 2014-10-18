@@ -1,6 +1,9 @@
 !function($){
   window.page=function(){
   var isFirst=true;
+  function preventDefault(e){
+    e.preventDefault();
+  }
 
   $('.pages').parallax({
     direction: 'vertical',  // horizontal (水平翻页)
@@ -25,7 +28,7 @@
       // var curindex=$(".pages .page").index($(".page.current"));
       var gameindex=$(".pages .page").index($(".page-game"));
       if(index==gameindex&&!$(".game-success").hasClass("success-show")){
-        window.stopDirec=1;
+        window.stopDirec=3;
         $(".u-guideTop").hide();
         
       }else{
@@ -33,6 +36,12 @@
         $(".u-guideTop").show();
         
       }
+      
+      if($(".pages .page").size()==1){
+       
+        window.stopDirec=3;
+      }
+      
     },
     /*
      * 横竖屏检测
@@ -142,7 +151,7 @@
   slider =Swipe(document.getElementById('slider'), {
     auto: false,
     callback: function(pos) {
-      console.log(pos);
+      
     }
   });
   
