@@ -17,15 +17,15 @@ var ISSENDER={$isSender};
 var APP="__APP__";
 var PUBLIC="__PUBLIC__";
 </script>
-<link rel="stylesheet" href="__PUBLIC__/css/main.css?t=14101811303">
+<link rel="stylesheet" href="__PUBLIC__/css/main.css?t=1410210010">
 </head>
 <body class="app">
 <header class="app-header">
-<a href="javascript:void(0);" class="u-globalAudio z-play">
+<span class="u-globalAudio z-play">
   <i class="icon-music"></i>
   <audio src="__PUBLIC__/audio/globalAudio1.mp3" autoplay loop></audio>
   <span>关闭</span>
-</a>
+</span>
 </header>
 <div class="app-loading">
   
@@ -144,7 +144,7 @@ var PUBLIC="__PUBLIC__";
               <img src="__PUBLIC__/pic/guest_img_07.jpg?t=1410181259" alt="">
             </span>
             <div class="item-desc">
-              <p class="desc-time">15:01 - 15:15</p>
+              <p class="desc-time">15:01 - 15:30</p>
               <p class="desc-name">时间胶囊</p>
               <p class="desc-title">演讲嘉宾将预测特定领域未来5年的发展</p>
             </div>
@@ -244,8 +244,8 @@ var PUBLIC="__PUBLIC__";
         <div class="game-bg-1"></div>
         <div class="game-bg-2"></div>
       </div>
-      <p class="we-font font-12" data-animation="followSlide" data-delay="200" data-duration="1000">请按下您的手指</p>
-      <p class="we-font font-13" data-animation="followSlide" data-delay="400" data-duration="1000">并保持 300 秒</p>
+      <p class="we-font font-12" data-animation="followSlide" data-delay="200" data-duration="1000">请按下您的2个指纹</p>
+      <p class="we-font font-13" data-animation="followSlide" data-delay="400" data-duration="1000">秒</p>
       <p class="count-down" data-animation="followSlide" data-delay="400" data-duration="1000">300</p>
       <div class="we-gamebox gamebox-01" data-animation="followSlide" data-delay="600" data-duration="1000">
         <span class="fingerprint"></span>
@@ -506,7 +506,7 @@ var PUBLIC="__PUBLIC__";
 </section>
 
 <script type="text/javascript" src="__PUBLIC__/js/zepto.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/main.js?t=1410190031"></script>
+<script type="text/javascript" src="__PUBLIC__/js/main.js?t=1410210010"></script>
 <script type="text/javascript">
 
   function loadImage(url, callback) {
@@ -543,6 +543,10 @@ var PUBLIC="__PUBLIC__";
 
   $(function(){
     var $this = $(".u-globalAudio"),$audio = $this.find('audio')[0],$text = $this.find('span');
+    if($.os.android){
+      $audio.pause();
+      $this.removeClass('z-play');
+    }
     $this.on('tap',function(){
       if ($this.hasClass('z-play')) {
         $this.removeClass('z-play');

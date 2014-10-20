@@ -92,8 +92,8 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
             	.addClass(options.swipeAnim);  	// 添加 swipeAnim 类
 
         $pageArr.css({                    		// 初始化 page 宽高
-            'width': pageWidth + 'px',
-            'height': pageHeight + 'px'
+            'width': pageWidth + 'px'
+            // 'height': pageHeight + 'px'
         });
         
         $($pageArr[curPage]).addClass('current');

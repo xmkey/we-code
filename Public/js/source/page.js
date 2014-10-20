@@ -53,7 +53,7 @@
   });
 
   window.sliderTo=function(index){
-    var pageHeight=$(window).height()
+    var pageHeight=$(window).height();
     $(".pages").css({"-webkit-transition-duration":"0ms","transition-duration":"0ms"});
 
     $(".pages").css({'-webkit-transform': 'matrix(1, 0, 0, 1, 0, -' + pageHeight*timeIndex + ')'});
