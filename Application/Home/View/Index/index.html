@@ -17,7 +17,7 @@ var ISSENDER={$isSender};
 var APP="__APP__";
 var PUBLIC="__PUBLIC__";
 </script>
-<link rel="stylesheet" href="__PUBLIC__/css/main.css?t=1410210010">
+<link rel="stylesheet" href="__PUBLIC__/css/main.css?t=1410220158">
 </head>
 <body class="app">
 <header class="app-header">
@@ -51,13 +51,12 @@ var PUBLIC="__PUBLIC__";
 </div>
 
 <section class="pages">
-<!--   <section class="page page-we-01">
+  <section class="page page-we-01">
     <section class="page-content">
       <h1 class="we-logo" data-animation="slideToTop" data-duration="1000"></h1>
       <p class="we-font font-01" data-animation="slideToTop" data-delay="200" data-duration="1000">这里没有商业或者公司竞争，只有前沿的科学</p>
       <p class="we-font font-02" data-animation="slideToTop" data-delay="400" data-duration="1000">思想和最新技术，还有天马行空般的想象力。</p>
       <p class="we-font font-03" data-animation="slideToTop" data-delay="600" data-duration="1000">— 马化腾 腾讯公司首席执行官兼董事会主席</p>
-      <p class="front-word" data-animation="slideToTop" data-delay="800" data-duration="1000">一万个触摸未来的机会等着你… …</p>
     </section>
   </section>
   <section class="page page-we-02">
@@ -69,11 +68,11 @@ var PUBLIC="__PUBLIC__";
       <p class="we-line" data-animation="slideToTop" data-delay="800" data-duration="1000"></p>
       <p class="we-font font-07" data-animation="slideToTop" data-delay="1000" data-duration="1000">13:00 - 18:00 12场未来演讲</p>
     </section>
-  </section> -->
+  </section>
   <section class="page page-speaker">
     <section class="page-content">
-      <div class="content" style="height:100%;" id="wrapper">
-        <div id="scroller" style="height:2037px;">
+      <div class="content" style="height:2037px;" id="wrapper">
+        <div id="scroller">
           <h2 class="speaker-title" data-animation="slideToTop" data-duration="1000">为未来而来的他们大会演讲嘉宾</h2>
           <ul class="speaker-list">
             <li class="list-item" data-animation="slideToTop" data-delay="200" data-duration="1000">
@@ -235,7 +234,7 @@ var PUBLIC="__PUBLIC__";
       <p class="we-font font-10" data-animation="slideToTop" data-delay="800" data-duration="1000">和好友一起按下指纹，打开未来之门，</p>
       <p class="we-font font-11" data-animation="slideToTop" data-delay="1000" data-duration="1000">抢2014WE大会视频直播码。</p>
       <div class="u-maskLayer m-weixinShareLayer hide" style="opacity:1;">
-        <img src="__PUBLIC__/pic/we_share.png">
+        <img src="__PUBLIC__/pic/we_share.jpg">
         <p class="we-font font-32">合作机构：艾迪票务设计机构：pinnadesign</p>
       </div>
     </section>
@@ -256,8 +255,12 @@ var PUBLIC="__PUBLIC__";
         <span class="fingerprint"></span>
       </div>
       <div class="we-funcs" data-animation="slideToTop" data-delay="800" data-duration="1000">
-        <div class="we-btn btn-fingerprint btn-fingerprint-left"><span>左</span></div>
-        <div class="we-btn btn-fingerprint btn-fingerprint-right"><span>右</span></div>
+        <div class="we-btn btn-fingerprint btn-fingerprint-left"><span>左</span>
+          <i class="light"></i>
+        </div>
+        <div class="we-btn btn-fingerprint btn-fingerprint-right"><span>右</span>
+          <i class="light"></i>
+        </div>
       </div>
       <div class="we-pop tips-hide" id="tips1">
         <p>时间不多了请按下您的指纹</p>
@@ -283,6 +286,7 @@ var PUBLIC="__PUBLIC__";
       <p class="we-font font-15" data-animation="slideToTop" data-delay="600" data-duration="1000">获得WE大会视频直播码！</p>
       <div class="we-code" data-animation="slideToTop" data-delay="800" data-duration="1000">
         <span>ZHIBOMA0256523</span>
+        <p>请截屏保存此直播码</p>
       </div>
       <p class="we-font font-16" data-animation="slideToTop" data-delay="1000" data-duration="1000">离WE大会直播还有<i>16</i>天</p>
       <a href="#" class="we-btn btn-02" data-animation="slideToTop" data-delay="1200" data-duration="1000">观看WE大会现场直播</a>
@@ -509,7 +513,7 @@ var PUBLIC="__PUBLIC__";
 
 <script type="text/javascript" src="__PUBLIC__/js/zepto.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/iscroll.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/main.js?t=1410210010"></script>
+<script type="text/javascript" src="__PUBLIC__/js/main.js?t=1410220158"></script>
 <script type="text/javascript">
 
   function loadImage(url, callback) {
@@ -569,14 +573,25 @@ var PUBLIC="__PUBLIC__";
       };
     });
   });
-  var myScroll;
-  function loaded() {
-    myScroll = new iScroll('wrapper',{
-      vScrollbar: false,
-    }); 
-  }
-  document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-  document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+  // var myScroll;
+  // function loaded() {
+    
+  //   myScroll = new iScroll('wrapper',{
+  //     vScrollbar: false,
+  //     useTransition: true,
+  //     topOffset: 10,
+  //     onRefresh: function () {
+  //       console.log(123);
+  //     },
+  //     onScrollMove: function () {
+  //     },
+  //     onScrollEnd: function () {
+
+  //     }
+  //   }); 
+  // }
+  // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+  // document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
 </script>
 
 </body>
