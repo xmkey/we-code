@@ -28,7 +28,7 @@
       // var curindex=$(".pages .page").index($(".page.current"));
       var gameindex=$(".pages .page").index($(".page-game"));
       if(index==gameindex&&!$(".game-success").hasClass("success-show")){
-        window.stopDirec=3;
+        window.stopDirec=1;
         $(".u-guideTop").hide();
         
       }else{

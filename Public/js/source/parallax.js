@@ -34,7 +34,8 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
         options,            // 最终配置项
 
         touchDown = false,  // 手指已按下 (取消触摸移动时 transition 过渡)
-        movePrevent = true; // 阻止滑动 (动画过程中手指按下不可阻止)
+        movePrevent = true, // 阻止滑动 (动画过程中手指按下不可阻止)
+        isFirst=true;
 
 
 
@@ -149,6 +150,10 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
         event.preventDefault();
         options.direction === 'horizontal' ? endPos = e.pageX : endPos = e.pageY;
         
+        if((curPage==0||!curPage)&&isFirst){
+
+            window.stopDirec=2;
+        }
         if(window.stopDirec==1){
             if(endPos - startPos<0){
                stage = 1
@@ -269,10 +274,13 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
             
             // console.log('====='+curPage);
             
+            if(curPage==pageCount-1){
+                isFirst=false;
+            }
             var gameindex=$(".pages .page").index($(".page-game"));
 
               if(curPage==gameindex&&!$(".game-success").hasClass("success-show")){
-                window.stopDirec=3;
+                window.stopDirec=1;
 
                 $(".u-guideTop").hide();
                 
