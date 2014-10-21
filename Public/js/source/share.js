@@ -2,12 +2,11 @@
 !function($){
 window.share=function(){
 
-
+}
 var imgUrl = 'http://imgcache.qq.com/ac/www_tencent/we/2014/images/logo.png?1410181347'; 
 var lineLink =window.location.protocol+"//"+window.location.host+window.location.pathname;
 var senderLink=lineLink;
 if(ISSENDER){
- 
   var search="from_key="+KEY;
   if(window.location.search.indexOf("?")==0){
     search="&"+search;
@@ -22,7 +21,7 @@ if(ISSENDER){
 var descContent = "这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。";  
 var shareTitle = 'we大会';  
 var appid = 'wxc9937e3a66af6dc8';  
-  
+
 function shareFriend() {  
   var curindex=$(".pages .page").index($(".page.current"));
   var gameindex=$(".pages .page").index($(".page-game"));
@@ -106,7 +105,7 @@ if(!is_weixn()){
 // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。  
 document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
       // 发送给好友  
-
+      
   WeixinJSBridge.on('menu:share:appmessage', function(argv){
    
 
@@ -134,5 +133,5 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
         shareWeibo();  
         });  
     }, false); 
-}
+// }
 }(Zepto)
