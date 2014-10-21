@@ -172,6 +172,31 @@ var PUBLIC="__PUBLIC__";
    });
   }
 
+  $(function(){
+    var $this = $(".u-globalAudio"),$audio = $this.find('audio')[0],$text = $this.find('span');
+    if($.os.android){
+      $(document).one('touchstart',function(e){
+        $audio.play();
+      })
+    }
+    $this.on('tap',function(){
+      if ($this.hasClass('z-play')) {
+        $this.removeClass('z-play');
+        $audio.pause();
+        $text.addClass('z-show').text('关闭');
+        setTimeout(function(){
+          $text.removeClass('z-show')
+        },300);
+      }else{
+        $this.addClass('z-play');
+        $audio.play();
+        $text.addClass('z-show').text('开启');
+        setTimeout(function(){
+          $text.removeClass('z-show')
+        },300);
+      };
+    });
+  });
   
 </script>
 

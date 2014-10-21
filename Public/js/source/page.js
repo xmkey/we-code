@@ -80,61 +80,110 @@
       cHeight = 0,
       wHeight = $(window).height();
 
-  $('.page-timeline').on('touchstart', function() {
-    onStart(event.changedTouches[0],$(this).find($('.content')));
-  })
-  .on('touchmove', function() {
-    onMove(event.changedTouches[0],$(this).find($('.content')));
-  });
   $('.page-speaker').on('touchstart', function() {
-    onStart(event.changedTouches[0],$(this).find($('.content')));
+    // console.log($(this).find('#scroller'));
+    onStart(event.changedTouches[0],$(this).find('#scroller'));
   })
   .on('touchmove', function() {
-    onMove(event.changedTouches[0],$(this).find($('.content')));
-  });
-  $('.page-history').on('touchstart', function() {
-    onStart(event.changedTouches[0],$(this).find($('.content')));
+    onMove(event.changedTouches[0],$(this).find('#scroller'));
   })
-  .on('touchmove', function() {
-    onMove(event.changedTouches[0],$(this).find($('.content')));
-  });
 
   function onStart(e,element) {
     startPos = e.pageY; 
 
-    cHeight = element.height() + 50;
+    cHeight = element.height();
     offset = element.css("-webkit-transform")
                         .replace("matrix(", "")
                         .replace(")", "")
                         .split(",");
 
     offset = parseInt(offset[5]) || 0;
+    event.preventDefault();
+    event.stopPropagation();
+    console.log(offset[5]);
   }
 
   function onMove(e,element) {
-    cHeight = element.height() + 50;
-        offset2 = $pages.css("-webkit-transform")
+    endPos = e.pageY; 
+    cHeight = element.height();
+    offset = element.css("-webkit-transform")
                         .replace("matrix(", "")
                         .replace(")", "")
                         .split(",");
+    temp = Math.abs(offset[5]);
+    console.log("temp:"+temp);
+    // console.log(wHeight-cHeight);
+    // if (offset[5] > wHeight-cHeight) {
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    // };
 
-    offset2 = Math.abs(parseInt(offset2[5]) || 0);
-    endPos = e.pageY; 
     if (cHeight > wHeight && endPos < startPos) {
-      temp = offset + endPos - startPos;
-      if (Math.abs(temp) <= (cHeight - wHeight)) {
-        event.preventDefault();
-        event.stopPropagation();
-        element.css("-webkit-transform", "matrix(1, 0, 0, 1, 0, " + temp + ")");  
+      // console.log(111);
+      if (temp == (cHeight - wHeight)) {
+        console.log(cHeight - wHeight);
+        $('.page-speaker').unbind('touchstart');
+      }else{
+        // event.preventDefault();
+        // event.stopPropagation();
       }
     }
     // 往上拖
-    else if (temp < 0 && endPos >= startPos ) {
-      event.preventDefault();
-      event.stopPropagation();
-      temp = offset + endPos - startPos;
-      element.css("-webkit-transform", "matrix(1, 0, 0, 1, 0, " + temp + ")");
+    else if (temp = 0 && endPos >= startPos ) {
+      if (temp = (cHeight - wHeight)) {
+        console.log(11111);
+      }
     }
+
+    // cHeight = element.height() + 50;
+    //     offset2 = $pages.css("-webkit-transform")
+    //                     .replace("matrix(", "")
+    //                     .replace(")", "")
+    //                     .split(",");
+
+    // offset2 = Math.abs(parseInt(offset2[5]) || 0);
+    // endPos = e.pageY; 
+    // if (cHeight > wHeight && endPos < startPos) {
+    //   temp = offset + endPos - startPos;
+    //   if (Math.abs(temp) <= (cHeight - wHeight)) {
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    //     element.css("-webkit-transform", "matrix(1, 0, 0, 1, 0, " + temp + ")");  
+    //   }
+    // }
+    // // 往上拖
+    // else if (temp < 0 && endPos >= startPos ) {
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    //   temp = offset + endPos - startPos;
+    //   element.css("-webkit-transform", "matrix(1, 0, 0, 1, 0, " + temp + ")");
+    // }
+  }
+
+  function onMoveEnd(e,element) {
+    // cHeight = element.height() + 50;
+    // offset2 = $pages.css("-webkit-transform")
+    //                 .replace("matrix(", "")
+    //                 .replace(")", "")
+    //                 .split(",");
+
+    // offset2 = Math.abs(parseInt(offset2[5]) || 0);
+    // endPos = e.pageY; 
+    // if (cHeight > wHeight && endPos < startPos) {
+    //   temp = offset + endPos - startPos;
+    //   if (Math.abs(temp) <= (cHeight - wHeight)) {
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    //     element.css("-webkit-transform", "matrix(1, 0, 0, 1, 0, " + temp + ")");  
+    //   }
+    // }
+    // // 往上拖
+    // else if (temp < 0 && endPos >= startPos ) {
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    //   temp = offset + endPos - startPos;
+    //   element.css("-webkit-transform", "matrix(1, 0, 0, 1, 0, " + temp + ")");
+    // }
   }
 
   $("#btn-invite").tap(function(){
