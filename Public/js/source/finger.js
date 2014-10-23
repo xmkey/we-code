@@ -176,7 +176,7 @@ $(".m-weixinShareLayer").tap(function(){
  }
 
  // $.fn.cookie("code","302390320",500);
- $.fn.cookie('code', null);
+ // $.fn.cookie('code', null);
 if(!ISSENDER){
  	Timer.start(global.timeRemain);
  	global.isTrigger=true;
@@ -233,12 +233,6 @@ if(!ISSENDER){
 	  	}else if(isfirst&&!ISSENDER){
 
 	  		global.timeRemain=result['timer'];
-	  		// alert(global.timeRemain)
-	  		// if(global.timeRemain<300){
-	  		// 	global.isFirst=false;
-	  		// }
-	  		// $(".count-down").html(global.timeRemain);
-	  		
 	  		
 	  	}
 	  	
