@@ -18,21 +18,21 @@ if(ISSENDER){
 
 
 
-var descContent = "这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。";  
-var shareTitle = 'we大会';  
+var descContent = "全球征集１００００个前往未来世界的同路人，速度点击与我同行！";  
+var shareTitle = '环游火星 往返月球？ Yes, WE are coming!';  
 var appid = 'wxc9937e3a66af6dc8';  
 
 function shareFriend() {  
   var curindex=$(".pages .page").index($(".page.current"));
   var gameindex=$(".pages .page").index($(".page-game"));
 
-  descContent = "这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。"; 
+  descContent = "全球征集１００００个前往未来世界的同路人，速度点击与我同行！"; 
   // alert($(".share-content").is(':hidden'))
   lineLink =window.location.protocol+"//"+window.location.host+window.location.pathname;
 
   if(curindex==gameindex&& $(".share-content").css("display")=="block"){
-    
-    descContent="帮我一起赢取we大会直播码吧";
+    shareTitle ="有你才有未来！ Yes, WE are coming!"
+    descContent="你没看错，我收到了来自火星的邀约！速度点开与我同行！";
     lineLink=senderLink;
     // alert(lineLink);
   }
@@ -60,10 +60,11 @@ function shareFriend() {
 function shareTimeline() {  
   var curindex=$(".pages .page").index($(".page.current"));
   var gameindex=$(".pages .page").index($(".page-game"));
-  descContent = "这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。"; 
+  descContent = "全球征集１００００个前往未来世界的同路人，速度点击与我同行！"; 
   lineLink =window.location.protocol+"//"+window.location.host+window.location.pathname;
   if(curindex==gameindex&& $(".share-content").css("display")=="block"){
-    descContent="帮我一起赢取we大会直播码吧";
+    shareTitle ="有你才有未来！ Yes, WE are coming!"
+    descContent="你没看错，我收到了来自火星的邀约！速度点开与我同行！";
     lineLink=senderLink;
     // window.toGame();
   }
@@ -85,9 +86,10 @@ function shareTimeline() {
 function is_weixn(){  
   var curindex=$(".pages .page").index($(".page.current"));
   var gameindex=$(".pages .page").index($(".page-game"));
-  descContent = "这里没有商业或者公司竞争,只有前沿的科学思想和最新技术，还有天马行空般的想象力。"; 
+  descContent = "全球征集１００００个前往未来世界的同路人，速度点击与我同行！"; 
   if(curindex==gameindex&& $(".share-content").css("display")=="block"){
-    descContent="帮我一起赢取we大会直播码吧";
+    shareTitle ="有你才有未来！ Yes, WE are coming!"
+    descContent="你没看错，我收到了来自火星的邀约！速度点开与我同行！";
     lineLink=senderLink;
     window.toGame();
   }

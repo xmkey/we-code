@@ -9,14 +9,14 @@ html,body{overflow:hidden;position:relative;}
 .we-icon,
 .popback{
     display:inline-block;
-    background:url(../img/we_sprite@2x.png?t=1410230007) no-repeat;background-size:242px auto;
+    background:url(../img/we_sprite@2x.png?t=1410232221) no-repeat;background-size:242px auto;
     text-indent:-999em;width:242px;overflow:hidden;margin:0;
     position:absolute;left:50%;margin-left:-121px;
 }
 .fingerprint,
 .btn-fingerprint,
 .tencent-logo{
-    background:url(../img/we_game@2x.png?t=1410230007) no-repeat;background-size:219px 107px;
+    background:url(../img/we_game@2x.png?t=1410232221) no-repeat;background-size:219px 107px;
 }
 .we-logo{
     height:107px;background-position:0 0;top:10%;
@@ -77,10 +77,10 @@ html,body{overflow:hidden;position:relative;}
 /* S page3 */
 .font-08{height:30px;background-position:0 -526px;top:50%;margin-top:-200px;}
 .font-09{height:20px;background-position:0 -557px;top:50%;margin-top:-165px;}
-.gamebox-01{top:50%;background:url(../img/gamebox_bg_01.png?t=1410230007) no-repeat;background-size:100% 100%;margin-top:-140px;}
-.gamebox-02{top:50%;background:url(../img/gamebox_bg_02.png?t=1410230007) no-repeat;background-size:210px 210px;background-position:50% 50%; margin-top:-140px;padding-top:82px;height:163px;}
+.gamebox-01{top:50%;background:url(../img/gamebox_bg_01.png?t=1410232221) no-repeat;background-size:100% 100%;margin-top:-140px;}
+.gamebox-02{top:50%;background:url(../img/gamebox_bg_02.png?t=1410232221) no-repeat;background-size:210px 210px;background-position:50% 50%; margin-top:-140px;padding-top:82px;height:163px;}
 .gamebox-02 p{color:#fff;padding:0 55px;}
-.gamebox-02 p:nth-child(1){font-size:18px;font-weight:700;padding-top:15px;}
+/*.gamebox-02 p:nth-child(1){font-size:18px;font-weight:700;padding-top:15px;}*/
 .btn-01{top:50%;margin-top:120px;}
 .font-10{height:12px;background-position:0 -367px;top:87%;background:0;}
 .font-11{height:12px;background-position:0 -380px;top:90%;background:0;}
@@ -89,7 +89,7 @@ html,body{overflow:hidden;position:relative;}
 /* S page4 */
 .game-bg{
     position:absolute;left:0;top:0;right:0;bottom:0;
-    background:url(../img/gamebox_bg.png?t=1410230007) no-repeat 0 0;background-size:100% 100%;
+    background:url(../img/gamebox_bg.png?t=1410232221) no-repeat 0 0;background-size:100% 100%;
     /*opacity:0.1;*/
 }
 .game-bg .game-bg-1,
@@ -98,8 +98,8 @@ html,body{overflow:hidden;position:relative;}
     width:50%;padding-right:20px;opacity:0;
     -webkit-transform: translateX(0%); 
 }
-.game-bg .game-bg-1{background:url(../img/gamebox_door_2.png?t=1410230007) no-repeat 0 0;background-size:100% 100%;left:0;}
-.game-bg .game-bg-2{background:url(../img/gamebox_door_1.png?t=1410230007) no-repeat 0 0;background-size:100% 100%;right:0;}
+.game-bg .game-bg-1{background:url(../img/gamebox_door_2.png?t=1410232221) no-repeat 0 0;background-size:100% 100%;left:0;}
+.game-bg .game-bg-2{background:url(../img/gamebox_door_1.png?t=1410232221) no-repeat 0 0;background-size:100% 100%;right:0;}
 .font-12{height:21px;top:5%;text-indent:0;background:0;font-size:20px;line-height:20px;color:#48e7ff;}
 .font-13{height:21px;top:10%;text-indent:0;background:0;font-size:20px;line-height:20px;color:#48e7ff;text-indent: 3em;}
 .count-down{
@@ -144,7 +144,7 @@ html,body{overflow:hidden;position:relative;}
 .we-code{
     position:absolute;left:50%;top:25%;
     width:281px;height:141px;margin-left:-140px;
-    background:url(../img/we_code_bg.png?t=1410230007) no-repeat;background-size:100% 100%;
+    background:url(../img/we_code_bg.png?t=1410232221) no-repeat;background-size:100% 100%;
 }
 .we-code span{
     position:absolute;left:47px;top:14px;
@@ -173,14 +173,14 @@ html,body{overflow:hidden;position:relative;}
 
 /* S page-speaker */
 .speaker-title,
-.item-text{position:absolute;background:url(../img/speaker_text.png?t=1410230007) no-repeat;background-size:253px auto;text-indent:-999em;}
+.item-text{position:absolute;background:url(../img/speaker_text.png?t=1410232221) no-repeat;background-size:253px auto;text-indent:-999em;}
 .item-text{width:253px;left:50%;margin-left:-126px;}
 .speaker-title{right:0;top:15px;background-position:-70px 0;width:183px;height:93px;}
 .speaker-list{padding-top:100px;}
 .speaker-list .list-item{position:relative;height:149px;}
 .speaker-list .list-item:before{
     position:absolute;
-    content:"";width:95px;height:85px;background:url(../img/speaker_line.png?t=1410230007) no-repeat;background-size:95px 171px;
+    content:"";width:95px;height:85px;background:url(../img/speaker_line.png?t=1410232221) no-repeat;background-size:95px 171px;
 }
 .speaker-list .list-item:nth-child(1):before{
     display:none;
@@ -267,7 +267,7 @@ html,body{overflow:hidden;position:relative;}
 .timeline:before{
     content:"";position:absolute;top:16px;left:50%;
     width:18px;height:18px;margin-left:-55px;
-    background:url(../img/clock@2x.png?t=1410230007) no-repeat;background-size:100% 100%;
+    background:url(../img/clock@2x.png?t=1410232221) no-repeat;background-size:100% 100%;
 }
 .timeline:after{
     content:"";position:absolute;left:50%;top:33px;z-index:0;
@@ -352,7 +352,7 @@ html,body{overflow:hidden;position:relative;}
 .guest-list .item-name{display:block;font-size:10px;color:#fff;}
 
 .app{
-    background:url(../img/bg.jpg?t=1410230007) no-repeat fixed;background-size:100% 100%;
+    background:url(../img/bg.jpg?t=1410232221) no-repeat fixed;background-size:100% 100%;
     text-align:center;
 }
 
@@ -393,7 +393,7 @@ html,body{overflow:hidden;position:relative;}
 .guest-pop .popback{
     position:absolute;bottom:12px;left:50%;z-index:10;
     width:42px;height:42px;margin:0 0 0 -21px;
-    background:url(../img/pop_back.png?t=1410230007) no-repeat 0 0;background-size:100%;
+    background:url(../img/pop_back.png?t=1410232221) no-repeat 0 0;background-size:100%;
 }
 
 
@@ -401,7 +401,7 @@ html,body{overflow:hidden;position:relative;}
 .u-guideTop {
     width: 20px;
     height: 25px;
-    background: url(../img/units-icons.png?t=1410230007) -33px 0;
+    background: url(../img/units-icons.png?t=1410232221) -33px 0;
     background-size:74px 28px;
     position: absolute;
     left: 50%;
@@ -439,7 +439,7 @@ html,body{overflow:hidden;position:relative;}
     position: absolute;
     top: 25%;
     z-index: 9998;
-    background: url(../img/sd-i.png?t=1410230007) no-repeat;
+    background: url(../img/sd-i.png?t=1410232221) no-repeat;
     background-size:100% 100%;
     display: block;
     width: 18px;
@@ -618,7 +618,7 @@ html,body{overflow:hidden;position:relative;}
 .u-globalAudio .icon-music {
     width: 27px;
     height: 27px;
-    background: url(../img/units-icons.png?t=1410230007);
+    background: url(../img/units-icons.png?t=1410232221);
     background-size:74px 28px;
     display: block
 }
