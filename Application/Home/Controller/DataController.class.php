@@ -21,7 +21,7 @@ class DataController extends Controller {
 		$data['from'] = $postdata['status'];
 		$data['timer'] = $postdata['timer'];
 		// $data['time'] = 133;
-
+		
 		// $data['isMatch']=false;
     	$Match = M('Match');
     	$key_data=$Match->where('`key`="'.$data['key'].'"')->find();
@@ -52,16 +52,25 @@ class DataController extends Controller {
 				if($key_data['num']==2||$key_data['num']==3){
 					$data['num']=3;
 				}
-				$code = uniqid();
-				$id=$key_data['id'];
-				$id1=$id%10;
-				$id=(int)($id/10);
-				$id2=$id%10;
-				$code=$id1.$id2.substr($code,2);
-				$code =strtoupper($code);
-				$data['code']=$code;
-				$ret['code']=$code;
+				// $code = uniqid();
+				// $id=$key_data['id'];
+				// $id1=$id%10;
+				// $id=(int)($id/10);
+				// $id2=$id%10;
+				// $code=$id1.$id2.substr($code,2);
+				// $code =strtoupper($code);
+				// $data['code']=$code;
+				// $ret['code']=$code;
 				// $data['num']=($key_data['num']?$key_data['num']:0)+1;
+
+				$CodeTable = M('Code');
+				$codeData = $CodeTable->where('used=0 and id>10000')->order('id')->find();
+
+				$codeUsed['used']=1;
+
+				$CodeTable->where('id='.$codeData['id'])->save($codeUsed); 
+				$data['code']=$codeData['id'];
+				$ret['code']=$codeData['code'];
 				$ret['status']='success';
 			}
 			// if($data['timer']!=180&&!$key_data['starttime']){
@@ -77,6 +86,7 @@ class DataController extends Controller {
 		echo json_encode($ret);
     }
     private function _helperHander($postdata){
+
     	$ret=array();
     	$limit=$this->limit;
     	$data['key'] =$postdata['key'];
