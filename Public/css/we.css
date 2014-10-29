@@ -27,7 +27,7 @@ html,body{overflow:hidden;position:relative;}
 .we-btn{
     position:absolute;left:50%;
     width:214px;height:40px;margin-left:-107px;
-    line-height:40px;font-size:18px;color:#fff;font-family:"MicroSoft YaHei";font-weight:100;
+    line-height:40px;font-size:16px;color:#fff;font-family:"MicroSoft YaHei";font-weight:100;
     background-color:#edab12;border-radius:3px;
 }
 .we-gamebox{
@@ -60,10 +60,11 @@ html,body{overflow:hidden;position:relative;}
     height:12px;
     top:40%;
 }
-.font-01{background-position:0 -108px;margin-top:70px;}
-.font-02{background-position:0 -121px;margin-top:88px;}
-.font-03{font-size:30px;text-indent:0;color:#fff;width:270px;margin-left:-135px;top:40%;background:0;}
+.font-01{background-position:0 -108px;margin-top:60px;}
+.font-02{background-position:0 -121px;margin-top:78px;}
+.font-03{font-size:30px;text-indent:0;color:#fff;width:270px;top:40%;background:0;margin:0 0 0 -135px;}
 .front-word{position:absolute;bottom:20px;left:0;right:0;color:#fff;font-size:12px;}
+.font-add1{text-indent:0;background:0;color:#fff;font-size:12px;bottom:50px;}
 /* E page1 */
 
 /* S page2 */
@@ -79,7 +80,7 @@ html,body{overflow:hidden;position:relative;}
 .font-09{height:20px;background-position:0 -557px;top:50%;margin-top:-165px;}
 .gamebox-01{top:50%;background:url(../img/gamebox_bg_01.png?t=1410232221) no-repeat;background-size:100% 100%;margin-top:-140px;}
 .gamebox-02{top:50%;background:url(../img/gamebox_bg_02.png?t=1410232221) no-repeat;background-size:210px 210px;background-position:50% 50%; margin-top:-140px;padding-top:82px;height:163px;}
-.gamebox-02 p{color:#fff;padding:0 55px;}
+.gamebox-02 p{color:#fff;padding:0 55px;font-size:18px;}
 /*.gamebox-02 p:nth-child(1){font-size:18px;font-weight:700;padding-top:15px;}*/
 .btn-01{top:50%;margin-top:120px;}
 .font-10{height:12px;background-position:0 -367px;top:87%;background:0;}
@@ -139,15 +140,17 @@ html,body{overflow:hidden;position:relative;}
 /* E page4 */
 
 /* S page5 */
-.font-14{height:21px;background-position:0 -393px;top:10%;}
-.font-15{height:21px;background-position:0 -415px;top:15%;}
+.font-14{height:21px;background-position:0 -393px;top:12%;}
+.font-15{height:21px;background-position:0 -415px;top:17%;}
+.cutdown-box{position:absolute;top:0;left:0;right:0;}
+.cutdown_tips{height:40px;background:#ea5b0c url(../img/cutdown_tips.png) no-repeat center top;background-size:auto 40px;width:100%;}
 .we-code{
     position:absolute;left:50%;top:25%;
     width:281px;height:141px;margin-left:-140px;
     background:url(../img/we_code_bg.png?t=1410232221) no-repeat;background-size:100% 100%;
 }
 .we-code span{
-    position:absolute;left:47px;top:14px;
+    position:absolute;left:47px;top:24px;
     width:205px;height:100px;line-height:100px;
     font-size:22px;color:#fff15f;font-family:"MicroSoft YaHei";
 }
@@ -161,6 +164,18 @@ html,body{overflow:hidden;position:relative;}
 .font-17{height:12px;background-position:0 -459px;top:86%;}
 .font-18{height:12px;background-position:0 -472px;top:90%;}
 .btn-02{top:75%;color:#90680b;}
+.success-show .cutdown_tips{-webkit-animation: flash 1.2s 6;}
+@-webkit-keyframes flash {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0.5
+    }
+    100% {
+        opacity: 1
+    }
+}
 /* E page5 */
 
 

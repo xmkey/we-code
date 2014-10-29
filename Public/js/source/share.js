@@ -3,7 +3,7 @@
 window.share=function(){
 
 }
-var imgUrl = 'http://imgcache.qq.com/ac/www_tencent/we/2014/images/logo.png?1410181347'; 
+var imgUrl = 'http://web.liveapp.cn/Public/img/share_logo.jpg'; 
 var lineLink =window.location.protocol+"//"+window.location.host+window.location.pathname;
 var senderLink=lineLink;
 if(ISSENDER){
@@ -31,8 +31,8 @@ function shareFriend() {
   lineLink =window.location.protocol+"//"+window.location.host+window.location.pathname;
 
   if(curindex==gameindex&& $(".share-content").css("display")=="block"){
-    shareTitle ="有你才有未来！ Yes, WE are coming!"
-    descContent="你没看错，我收到了来自火星的邀约！速度点开与我同行！";
+    shareTitle ="那谁，快醒醒帮我抢WE码了，我会坚持３００秒，速来！"
+    descContent="腾讯２０１４WE大会限量直播观看码开抢中！想一站式看完全球最新科技？只在这里，小伙伴们一起来吧！";
     lineLink=senderLink;
     // alert(lineLink);
   }
@@ -63,8 +63,8 @@ function shareTimeline() {
   descContent = "全球征集１００００个前往未来世界的同路人，速度点击与我同行！"; 
   lineLink =window.location.protocol+"//"+window.location.host+window.location.pathname;
   if(curindex==gameindex&& $(".share-content").css("display")=="block"){
-    shareTitle ="有你才有未来！ Yes, WE are coming!"
-    descContent="你没看错，我收到了来自火星的邀约！速度点开与我同行！";
+    shareTitle ="那谁，快醒醒帮我抢WE码了，我会坚持３００秒，速来！"
+    descContent="腾讯２０１４WE大会限量直播观看码开抢中！想一站式看完全球最新科技？只在这里，小伙伴们一起来吧！";
     lineLink=senderLink;
     // window.toGame();
   }
@@ -88,8 +88,8 @@ function is_weixn(){
   var gameindex=$(".pages .page").index($(".page-game"));
   descContent = "全球征集１００００个前往未来世界的同路人，速度点击与我同行！"; 
   if(curindex==gameindex&& $(".share-content").css("display")=="block"){
-    shareTitle ="有你才有未来！ Yes, WE are coming!"
-    descContent="你没看错，我收到了来自火星的邀约！速度点开与我同行！";
+    shareTitle ="那谁，快醒醒帮我抢WE码了，我会坚持３００秒，速来！"
+    descContent="腾讯２０１４WE大会限量直播观看码开抢中！想一站式看完全球最新科技？只在这里，小伙伴们一起来吧！";
     lineLink=senderLink;
     window.toGame();
   }
