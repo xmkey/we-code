@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ch">
 <head>
-<title>抢码观看WE直播！</title>
+<title>抢码观看WE直播</title>
 <meta charset="utf-8" />
 <meta name="keywords" content="WE大会" />
 <meta name="description" content="WE大会" />
@@ -291,7 +291,7 @@ var PUBLIC="__PUBLIC__";
       <div class="we-code" data-animation="slideToTop" data-delay="800" data-duration="1000">
         <span>ZHIBOMA0256523</span>
       </div>
-      <p class="we-font font-16" data-animation="slideToTop" data-delay="1000" data-duration="1000">离WE大会直播还有<i>16</i>天</p>
+      <p class="we-font font-16" data-animation="slideToTop" data-delay="1000" data-duration="1000">离WE大会直播还有<i id="cutdownDate">16</i>天</p>
       <a href="#" class="we-btn btn-02" data-animation="slideToTop" data-delay="1200" data-duration="1000">观看WE大会现场直播</a>
       <p class="we-font font-17" data-animation="slideToTop" data-delay="1400" data-duration="1000">请于2014年11月8日 13:00进入腾讯大学 </p>
       <p class="we-font font-18" data-animation="slideToTop" data-delay="1600" data-duration="1000">官网WE大会直播间输入直播码观看！</p>
@@ -572,7 +572,24 @@ var PUBLIC="__PUBLIC__";
     //   $yunlaiPop.addClass('hide');
     // });
 
+
   });
+  var interval = 1000; 
+  function ShowCountDown(year,month,day,divname) 
+  { 
+    var now = new Date(); 
+    var endDate = new Date(year, month-1, day); 
+    var leftTime=endDate.getTime()-now.getTime(); 
+    var leftsecond = parseInt(leftTime/1000); 
+    //var day1=parseInt(leftsecond/(24*60*60*6)); 
+    var day1=Math.floor(leftsecond/(60*60*24)); 
+    var hour=Math.floor((leftsecond-day1*24*60*60)/3600); 
+    var minute=Math.floor((leftsecond-day1*24*60*60-hour*3600)/60); 
+    var second=Math.floor(leftsecond-day1*24*60*60-hour*3600-minute*60); 
+    var cc = document.getElementById(divname); 
+    cc.innerHTML = day1; 
+  } 
+  window.setInterval(function(){ShowCountDown(2014,11,08,'cutdownDate');}, interval); 
 </script>
 
 </body>
