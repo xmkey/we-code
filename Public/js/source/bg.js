@@ -183,17 +183,19 @@ window.bg_start=function(){
           // }else{
 
             
-          //   setTimeout(function(){
-          //     update();
-          //   },40);
+          // setTimeout(function(){
+          //   update();
+          // },40);
           // }
           // alert($.os.android)
-          setTimeout(function(){
-            update();
-          },40);
-          // if(!$.os.android){
-          //   requestAnimationFrame(update);
-          // }
+          if ($.os.android) {
+            setTimeout(function(){
+              update();
+            },40);
+          };
+          if(!$.os.android&&$.os.version>=7){
+            requestAnimationFrame(update);
+          }
       }
 
       function drawStar(star) {
