@@ -153,9 +153,8 @@ $(".m-weixinShareLayer").tap(function(){
  }
 
  window.toGame=function(){
- 	
  	var index=$(".pages .page").index($(".page-game"));
-    window.slideTo(index);  
+    window.slideTo(index); 
     $(".share-content").hide();
     $(".game-content").css({"display":"block"});
     setTimeout(function(){

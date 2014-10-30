@@ -178,20 +178,22 @@ window.bg_start=function(){
           }
           // alert(1);
           // alert(requestAnimationFrame)
-          // if(requestAnimationFrame){
+          // if(requestAnimationFrame||!$.os.android){
           //     requestAnimationFrame(update);
           // }else{
 
             
-            // setTimeout(function(){
-            //   update();
-            // },40);
+          //   setTimeout(function(){
+          //     update();
+          //   },40);
           // }
           // alert($.os.android)
-          if(!$.os.android){
-            requestAnimationFrame(update);
-          }
-          
+          setTimeout(function(){
+            update();
+          },40);
+          // if(!$.os.android){
+          //   requestAnimationFrame(update);
+          // }
       }
 
       function drawStar(star) {

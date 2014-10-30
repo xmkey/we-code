@@ -45,7 +45,6 @@ function shareFriend() {
       "desc": descContent,  
       "title": shareTitle  
       }, function(res) { 
-        
       if(curindex==gameindex&& $(".share-content").css("display")=="block"){
         // alert(res.err_msg.toUpperCase());
         if(res.err_msg.toUpperCase()!='SEND_APP_MSG:CANCEL'){
