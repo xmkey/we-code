@@ -191,6 +191,7 @@ if(!ISSENDER){
  		$(".game-content").hide();
  		$("#sender-success").addClass("success-show");
  		$(".we-code span").html($.fn.cookie("code"));
+		$('#activation').attr('href',"http://daxue.qq.com/content/we2014/"+$.fn.cookie("code"));
  		// window.toGame();
  		window.stopDirec=0;
  		$(".u-guideTop").show();
@@ -298,6 +299,7 @@ function done(result){
 			}else{
 				
 				$(".we-code span").html(result.code);
+				$('#activation').attr('href',"http://daxue.qq.com/content/we2014/"+result.code);
 				$.fn.cookie("code",result.code,500);
 				setTimeout(function(){
 					$("#sender-success").addClass("success-show");
