@@ -575,29 +575,26 @@ var PUBLIC="__PUBLIC__";
 
   });
   var interval = 1000; 
-  function ShowCountDown(year,month,day,divname) 
+  function ShowCountDown(year,month,day,hour,divname) 
   { 
     var now = new Date(); 
     var endDate = new Date(year, month-1, day); 
     var leftTime=endDate.getTime()-now.getTime(); 
     var leftsecond = parseInt(leftTime/1000); 
-    //var day1=parseInt(leftsecond/(24*60*60*6)); 
     var day1=Math.floor(leftsecond/(60*60*24)); 
     var hour=Math.floor((leftsecond-day1*24*60*60)/3600); 
     var minute=Math.floor((leftsecond-day1*24*60*60-hour*3600)/60); 
     var second=Math.floor(leftsecond-day1*24*60*60-hour*3600-minute*60); 
     var cc = document.getElementById(divname);
-    var leftHour = Math.floor(24-11-hour);
     if (day1 > 0) {
       cc.innerHTML = "离WE大会直播还有<i>"  + day1 +"</i>天";
-    }else if(day1 == 0 && leftHour !=0){
-      cc.innerHTML = "WE大会直播倒计时：<i class='time'>" + Math.floor(24-11-hour)+"</i>时<i class='time'>"+ minute+"</i>分";
-    }else if(day1 == 0 && leftHour == 0 && minute == 0 || day1 <= 0){
+    }else if(day1 == -1 && hour !=0){
+      cc.innerHTML = "WE大会直播倒计时：<i class='time'>" + hour +"</i>时<i class='time'>"+ minute+"</i>分";
+    }else if(day1 <= -1 && hour == 0 && minute == 0 || day1 < -1){
       cc.innerHTML = "WE大会直播已经开始！";
     }
-    
   } 
-  window.setInterval(function(){ShowCountDown(2014,11,08,'cutdownDate');}, interval); 
+  window.setInterval(function(){ShowCountDown(2014,11,08,13,'cutdownDate');}, interval); 
 </script>
 
 </body>
