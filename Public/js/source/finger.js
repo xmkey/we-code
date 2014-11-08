@@ -176,6 +176,7 @@ $(".m-weixinShareLayer").tap(function(){
 
  // $.fn.cookie("code","302390320",500);
  // $.fn.cookie('code', null);
+ $(".we-code span").html("正在获取，请稍候...");
 if(!ISSENDER){
  	Timer.start(global.timeRemain);
  	global.isTrigger=true;
@@ -298,13 +299,35 @@ function done(result){
 
 			}else{
 				
-				$(".we-code span").html(result.code);
+				// $(".we-code span").html(result.code);
+				// $('#activation').attr('href',"http://daxue.qq.com/content/we2014/"+result.code);
+				// $.fn.cookie("code",result.code,500);
+				// setTimeout(function(){
+				// 	$("#sender-success").addClass("success-show");
+				// },800);
+
 				$('#activation').attr('href',"http://daxue.qq.com/content/we2014/"+result.code);
-				$.fn.cookie("code",result.code,500);
+				
 				setTimeout(function(){
 					$("#sender-success").addClass("success-show");
 				},800);
-
+				// alert(result.code)
+				if(!result.code){
+					global.isDone=false;
+					$(".we-code span").html("正在获取，请稍候...");
+					var data={
+			 			isSender:ISSENDER,
+			 			status:"reget",
+			 			key:KEY,
+			 			timer:global.timeRemain
+			 		}
+			 		// alert(1)
+					postData(data,false);
+					// alert(2)
+				}else{
+					$(".we-code span").html(result.code);
+					$.fn.cookie("code",result.code,500);
+				}
 			}
 
 			window.stopDirec=0;

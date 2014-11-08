@@ -25,8 +25,20 @@ class DataController extends Controller {
 		// $data['isMatch']=false;
     	$Match = M('Match');
     	$key_data=$Match->where('`key`="'.$data['key'].'"')->find();
-    	
-		if(!$key_data){
+    	if($postdata['status']=="reget"){
+    		
+    		$CodeTable = M('Code');
+			$codeData = $CodeTable->where('used=0 and id>10000')->order('id')->find();
+
+			$codeUsed['used']=1;
+
+			$CodeTable->where('id='.$codeData['id'])->save($codeUsed); 
+			$data['code']=$codeData['id'];
+			$ret['code']=$codeData['code'];
+			
+			$ret['status']='success';
+    	}
+		else if(!$key_data){
 			$data['time']=time();
 			$Match->data($data)->add();
 			$ret['status']='new';

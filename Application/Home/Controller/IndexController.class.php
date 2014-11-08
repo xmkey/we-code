@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-use \LaneWeChat\Userinfo;
+// use \LaneWeChat\Userinfo;
 class IndexController extends Controller {
     public function index(){
         $limit=300;
